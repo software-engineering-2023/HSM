@@ -2,15 +2,32 @@
 <html>
   <head>
     <title>Login Page</title>
+    <script>
+      function login() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        
+        if (username === "client" && password === "clientpass") {
+          window.location.href = "client/client.html";
+        } else if (username === "admin" && password === "adminpass") {
+          window.location.href = "admin/admin.html";
+        } else if (username === "banker" && password === "bankerpass") {
+          window.location.href = "banker/banker.html";
+        } else {
+          alert("Invalid credentials");
+        }
+      }
+    </script>
   </head>
   <body>
     <div style="text-align: center;">
       <h1>Login</h1>
-      <input type="text" placeholder="Username"><br><br>
-      <input type="password" placeholder="Password"><br><br>
-      <button>Login</button>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <input type="text" placeholder="Username" id="username"><br><br>
+      <input type="password" placeholder="Password" id="password"><br><br>
+      <button onclick="login()">Login</button>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <a href="#">Register</a> | <a href="#">ATM Locator</a> | <a href="#">Settings</a>
     </div>
   </body>
 </html>
+
