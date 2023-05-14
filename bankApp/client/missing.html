@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Report Missing, Lost or Damaged Card</title>
+    <style>
+      /* Add some basic styles for the page */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Add some styles for the input boxes */
+      input[type="text"], select {
+        padding: 10px;
+        margin: 10px;
+        width: 300px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      /* Add some styles for the submit button */
+      input[type="submit"] {
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Report Missing, Lost or Damaged Card</h1>
+    <form action="#" method="post">
+      <label for="credit-card-number">Credit Card Number:</label><br>
+      <input type="text" id="credit-card-number" name="credit-card-number" /><br>
+
+      <label for="reason-of-replacement">Reason of Replacement:</label><br>
+      <select id="reason-of-replacement" name="reason-of-replacement">
+        <option value="" disabled selected>Select a reason</option>
+        <option value="stolen">Stolen</option>
+        <option value="lost">Lost</option>
+        <option value="damaged">Damaged</option>
+      </select><br>
+
+      <label for="date-of-loss">Date of Loss:</label><br>
+      <input type="text" id="date-of-loss" name="date-of-loss" /><br>
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
