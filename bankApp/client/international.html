@@ -32,7 +32,7 @@
 </head>
 <body>
 	<h1>Interational Transfer Form</h1>
-	<form action="process_transfer.php" method="post">
+	<form action="process_transfer.php" method="post" onsubmit="return validateForm()">
 		<label for="beneficiary-name">Beneficiary Name:</label>
 		<input type="text" id="beneficiary-name" name="beneficiary-name" required>
 
@@ -52,3 +52,20 @@
 	</form>
 </body>
 </html>
+
+<script>
+    function validateForm() {
+      const beneficiaryName = document.getElementById("beneficiary-name").value;
+      const iban = document.getElementById("iban").value;
+      const swiftCode = document.getElementById("swift-code").value;
+      const bankname = document.getElementById("bank-name").value;
+      const bankAddress = document.getElementById("bank-address").value;
+
+    
+      if (!beneficiaryName || !iban || !swiftCode || !bankname || !bankAddress) {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+    }
+    </script>
+    

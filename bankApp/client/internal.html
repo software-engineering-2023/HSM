@@ -32,7 +32,7 @@
 </head>
 <body>
 	<h1>Internal Transfer Form</h1>
-	<form action="process_transfer.php" method="post">
+	<form action="process_transfer.php" method="post" onsubmit="return validateForm()">
 		<label for="beneficiary-name">Beneficiary Name:</label>
 		<input type="text" id="beneficiary-name" name="beneficiary-name" required>
 
@@ -43,3 +43,16 @@
 	</form>
 </body>
 </html>
+
+<script>
+    function validateForm() {
+      const beneficiaryName = document.getElementById("beneficiary-name").value;
+      const iban = document.getElementById("iban").value;
+    
+      if (!beneficiaryName || !iban) {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+    }
+    </script>
+    
