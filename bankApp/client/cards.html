@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cards</title>
+	<style>
+		body {
+			text-align: center;
+		}
+
+		h1 {
+			font-weight: bold;
+			color: black;
+		}
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			margin: 20px;
+		}
+
+		.box {
+			flex: 1;
+			height: 300px;
+			border: 2px solid lightblue;
+			padding: 20px;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin-right: 2pt;
+		}
+
+		.box p {
+			font-size: 16px;
+			margin: 0;
+		}
+
+		.box p.balance {
+			font-size: 24px;
+			font-weight: bold;
+			margin: 20px 0;
+		}
+
+		.button {
+			background-color: lightblue;
+			color: black;
+			border: none;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
+		.button-small {
+			background-color: lightblue;
+			color: black;
+			border: none;
+			padding: 5px 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 12px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>Cards</h1>
+
+	<div class="container">
+		<div class="box">
+			<p>Card Number: 5131 6757 8772 2828</p>
+			<p>Account Number: 08798787675</p>
+			<p>Available Balance:</p>
+			<p class="balance">28,974.68</p>
+			<p>Currency: EGP</p>
+			<button class="button">View Points</button>
+			<button class="button">Transactions History</button>
+		</div>
+
+		<div class="box">
+			<p>Card Number: 4762 6757 8772 2828</p>
+			<p>Account Number: 28798787675</p>
+			<p>Available Balance:</p>
+			<p class="balance">14,792.64</p>
+			<p>Currency: EUR</p>
+			<button class="button">View Points</button>
+			<button class="button">Transactions History</button>
+		</div>
+
+		<div class="box">
+			<p>Card Number: 2872 8260 7878 9090</p>
+			<p>Account Number: 9087261579</p>
+			<p>Available Balance:</p>
+			<p class="balance">29,824.83</p>
+			<p>Currency: USD</p>
+			<button class="button">View Points</button>
+			<button class="button">Transactions History</button>
+		</div>
+	</div>
+
+</body>
+</html>
