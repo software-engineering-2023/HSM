@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Buttons Example</title>
+	<title>Transfers</title>
 	<style>
 		body {
 			display: flex;
@@ -29,55 +29,13 @@
 		button:hover {
 			background-color: rgb(52, 107, 124);
 		}
-		.ripple {
-			position: absolute;
-			border-radius: 50%;
-			background-color: rgba(255, 255, 255, 0.7);
-			animation-name: ripple-effect;
-			animation-duration: 1s;
-			animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-			animation-fill-mode: forwards;
-		}
-		@keyframes ripple-effect {
-			from {
-				transform: scale(1);
-				opacity: 0.5;
-			}
-			to {
-				transform: scale(100);
-				opacity: 0;
-			}
-		}
-	</style>
+</style>
 </head>
 <body>
 	<h1>Transfer Options:</h1>
-	<button onclick="createRipple(event)">Internal</button>
-	<button onclick="createRipple(event)">External</button>
-	<button onclick="createRipple(event)">Domestic</button>
+	<button onclick="window.location.href='internal.html'">Internal</button></button>
+    <button onclick="window.location.href='domestic.html'">Domestic</button>
+	<button onclick="window.location.href='international.html'">International</button>
 	
-	<script>
-		function createRipple(event) {
-			const button = event.currentTarget;
-			const circle = document.createElement("span");
-			const diameter = Math.max(button.clientWidth, button.clientHeight);
-			const radius = diameter / 2;
-			const buttonCoords = button.getBoundingClientRect();
-			const rippleX = event.clientX - buttonCoords.left - radius;
-			const rippleY = event.clientY - buttonCoords.top - radius;
-			
-			circle.style.width = circle.style.height = `${diameter}px`;
-			circle.style.left = `${rippleX}px`;
-			circle.style.top = `${rippleY}px`;
-			circle.classList.add("ripple");
-			
-			const ripple = button.getElementsByClassName("ripple")[0];
-			if (ripple) {
-				ripple.remove();
-			}
-			
-			button.appendChild(circle);
-		}
-	</script>
-</body>
-</html>
+	
+	

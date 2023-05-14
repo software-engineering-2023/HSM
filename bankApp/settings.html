@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Settings</title>
+</head>
+<body>
+	<h1>Settings</h1>
+	<label>Change Language:</label>
+	<select>
+		<option value="en">English</option>
+		<option value="zh">Chinese</option>
+		<option value="es">Spanish</option>
+		<option value="ar">Arabic</option>
+		<option value="hi">Hindi</option>
+	</select>
+	<br><br>
+	<button onclick="toggleImpairmentSupport()">Visual Impairment Support</button>
+	<div id="impairment-support" style="display: none;">
+		<label>Which visual impairment do you suffer from?</label><br>
+		<input type="radio" name="impairment" value="1"><label>Blindness</label><br>
+		<input type="radio" name="impairment" value="2"><label>Color Blindness</label><br>
+		<input type="radio" name="impairment" value="3"><label>Glaucoma</label><br>
+		<input type="radio" name="impairment" value="4"><label>Macular Degeneration</label><br>
+		<input type="radio" name="impairment" value="5"><label>Retinitis Pigmentosa</label><br><br>
+		<button>Enable</button>
+	</div>
+	
+	<script>
+		function toggleImpairmentSupport() {
+			var div = document.getElementById('impairment-support');
+			div.style.display = div.style.display == 'none' ? 'block' : 'none';
+		}
+	</script>
+</body>
+</html>
