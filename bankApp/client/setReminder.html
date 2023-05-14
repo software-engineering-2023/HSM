@@ -44,7 +44,7 @@
     }
   </style>
   
-  <form>
+  <form action="process_transfer.php" method="post" onsubmit="return validateForm()">
     <label for="reminder-name">Reminder Name:</label>
     <input type="text" id="reminder-name" name="reminder-name">
   
@@ -54,3 +54,14 @@
     <input type="submit" value="Set Reminder">
   </form>
   
+  <script>
+    function validateForm() {
+      const name = document.getElementById("reminder-name").value;
+      const date = document.getElementById("reminder-date").value;
+    
+      if (!name || !date) {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+    }
+    </script>
