@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Banking App</title>
+	<style>
+		.button {
+		  background-color: #4CAF50; /* Green */
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		}
+		.left-container {
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: flex-start;
+		  height: 100vh;
+		  width: 50%;
+		  margin: 0;
+		  padding: 0;
+		  float: left;
+		  background-color: #f2f2f2;
+		}
+		.right-container {
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		  height: 100vh;
+		  width: 50%;
+		  margin: 0;
+		  padding: 0;
+		  float: right;
+		  background-color: #f2f2f2;
+		}
+		.report-button {
+		  background-color: #FF0000; /* Red */
+		  border: none;
+		  color: white;
+		  padding: 15px 32px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		  float: right;
+		}
+		.notification-button {
+		  background-color: #f2f2f2;
+		  border: none;
+		  color: black;
+		  padding: 8px 16px;
+		  text-align: center;
+		  text-decoration: none;
+		  display: inline-block;
+		  font-size: 16px;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		  float: right;
+		}
+		.notification-icon {
+		  font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="left-container">
+		<button class="button">Make Transfer</button>
+		<button class="button">Open Account</button>
+		<button class="button">Apply for Loan</button>
+		<button class="button">View Bills</button>
+		<button class="button">View Requests</button>
+		<button class="button">View Cards</button>
+		<button class="button">Reminders</button>
+		<button class="button">Report Issue</button>
+	</div>
+	<div class="right-container">
+		<button class="report-button">Report Missing Card</button>
+		<button class="notification-button"><i class="notification-icon fa fa-bell"></i></button>
+	</div>
+</body>
+</html>
