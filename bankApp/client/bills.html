@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <title>Bills</title>
+	<style>
+body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+
+header {
+	text-align: center;
+	margin-top: 50px;
+}
+
+h1 {
+	font-size: 36px;
+	font-weight: bold;
+	margin: 0;
+}
+
+p {
+	font-size: 24px;
+	margin-top: 20px;
+}
+
+main {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 50px;
+	padding: 0 50px;
+}
+
+.view-bills-btn {
+	padding: 10px 20px;
+	background-color: #fff;
+	border: 2px solid #00bfff;
+	color: #000;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.3s, color 0.3s;
+	margin-left: 50px;
+}
+
+.view-bills-btn:hover {
+	background-color: #00bfff;
+	color: #fff;
+}
+
+footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 20px;
+	background-color: #fff;
+	box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
+}
+
+.partial-payment-btn,
+.full-payment-btn,
+.third-party-payment-btn {
+	padding: 10px 20px;
+	background-color: #fff;
+	border: 2px solid #00bfff;
+	color: #000;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.3s, color 0.3s;
+	margin-bottom: 20px;
+}
+
+.partial-payment-btn:hover,
+.full-payment-btn:hover,
+.third-party-payment-btn:hover {
+	background-color: #00bfff;
+	color: #fff;
+}
+
+.pay-bills-btn {
+	padding: 10px 20px;
+	background-color: #00bfff;
+	border: 2px solid #00bfff;
+	color: #fff;
+	font-size: 18px;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background-color 0.3s, color 0.3s;
+	margin-left: auto;
+}
+
+.pay-bills-btn:hover {
+	background-color: #fff;
+	color: #00bfff;
+}
+
+.view-bills-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
+}
+
+.view-bills-page h1 {
+	font-size: 36px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	background-color: #fff;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	padding: 12px 16px;
+	border-radius: 5px;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown-content a {
+	color: #000;
+	padding: 8px 0;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-content a:hover {
+	color: #00bfff;
+}
+
+.dropdown-content a:first-child {
+	margin-top: 0;
+}
+
+.dropdown-content a:last-child {
+	margin-bottom: 0;
+}
+        </style>
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Bills</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Bills</h1>
+            <p>Total Bills Due: 7,250.32 EGP</p>
+        </header>
+        <main>
+            <button class="view-bills-btn">View Bills</button>
+        </main>
+        <footer>
+            <button class="partial-payment-btn">Partial Payment</button>
+            <button class="full-payment-btn">Full Payment</button>
+            <a href="pay.html" class="third-party-payment-btn">Payment Through 3rd Party Apps</a>
+            <button class="pay-bills-btn">Pay Bills</button>
+        </footer>
+    </body>
+    </html>
