@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Account Information</title>
+  <style>
+    .central-box {
+      border: 2px solid #4CAF50;
+      padding: 20px;
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Account Information</h1>
+  <select id="account-select">
+    <option value="savings">Savings Account</option>
+    <option value="current">Current Account</option>
+    <option value="extra">Extra Account 1</option>
+  </select>
+  
+  <div class="central-box">
+    <h2>Account Details</h2>
+    <div id="account-info">
+      Account Number: -
+      <br>
+      Swift Code: -
+      <br>
+      Balance: -
+    </div>
+  </div>
+
+  <script>
+    var accountSelect = document.getElementById("account-select");
+    var accountInfo = document.getElementById("account-info");
+    
+    accountSelect.addEventListener("change", function() {
+      var selectedValue = accountSelect.value;
+      
+      if (selectedValue === "savings") {
+        accountInfo.innerHTML = "Account Number: 97687658674 <br> Swift Code: 2345dfgh4567 <br> Balance: 87,897 EGP";
+      } else if (selectedValue === "current") {
+        accountInfo.innerHTML = "Account Number: 34569087654 <br> Swift Code: 456fdcyv78f7i6f6 <br> Balance: 200,658 EGP";
+      } else if (selectedValue === "extra") {
+        accountInfo.innerHTML = "Account Number: 5446789009876 <br> Swift Code: 34rtgyu7865rfgui8 <br> Balance: 10,986,764 EGP";
+      }
+    });
+  </script>
+</body>
+</html>
