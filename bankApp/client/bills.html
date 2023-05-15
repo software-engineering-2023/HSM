@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bills</title>
+  <style>
+    .panel {
+      display: none;
+      margin-top: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th:last-child, td:last-child {
+      text-align: center;
+    }
+    .pay-button {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .pay-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bills</h1>
+  <div>
+    <p>Total Bills: 67,902 EGP</p>
+    <a href="pay.html" class="pay-button">Pay All Bills</a>
+    <button id="view-bills-button">View Separate Bills</button>
+  </div>
+  <div id="bills-panel" class="panel">
+    <table>
+      <tr>
+        <th>Bill</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Bill 1</td>
+        <td>Credit Card Bill</td>
+        <td>30,000 EGP</td>
+        <td><a href="pay.html" class="pay-button">Pay</a></td>
+      </tr>
+      <tr>
+        <td>Bill 2</td>
+        <td>Loan Installment</td>
+        <td>30,000 EGP</td>
+        <td><a href="pay.html" class="pay-button">Pay</a></td>
+      </tr>
+      <tr>
+        <td>Bill 3</td>
+        <td>Electricity Bill</td>
+        <td>17,902 EGP</td>
+        <td><a href="pay.html" class="pay-button">Pay</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    var viewBillsButton = document.getElementById("view-bills-button");
+    var billsPanel = document.getElementById("bills-panel");
+
+    viewBillsButton.addEventListener("click", function() {
+      if (billsPanel.style.display === "none") {
+        billsPanel.style.display = "block";
+      } else {
+        billsPanel.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
