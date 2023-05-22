@@ -1,88 +1,129 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Client Page</title>
-	<style>
-		.button {
-		  background-color: #4CAF50; /* Green */
-		  border: none;
-		  color: white;
-		  padding: 15px 32px;
-		  text-align: center;
-		  text-decoration: none;
-		  display: inline-block;
-		  font-size: 16px;
-		  margin: 4px 2px;
-		  cursor: pointer;
-		}
-		.left-container {
-		  display: flex;
-		  flex-direction: column;
-		  justify-content: center;
-		  align-items: flex-start;
-		  height: 100vh;
-		  width: 50%;
-		  margin: 0;
-		  padding: 0;
-		  float: left;
-		  background-color: #f2f2f2;
-		}
-		.right-container {
-		  display: flex;
-		  flex-direction: column;
-		  justify-content: center;
-		  align-items: center;
-		  height: 100vh;
-		  width: 50%;
-		  margin: 0;
-		  padding: 0;
-		  float: right;
-		  background-color: #f2f2f2;
-		}
-		.notification-button {
-		  background-color: #6408ee;
-		  border: none;
-		  color: white;
-		  padding: 15px 32px;
-		  text-align: center;
-		  text-decoration: none;
-		  display: inline-block;
-		  font-size: 16px;
-		  margin: 4px 2px;
-		  cursor: pointer;
-		  float: right;
-		}
-		.report-button {
-		  background-color: #FF0000; /* Red */
-		  border: none;
-		  color: white;
-		  padding: 15px 32px;
-		  text-align: center;
-		  text-decoration: none;
-		  display: inline-block;
-		  font-size: 16px;
-		  margin: 4px 2px;
-		  cursor: pointer;
-		  float: right;
-		}
-	
-		
-	</style>
+  <title>My Page</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #ffffff;
+    }
+    
+    header {
+      background-color: #000000;
+      color: #ffffff;
+      height: 100px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    
+    header img {
+      width: 100px;
+      height: 100px;
+      margin: 20px 0 0 20px;
+    }
+    
+    header button {
+      float: right;
+      margin-top: 20px;
+    }
+    
+    sidebar {
+      background-color: #ffffff;
+      width: 200px;
+      height: 100%;
+      position: fixed;
+      top: 100px;
+      left: 0;
+      z-index: 10;
+    }
+    
+    sidebar a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: #000000;
+    }
+    
+    sidebar a:hover {
+      background-color: #eeeeee;
+    }
+    
+    .notifications {
+      background-color: #ffffff;
+      width: 300px;
+      height: 100px;
+      position: fixed;
+      top: 100px;
+      right: 0;
+      z-index: 10;
+    }
+    
+    .notifications h3 {
+      margin: 0;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    
+    .notifications p {
+      margin: 0;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    
+    .buttons {
+      text-align: center;
+      margin: 0 auto;
+      width: 50%;
+    }
+    
+    .buttons button {
+      margin: 10px 0;
+      width: 100px;
+      height: 50px;
+      background-color: #000000;
+      color: #ffffff;
+      font-size: 18px;
+      border: 1px solid;
+    }
+    
+    .welcome {
+      text-align: center;
+      margin: 0 auto;
+      width: 50%;
+      position: relative;
+      top: 200px;
+    }
+  </style>
 </head>
 <body>
-	<div class="left-container">
-		<button class="button" onclick="window.location.href='transfer.html'">Make Transfer</button>
-		<button class="button" onclick="window.location.href='accounts.html'">View Accounts</button>
-		<button class="button" onclick="window.location.href='loanApp.html'">Apply for Loan</button>
-		<button class="button" onclick="window.location.href='bills.html'">View Bills</button>
-		<button class="button" onclick="window.location.href='requests.html'">View Requests</button>
-		<button class="button" onclick="window.location.href='cards.html'">View Cards</button>
-		<button class="button" onclick="window.location.href='reminders.html'">Reminders</button>
-		<button class="button" onclick="window.location.href='issue.html'">Report Issue</button>
-	</div>
-	<div class="right-container">
-		<button class="report-button" onclick="window.location.href='missing.html'">Report Missing Card</button>
-		<button class="notification-button" onclick="window.location.href='notifications.html'">Notifications</button>
-	</div>
+  <header>
+    <img src="logo.jpeg" alt="Logo">
+    <button onclick="window.location='///D:/uni/Software%20Engineering/Project/HSM/bankApp/loginPage.html'">Log Out</button>
+  </header>
+  <sidebar>
+    <a href="transfer.html">Transfers</a>
+    <a href="accounts.html">Accounts</a>
+    <a href="loanApp.html">Apply to Loans</a>
+    <a href="bills.html">Bills</a>
+    <a href="requests.html">Requests</a>
+    <a href="cards.html">Cards</a>
+    <a href="reminders.html">Reminders</a>
+    <a href="issue.html">Report issue</a>
+    <a href="missing.html">Report missing Card</a>
+	<a href="notifications.html">Notifications</a>
+  </sidebar>
+  <div class="notifications">
+    <h3>Notifications</h3>
+    <p>hello! this is a notification</p>
+    <p>sherifasherifasherifasherifa</p>
+    <p>RAAAAAAAAAAAAA</p>
+  </div>
+  <div class="welcome">
+    <p>Welcome to HSM virtual banking system, please choose a service from the left side bar. You can view your system notifications on the right and log out from the top right button.</p>
+  </div>
 </body>
 </html>
+
+
