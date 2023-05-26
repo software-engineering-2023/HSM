@@ -33,11 +33,17 @@
 <body>
 	<h1>Internal Transfer Form</h1>
 	<form action="process_transfer.php" method="post" onsubmit="return validateForm()">
+		<label for="amount">Amount:</label>
+		<input type="text" id="amount" name="amount" required>
+
+		<label for="to-account">To Account:</label>
+		<input type="text" id="to-account" name="to-account" required>
+
+		<label for="from-account">From Account:</label>
+		<input type="text" id="from-account" name="from-account" required>
+
 		<label for="beneficiary-name">Beneficiary Name:</label>
 		<input type="text" id="beneficiary-name" name="beneficiary-name" required>
-
-		<label for="account-number">Account Number:</label>
-		<input type="text" id="account-number" name="account-number" required>
 
 		<input type="submit" value="Transfer">
 	</form>
