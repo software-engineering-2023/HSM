@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payment Options</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+		.container {
+			margin: auto;
+			width: 50%;
+			background-color: white;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+		}
+		button {
+			display: block;
+			margin: 10px auto;
+			background-color: #008CBA;
+			color: white;
+			border-radius: 5px;
+			padding: 10px 20px;
+			border: none;
+			cursor: pointer;
+		}
+		button:active {
+			transform: translateY(2px);
+			box-shadow: none;
+		}
+		input[type=number] {
+			display: block;
+			margin: 10px auto;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			width: 35%;
+			height: 10%;
+		}
+		.cancel-btn {
+			background-color: #f44336;
+		}
+	</style>
+</head>
+<body>
+	<h1>Payment Options</h1>
+	<div class="container">
+		<button>Pay All</button>
+		<button onclick="document.getElementById('partialPayment').style.display = 'block';">Pay Partially</button>
+		<button onclick="document.getElementById('thirdParty').style.display = 'block';">Pay Through Third Party</button>
+		<div id="partialPayment" style="display: none;">
+			<label for="partialAmount">How much do you want to pay?</label>
+			<input type="number" id="partialAmount" name="partialAmount" placeholder="Enter amount in EGP" min="0" step="1">
+			<button onclick="document.getElementById('partialPayment').style.display = 'none';">Submit</button>
+			<button class="cancel-btn" onclick="document.getElementById('partialPayment').style.display = 'none';">Cancel</button>
+		</div>
+		<div id="thirdParty" style="display: none;">
+			<label>Third Party Options: </label>
+			<button>Fawry</button>
+			<button>Vodafone Cash</button>
+			<button>WePay</button>
+			<button class="cancel-btn" onclick="document.getElementById('thirdParty').style.display = 'none';">Cancel</button>
+		</div>
+	</div>
+</body>
+</html>

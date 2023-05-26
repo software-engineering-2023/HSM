@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Upcoming Reminders</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		h1 {
+			text-align: center;
+			margin-top: 50px;
+		}
+		table {
+			margin: auto;
+			width: 80%;
+			border-collapse: collapse;
+			background-color: white;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+		}
+		th {
+			background-color: #008CBA;
+			color: white;
+			padding: 10px;
+			text-align: left;
+		}
+		td {
+			padding: 10px;
+			border-bottom: 1px solid #ddd;
+			text-align: left;
+		}
+		input[type=checkbox] {
+			transform: scale(1.5);
+		}
+	</style>
+</head>
+<body>
+	<h1>Upcoming Reminders</h1>
+	<table>
+		<tr>
+			<th>Reminder</th>
+			<th>Date</th>
+			<th>Done</th>
+		</tr>
+		<tr>
+			<td>Pay electricity</td>
+			<td>June 1st, 2023</td>
+			<td><input type="checkbox"></td>
+		</tr>
+		<tr>
+			<td>Check on loan application</td>
+			<td>June 27th, 2023</td>
+			<td><input type="checkbox"></td>
+		</tr>
+		<tr>
+			<td>Change password</td>
+			<td>July 4th, 2023</td>
+			<td><input type="checkbox"></td>
+		</tr>
+		<tr>
+			<td>Transfer tuition fees</td>
+			<td>August 18th, 2023</td>
+			<td><input type="checkbox"></td>
+		</tr>
+	</table>
+</body>
+</html>

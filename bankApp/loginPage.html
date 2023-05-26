@@ -1,33 +1,105 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Login Page</title>
-    <script>
-      function login() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        
-        if (username === "client" && password === "clientpass") {
-          window.location.href = "client/client.html";
-        } else if (username === "admin" && password === "adminpass") {
-          window.location.href = "admin/admin.html";
-        } else if (username === "banker" && password === "bankerpass") {
-          window.location.href = "banker/banker.html";
-        } else {
-          alert("Invalid credentials");
-        }
+<head>
+  <title>My Page</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #ffffff;
+    }
+    
+    .login {
+      text-align: center;
+      margin: 0 auto;
+      width: 50%;
+      position: relative;
+      top: 200px;
+    }
+    
+    .login input {
+      width: 200px;
+      height: 50px;
+      border: 1px solid;
+      margin: 10px 0;
+    }
+    
+    .login button {
+      margin: 10px 0;
+      width: 100px;
+      height: 50px;
+      background-color: #000000;
+      color: #ffffff;
+      font-size: 18px;
+      border: 1px solid;
+    }
+    
+    .bottom-links {
+      text-align: center;
+      margin: 0 auto;
+      width: 50%;
+      position: relative;
+      top: 400px;
+    }
+    
+    .bottom-links a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    
+    .bottom-links a:hover {
+      background-color: #eeeeee;
+    }
+    
+    .bottom-links a:first-child {
+      margin-left: 0;
+    }
+    
+    .bottom-links a:last-child {
+      margin-right: 0;
+    }
+    
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin: 20px 0 0 20px;
+    }
+    
+    .login-container {
+      width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.jpeg" alt="Logo" class="logo">
+  <div class="login-container">
+    <h1>Login</h1>
+    <input type="text" placeholder="Username" id="username"><br><br>
+    <input type="password" placeholder="Password" id="password"><br><br>
+    <button onclick="login()">Login</button>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <a href="register.html">Register</a> | <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contact.html">Contact Us &phone;</a>
+  </div>
+  <script>
+    function login() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+    
+      if (username === "client" && password === "clientpass") {
+        window.location.href = "client/client.html";
+      } else if (username === "admin" && password === "adminpass") {
+        window.location.href = "admin/admin.html";
+      } else if (username === "banker" && password === "bankerpass") {
+        window.location.href = "banker/banker.html";
+      } else {
+        alert("Invalid credentials");
       }
-    </script>
-  </head>
-  <body>
-    <div style="text-align: center;">
-      <h1>Login</h1>
-      <input type="text" placeholder="Username" id="username"><br><br>
-      <input type="password" placeholder="Password" id="password"><br><br>
-      <button onclick="login()">Login</button>
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-      <a href="register.html">Register</a> | <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a>
-    </div>
-  </body>
+    }
+    
+    document.getElementById("loginButton").addEventListener("click", login);
+  </script>
+</body>
 </html>
 

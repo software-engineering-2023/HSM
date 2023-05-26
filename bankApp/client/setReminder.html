@@ -1,0 +1,67 @@
+<style>
+    form {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #ccc;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="datetime-local"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    input[type="submit"] {
+      background-color: #006280;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #ccc;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    input[type="submit"]:hover {
+      background-color: #005069;
+    }
+  </style>
+  
+  <form action="process_transfer.php" method="post" onsubmit="return validateForm()">
+    <label for="reminder-name">Reminder Name:</label>
+    <input type="text" id="reminder-name" name="reminder-name">
+  
+    <label for="reminder-date">Reminder Date and Time:</label>
+    <input type="datetime-local" id="reminder-date" name="reminder-date">
+  
+    <input type="submit" value="Set Reminder">
+  </form>
+  
+  <script>
+    function validateForm() {
+      const name = document.getElementById("reminder-name").value;
+      const date = document.getElementById("reminder-date").value;
+    
+      if (!name || !date) {
+        alert("Please fill in all required fields.");
+        return false;
+      }
+    }
+    </script>
