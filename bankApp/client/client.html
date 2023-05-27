@@ -15,6 +15,7 @@
 		  margin: 4px 2px;
 		  cursor: pointer;
 		}
+        
 		.left-container {
 		  display: flex;
 		  flex-direction: column;
@@ -89,7 +90,10 @@
             height: 50px;
             margin-right: 10px;
         }
-        
+        #icon{
+			width: 50px;
+			height: 50 px;
+		}
         h1 {
             margin: 0;
             font-size: 20px;
@@ -206,14 +210,20 @@
         <p>Welcome to HSM Virtual Bank Portal. Here you can do everything you need in the bank from the comfort of your home. Please select one of the buttons below to proceed or you may logout.</p>
         
         <div class="button-container1">
-            <a class="button" href="transfer.html">Transfers</a>
-            <a class="button" href="accounts.html">Accounts</a>
-            <a class="button" href="loan.html">Loans</a>
+            <a class="button" href="transfer.html">Transfers<br><br>
+                <img id = "icon" src="trans.png" alt="transfer Image"></a>
+            <a class="button" href="accounts.html">Accounts<br><br>
+                <img id = "icon" src="acc.png" alt="accounts Image"></a>
+            <a class="button" href="loan.html">Loans<br><br>
+                <img id = "icon" src="loans.png" alt="loans Image"></a>
         </div>
         <div class="button-container2">
-            <a class="button" href="cards.html">Cards</a>
-            <a class="button" href="reminders.html">Reminders</a>
-            <a class="button" href="bills.html">Bills </a>
+            <a class="button" href="cards.html">Cards<br><br>
+                <img id = "icon" src="card.jpeg" alt="cards Image"></a>
+            <a class="button" href="reminders.html">Reminders<br><br>
+                <img id = "icon" src="rem.png" alt="reminders Image"></a>
+            <a class="button" href="bills.html">Bills<br><br>
+                <img id = "icon" src="bill.png" alt="bills Image"> </a>
         </div>
     </main>
     

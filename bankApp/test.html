@@ -1,104 +1,140 @@
-<!DOCTYPE html>
-<html>
+!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>My Page</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #ffffff;
-    }
-    
-    .login {
-      text-align: center;
-      margin: 0 auto;
-      width: 50%;
-      position: relative;
-      top: 200px;
-    }
-    
-    .login input {
-      width: 200px;
-      height: 50px;
-      border: 1px solid;
-      margin: 10px 0;
-    }
-    
-    .login button {
-      margin: 10px 0;
-      width: 100px;
-      height: 50px;
-      background-color: #000000;
-      color: #ffffff;
-      font-size: 18px;
-      border: 1px solid;
-    }
-    
-    .bottom-links {
-      text-align: center;
-      margin: 0 auto;
-      width: 50%;
-      position: relative;
-      top: 400px;
-    }
-    
-    .bottom-links a {
-      text-decoration: none;
-      color: #000000;
-      font-size: 18px;
-      margin: 10px 0;
-    }
-    
-    .bottom-links a:hover {
-      background-color: #eeeeee;
-    }
-    
-    .bottom-links a:first-child {
-      margin-left: 0;
-    }
-    
-    .bottom-links a:last-child {
-      margin-right: 0;
-    }
-    
-    .logo {
-      width: 100px;
-      height: 100px;
-      margin: 20px 0 0 20px;
-    }
-    
-    .login-container {
-      width: 500px;
-      margin: 0 auto;
-    }
-  </style>
+    <title>My System App</title>
+    <style>
+        .button {
+            background-color: rgb(0, 98, 128); /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+
+        body {
+            background-color: lightblue;
+            font-family: sans-serif;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+
+        #logo {
+            margin-left: 30px;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+		#icon{
+			width: 50px;
+			height: 50 px;
+		}
+
+        h1 {
+            margin: 0;
+            font-size: 20px;
+            margin-right: 1000px;
+        }
+		h2 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        #logout-button {
+            float: right;
+            margin-top: 0px;
+            margin-left: 80px;
+            padding: 5px 10px;
+            background-color: white;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+
+        #logout-button:hover {
+            background-color: lightgrey;
+        }
+
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            margin: 10px;
+            padding: 20px;
+            background-color: white;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: lightgrey;
+        }
+
+        .button-container1 {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .button-container2 {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-  <img src="logo.jpeg" alt="Logo" class="logo">
-  <div class="login-container">
-    <h1>Login</h1>
-    <input type="text" placeholder="Username" id="username"><br><br>
-    <input type="password" placeholder="Password" id="password"><br><br>
-    <button onclick="login()">Login</button>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <a href="register.html">Register</a> | <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a>
-  </div>
-  <script>
-    function login() {
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
+    <header class="header">
+        <img id="logo" src="logo.jpeg" alt="Logo">
+        <h1>HSM Bank</h1>
+        <a id="logout-button" href="///D:/uni/Software%20Engineering/Project/HSM/bankApp/loginPage.html">Log Out&#10162;</a>
+    </header>
     
-      if (username === "client" && password === "clientpass") {
-        window.location.href = "client/client.html";
-      } else if (username === "admin" && password === "adminpass") {
-        window.location.href = "admin/admin.html";
-      } else if (username === "banker" && password === "bankerpass") {
-        window.location.href = "banker/banker.html";
-      } else {
-        alert("Invalid credentials");
-      }
-    }
+
+        <div class="button-container1">
+			<h2>Banker Portal</h2>
+			<br>
+			<br>
+            <a class="button" href="issues.html">View Account Requests <br><br>
+                <img id = "icon" src="iss.png" alt="issues Image"></a>
+            <a class="button" href="analytics.html"> View Loan Requests <br><br>
+                <img id = "icon" src="analyt.png" alt="Analytics Image"> </a>
+            <a class="button" href="analytics.html"> Open Account <br><br>
+              <img id = "icon" src="analyt.png" alt="Analytics Image"> </a>
+		</div>
+		<div class="button-container2">
+            <a class="button" href="notifs.html">Close Account<br><br>
+                <img id = "icon" src="not.png" alt="notifs Image"></a>
+            <a class="button" href="analytics.html"> View Reports <br><br>
+              <img id = "icon" src="analyt.png" alt="Analytics Image"> </a>
+              <a class="button" href="analytics.html"> Report Technical Issues <br><br>
+                <img id = "icon" src="analyt.png" alt="Analytics Image"> </a>    
+			<br><br><br>
+        </div>
+
     
-    document.getElementById("loginButton").addEventListener("click", login);
-  </script>
+    
+    <footer>
+        &copy; 2023 HSM Bank. All rights reserved.
+    </footer>
 </body>
 </html>
