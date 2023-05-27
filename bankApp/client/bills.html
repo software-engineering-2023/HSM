@@ -1,12 +1,25 @@
 
 <!DOCTYPE html>
 <html>
-    <title>Bills</title>
+
+  <link rel="stylesheet" href="universalstyles.css">
+
+  <title>Bills</title>
 	<style>
+
 body {
 	margin: 0;
 	padding: 0;
 	font-family: Arial, sans-serif;
+}
+
+/* .tablestyle{
+  margin-left: 50px;
+  margin-right: 50px;
+} */
+
+.shift{
+  margin-left: 50px;
 }
 
 header {
@@ -153,38 +166,12 @@ footer {
 .dropdown-content a:last-child {
 	margin-bottom: 0;
 }
-        </style>
 
-<!-- <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Bills</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-    <body>
-        <header>
-            <h1>Bills</h1>
-            <p>Total Bills Due: 7,250.32 EGP</p>
-        </header>
-        <main>
-            <button class="view-bills-btn">View Bills</button>
-        </main>
-        <footer>
-            <button class="partial-payment-btn">Partial Payment</button>
-            <button class="full-payment-btn">Full Payment</button>
-            <a href="pay.html" class="third-party-payment-btn">Payment Through 3rd Party Apps</a>
-            <button class="pay-bills-btn">Pay Bills</button>
-        </footer>
-    </body>
-    </html>
-<!DOCTYPE html> -->
-<html>
-<head> 
-  <title>Bills</title>
-  <style>
     .panel {
       display: none;
       margin-top: 20px;
+      margin-left: 50px;
+      margin-right: 50px;
     }
     table {
       border-collapse: collapse;
@@ -208,13 +195,33 @@ footer {
     .pay-button:hover {
       background-color: #45a049;
     }
-  </style>
+        </style>
+
+<html>
+<head> 
+
+  <div class="sidebar" id="sidebar-id">
+    <ul>
+        <br><br><br><br>
+        <li><a href="client.html">Home</a></li>
+        <br>
+        <li><a href="accounts.html">Accounts</a></li>
+        <br>
+        <li><a href="cards.html">Cards</a></li>
+        <br>
+        <li><a href="loans.html">Loans</a></li>
+    </ul>
+</div>
+<button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+
+  <title>Bills</title>
+  
 </head>
 <body>
-  <h1>Bills</h1>
+  <h1 class="title-style">Bills</h1>
   <div>
-    <p>Total Bills: 67,902 EGP</p>
-    <a href="pay.html" class="pay-button">Pay All Bills</a>
+    <p class="shift">Total Bills: 67,902 EGP</p>
+    <a class="shift" href="pay.html" class="pay-button">Pay All Bills</a>
     <button id="view-bills-button">View Separate Bills</button>
   </div>
   <div id="bills-panel" class="panel">
@@ -257,10 +264,22 @@ footer {
         billsPanel.style.display = "none";
       }
     });
+
+
+    var sidebartmp = document.getElementById("sidebar-id");
+        var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+        sidebarbuttontmp.addEventListener("click", () => {
+            if(sidebartmp.style.width === "20px"){
+                sidebartmp.style.width = "200px";
+                sidebarbuttontmp.style.left="180px";
+            }else{
+                sidebartmp.style.width = "20px";
+                sidebarbuttontmp.style.left="5px";
+            }
+        });
+
+
   </script>
 </body>
 </html>
-<!-- <<<<<<< HEAD
->>>>>>> 7cefbc0fcbd1ed5de0aec9f447f206bf44e4dd47
-=======
->>>>>>> 7cefbc0fcbd1ed5de0aec9f447f206bf44e4dd47 -->
+
