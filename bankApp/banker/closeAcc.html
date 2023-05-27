@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Close Client Accounts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: lightblue;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .search-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-form input[type="text"] {
+            padding: 8px;
+            width: 200px;
+            margin-right: 10px;
+        }
+
+        .search-form button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            display: none;
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 20% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .close-account-button {
+            background-color: red;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Close Client Accounts</h1>
+        <div class="search-form">
+            <input type="text" id="clientIdInput" placeholder="Client ID">
+            <button id="searchButton">Search</button>
+        </div>
+        <table id="accountTable">
+            <thead>
+                <tr>
+                    <th>Account Number</th>
+                    <th>Account Type</th>
+                    <th>Balance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Add rows dynamically here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Account Information</h2>
+            <p id="accountInfo"></p>
+            <button class="close-account-button">Close Account</button>
+        </div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        };
+
+        // Get the table and account ID input elements
+        var table = document.getElementById("accountTable");
+        var clientIdInput = document.getElementById("clientIdInput");
+
+        // Add event listener to the search button
+        document.getElementById("searchButton").addEventListener("click", function() {
+            var clientId = clientIdInput.value.trim();
+
+            if (clientId === "client") {
+                // Display the table
+                table.style.display = "table";
+                // Remove previous rows
+                table.getElementsByTagName("tbody")[0].innerHTML = "";
+                // Add new rows with mock data
+                addMockRows();
+            } else {
+                // Display an alert if no accounts found
+                alert("No accounts found");
+            }
+        });
+
+        // Function to add mock rows to the table
+        function addMockRows() {
+            var tbody = table.getElementsByTagName("tbody")[0];
+
+            // Mock data - replace with actual data
+            var mockData = [
+                { accountNumber: "123456789", accountType: "Savings", balance: "$10,000" },
+                { accountNumber: "987654321", accountType: "Checking", balance: "$5,000" },
+                { accountNumber: "567891234", accountType: "Investment", balance: "$20,000" },
+                // Add more rows...
+            ];
+
+            for (var i = 0; i < mockData.length; i++) {
+                var row = tbody.insertRow();
+                row.innerHTML = `
+                    <td>${mockData[i].accountNumber}</td>
+                    <td>${mockData[i].accountType}</td>
+                    <td>${mockData[i].balance}</td>
+                `;
+
+                // Add click event listener to each row
+                row.addEventListener("click", function() {
+                    showModal(this);
+                });
+            }
+        }
+
+        // Function to show the modal with account information
+        function showModal(row) {
+            // Get the account information from the clicked row
+            var accountNumber = row.cells[0].innerHTML;
+            var accountType = row.cells[1].innerHTML;
+            var balance = row.cells[2].innerHTML;
+
+            // Populate the modal with the account information
+            document.getElementById("accountInfo").innerHTML = `
+                <strong>Account Number:</strong> ${accountNumber}<br>
+                <strong>Account Type:</strong> ${accountType}<br>
+                <strong>Balance:</strong> ${balance}
+            `;
+
+            // Show the modal
+            modal.style.display = "block";
+        }
+    </script>
+</body>
+</html>
