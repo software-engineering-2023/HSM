@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Utility Bills Payment</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #header {
+        text-align: center;
+        background-color: lightblue;
+        padding: 20px;
+      }
+      #options {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: lightblue;
+        color: white;
+        cursor: pointer;
+      }
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 1px solid lightgray;
+        padding: 20px;
+        text-align: center;
+      }
+      .popup .title {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .popup .dropdown {
+        margin-bottom: 10px;
+      }
+      .popup .cancel {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: darkred;
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+      .popup .amount {
+        margin-bottom: 10px;
+      }
+      .popup .confirm {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Utility Bills Payment</h1>
+      <div class="amount">Amount Due: 7,500.00 EGP</div>
+    </div>
+    <div id="options">
+      <h2>Payment Options:</h2>
+      <button class="button" id="full-amount-btn">Pay Full Amount</button>
+      <button class="button" id="third-party-btn">Pay Through a Third Party</button>
+    </div>
+    <div id="full-amount-pay" class="popup">
+      <h3 class="title">Choose the account you want to pay from:</h3>
+      <div class="dropdown">
+        <label for="account-select">Your Accounts:</label>
+        <select id="account-select">
+          <option value="Account 1">Account 1</option>
+          <option value="Account 2">Account 2</option>
+          <option value="Account 3">Account 3</option>
+        </select>
+      </div>
+      <button class="confirm button">Confirm Payment</button>
+      <button class="cancel button">Cancel</button>
+    </div>
+    <div id="third-party-pay" class="popup">
+      <button class="cancel button">Cancel</button>
+      <h3 class="title">Choose a third-party payment provider:</h3>
+      <button class="button">Fawry</button>
+      <button class="button">Vodafone Cash</button>
+      <button class="button">WePay</button>
+    </div>
+    <script>
+      const fullAmountBtn = document.getElementById('full-amount-btn');
+      const fullAmountPay = document.getElementById('full-amount-pay');
+      const thirdPartyBtn = document.getElementById('third-party-btn');
+      const thirdPartyPay = document.getElementById('third-party-pay');
+      const cancelBtns = document.querySelectorAll('.popup .cancel');
+      const confirmBtn = document.querySelector('.popup .confirm');
+
+      fullAmountBtn.addEventListener('click', () => {
+        fullAmountPay.style.display = 'block';
+        thirdPartyPay.style.display = 'none';
+      });
+
+      thirdPartyBtn.addEventListener('click', () => {
+        thirdPartyPay.style.display = 'block';
+        fullAmountPay.style.display = 'none';
+      });
+
+      cancelBtns.forEach((cancelBtn) => {
+        cancelBtn.addEventListener('click', () => {
+          fullAmountPay.style.display = 'none';
+          thirdPartyPay.style.display = 'none';
+        });
+      });
+
+      confirmBtn.addEventListener('click', () => {
+        fullAmountPay.style.display = 'none';
+        alert('Payment settled successfully. Thank you!');
+      });
+    </script>
+  </body>
+</html>
