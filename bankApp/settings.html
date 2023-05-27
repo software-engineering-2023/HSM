@@ -1,35 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<title>Settings</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Application Settings</title>
+  <style>
+    /* CSS styles specific to this page */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #003366;
+      color: #fff;
+      padding: 20px;
+    }
+
+    nav {
+      background-color: #f2f2f2;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #000;
+      text-decoration: none;
+      padding: 5px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    select,
+    input[type="submit"] {
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    footer {
+      background-color: #f2f2f2;
+      padding: 10px;
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
 </head>
+
 <body>
-	<h1>Settings</h1>
-	<label>Change Language:</label>
-	<select>
-		<option value="en">English</option>
-		<option value="zh">Chinese</option>
-		<option value="es">Spanish</option>
-		<option value="ar">Arabic</option>
-		<option value="hi">Hindi</option>
-	</select>
-	<br><br>
-	<button onclick="toggleImpairmentSupport()">Visual Impairment Support</button>
-	<div id="impairment-support" style="display: none;">
-		<label>Which visual impairment do you suffer from?</label><br>
-		<input type="radio" name="impairment" value="1"><label>Blindness</label><br>
-		<input type="radio" name="impairment" value="2"><label>Color Blindness</label><br>
-		<input type="radio" name="impairment" value="3"><label>Glaucoma</label><br>
-		<input type="radio" name="impairment" value="4"><label>Macular Degeneration</label><br>
-		<input type="radio" name="impairment" value="5"><label>Retinitis Pigmentosa</label><br><br>
-		<button>Enable</button>
-	</div>
-	
-	<script>
-		function toggleImpairmentSupport() {
-			var div = document.getElementById('impairment-support');
-			div.style.display = div.style.display == 'none' ? 'block' : 'none';
-		}
-	</script>
+  <header>
+    <h1>Bank Application Settings</h1>
+  </header>
+
+
+
+  <main>
+    <h2>Language Settings</h2>
+
+    <form>
+      <div>
+        <label for="language">Language:</label>
+        <select id="language" name="language">
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <!-- Add more language options as needed -->
+        </select>
+		
+      </div>
+
+      <div>
+		<br>
+        <input type="submit" value="Save Changes">
+      </div>
+    </form>
+
+    <h2>Accessibility Settings</h2>
+
+    <form>
+      <div>
+        <label for="font-size">Font Size:</label>
+        <select id="font-size" name="font-size">
+          <option value="small">Small</option>
+          <option value="medium">Medium</option>
+          <option value="large">Large</option>
+        </select>
+      </div>
+
+      <div>
+		<br>
+        <label for="contrast-mode">Contrast Mode:</label>
+        <select id="contrast-mode" name="contrast-mode">
+          <option value="normal">Normal</option>
+          <option value="high">High Contrast</option>
+        </select>
+      </div>
+
+      <div>
+		<br>
+        <input type="submit" value="Save Changes">
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 HSM Bank. All rights reserved.</p>
+  </footer>
 </body>
+
 </html>

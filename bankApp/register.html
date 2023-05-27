@@ -1,26 +1,96 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Register</title>
-  </head>
-  <body>
-    <div style="text-align: center;">
-      <h1>Register</h1>
-      <form>
-        <label>Username:</label>
-        <br>
-        <input type="text" name="username">
-        <br><br>
-        <label>Password:</label>
-        <br>
-        <input type="password" name="password">
-        <br><br>
-        <label>National ID:</label>
-        <br>
-        <input type="text" name="national_id">
-        <br><br>
-        <button type="submit">Register</button>
-      </form>
-    </div>
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .register-container {
+      text-align: center;
+      margin: 200px auto;
+      width: 50%;
+    }
+
+    .register-container input {
+      width: 200px;
+      height: 50px;
+      border: 1px solid;
+      margin: 10px 0;
+      font-size: 16px;
+      padding: 5px;
+    }
+
+    .register-container button {
+      margin: 10px 0;
+      width: 100px;
+      height: 50px;
+      background-color: #000000;
+      color: #ffffff;
+      font-size: 18px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .bottom-links {
+      text-align: center;
+      margin: 30px auto;
+      width: 50%;
+    }
+
+    .bottom-links a {
+      text-decoration: none;
+      color: #000000;
+      font-size: 16px;
+      margin: 10px 10px;
+    }
+
+    .bottom-links a:hover {
+      background-color: #eeeeee;
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="logo.jpeg" alt="Logo" class="logo">
+  <div class="register-container">
+    <h1>Register</h1>
+    <input type="text" placeholder="Username" id="username" required><br><br>
+    <input type="password" placeholder="Password" id="password" required><br><br>
+    <input type="text" placeholder="National ID" id="national_id" required><br><br>
+    <button onclick="register()">Register</button>
+  </div>
+  <div class="bottom-links">
+    <a href="login.html">Login</a>
+    <a href="atm.html">ATM Locator</a>
+    <a href="settings.html">Settings</a>
+    <a href="contactus.html">Contact Us &phone;</a>
+  </div>
+  <script>
+    function register() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var nationalId = document.getElementById("national_id").value;
+
+      // Perform registration logic here
+
+      // Redirect to a success page or perform further actions
+      window.location.href = "success.html";
+    }
+  </script>
+</body>
+
 </html>
