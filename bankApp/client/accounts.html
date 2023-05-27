@@ -1,51 +1,194 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Account Information</title>
-  <style>
-    .central-box {
-      border: 2px solid #4CAF50;
-      padding: 20px;
-      width: 300px;
-      margin: 0 auto;
-      text-align: center;
-    }
-  </style>
+	<title>Accounts</title>
+	<style>
+		body {
+			text-align: center;
+		}
+
+		h1 {
+			font-weight: bold;
+			color: black;
+		}
+
+		.container {
+			display: flex;
+			justify-content: space-between;
+			margin: 20px;
+		}
+
+		.panel#trans1panel{
+      		display: none;
+      		margin-top: 50px;
+    	}
+		.panel#trans2panel{
+      		display: none;
+      		margin-top: 50px;
+    	}
+		.panel#trans3panel{
+      		display: none;
+      		margin-top: 50px;
+    	}
+
+		.box {
+			flex: 1;
+			height: 320px;
+			border: 2px solid lightblue;
+			padding: 20px;
+			box-sizing: border-box;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin-right: 2pt;
+		}
+
+		.box p {
+			font-size: 16px;
+			margin: 0;
+		}
+
+		.box p.balance {
+			font-size: 24px;
+			font-weight: bold;
+			margin: 20px 0;
+		}
+
+		.button {
+			background-color: lightblue;
+			color: black;
+			border: none;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
+		.button-small {
+			background-color: lightblue;
+			color: black;
+			border: none;
+			padding: 5px 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 12px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+	</style>
 </head>
 <body>
-  <h1>Account Information</h1>
-  <select id="account-select">
-    <option value="savings">Savings Account</option>
-    <option value="current">Current Account</option>
-    <option value="extra">Extra Account 1</option>
-  </select>
-  
-  <div class="central-box">
-    <h2>Account Details</h2>
-    <div id="account-info">
-      Account Number: -
-      <br>
-      Swift Code: -
-      <br>
-      Balance: -
-    </div>
-  </div>
 
-  <script>
-    var accountSelect = document.getElementById("account-select");
-    var accountInfo = document.getElementById("account-info");
+	<h1>Accounts</h1>
+
+  <br>
+  <select class="dropdown" id="dropdown-accounts">
+    <option value="all">All Accounts</option>
+    <option value="current">Current Accounts</option>
+    <option value="savings">Savings Accounts</option>
+  </select>
+  <br>
+	<div class="container">
+		<div class="box" id="savings-id">
+      <p>Account Type: Savings</p>
+			<p>Account Number: </p>
+			<p>Available Balance:</p>
+			<p class="balance"></p>
+			<p>Currency:</p>
+			<button class="button" id="trans-1-button">View Transactions</button>
+      <button class="button" onclick="window.location='transfer.html'">Make Transfer</button>
+		</div>
+
+		<div class="box" id="current1-id">
+			<p>Account Type: Current</p>
+			<p>Account Number: </p>
+			<p>Available Balance:</p>
+			<p class="balance"></p>
+			<p>Currency:</p>
+			<button class="button" id="trans-2-button">View Transactions</button>
+      <button class="button" onclick="window.location='transfer.html'">Make Transfer</button>
+		</div>
+
+		<div class="box" id="current2-id">
+			<p>Account Type: Current</p>
+			<p>Account Number: </p>
+			<p>Available Balance:</p>
+			<p class="balance"></p>
+			<p>Currency:</p>
+			<button class="button" id="trans-3-button">View Transactions</button>
+      <button class="button" onclick="window.location='transfer.html'">Make Transfer</button>
+		</div>
+	</div>
+
+	<div class="panel" id="trans1panel">
+		<p>this is transaction of card 1 table</p>
+	</div>
+	<div class="panel" id="trans2panel">
+		<p>this is transaction of card 2 table</p>
+	</div>
+	<div class="panel" id="trans3panel">
+		<p>this is transaction of card 3 table</p>
+	</div>
+
+	<script>
+		var transactionbuttons = document.getElementsByClassName("button");
+		for(var i=0;i<transactionbuttons.length;i++){
+		  var tmpbutton = transactionbuttons[i];
+		  var tmpid = tmpbutton.id;
+		  if(tmpid == "trans-1-button" || tmpid == "trans-2-button" || tmpid == "trans-3-button"){
+			tmpbutton.addEventListener("click",
+			  function(){
+				if(this.id == "trans-1-button"){
+				  document.getElementById("trans2panel").style.display="none";
+				  document.getElementById("trans3panel").style.display="none";
+				  document.getElementById("trans1panel").style.display="block";
+				}else if(this.id == "trans-2-button"){
+				  document.getElementById("trans1panel").style.display="none";
+				  document.getElementById("trans3panel").style.display="none";
+				  document.getElementById("trans2panel").style.display="block";
+				}else{
+				  document.getElementById("trans2panel").style.display="none";
+				  document.getElementById("trans1panel").style.display="none";
+				  document.getElementById("trans3panel").style.display="block";
+				}
+			  })
+		  }
+    }
     
-    accountSelect.addEventListener("change", function() {
-      var selectedValue = accountSelect.value;
-      
-      if (selectedValue === "savings") {
-        accountInfo.innerHTML = "Account Number: 97687658674 <br> Swift Code: 2345dfgh4567 <br> Balance: 87,897 EGP";
-      } else if (selectedValue === "current") {
-        accountInfo.innerHTML = "Account Number: 34569087654 <br> Swift Code: 456fdcyv78f7i6f6 <br> Balance: 200,658 EGP";
-      } else if (selectedValue === "extra") {
-        accountInfo.innerHTML = "Account Number: 5446789009876 <br> Swift Code: 34rtgyu7865rfgui8 <br> Balance: 10,986,764 EGP";
+    var mySelect = document.getElementById("dropdown-accounts");
+    mySelect.addEventListener("change", function(){
+      var selectedValue = mySelect.options[mySelect.selectedIndex].value;
+      if(selectedValue == "current"){
+        document.getElementById("savings-id").style.display="none";
+        document.getElementById("current1-id").style.display="flex";
+        document.getElementById("current2-id").style.display="flex";
+
+        document.getElementById("trans2panel").style.display="none";
+				document.getElementById("trans3panel").style.display="none";
+				document.getElementById("trans1panel").style.display="none";
+      }else if(selectedValue == "savings"){
+        document.getElementById("savings-id").style.display="flex";
+        document.getElementById("current1-id").style.display="none";
+        document.getElementById("current2-id").style.display="none";
+
+        document.getElementById("trans2panel").style.display="none";
+				document.getElementById("trans3panel").style.display="none";
+				document.getElementById("trans1panel").style.display="none";
+      }else{
+        document.getElementById("savings-id").style.display="flex";
+        document.getElementById("current1-id").style.display="flex";
+        document.getElementById("current2-id").style.display="flex";
+
+        document.getElementById("trans2panel").style.display="none";
+				document.getElementById("trans3panel").style.display="none";
+				document.getElementById("trans1panel").style.display="none";
       }
     });
-  </script>
+		</script>
+
 </body>
 </html>
