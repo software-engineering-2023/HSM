@@ -40,7 +40,7 @@
 
 		.box {
 			flex: 1;
-			height: 320px;
+			height: 360px;
 			border: 2px solid rgb(37, 125, 132);
 			padding: 20px;
 			box-sizing: border-box;
@@ -122,6 +122,26 @@
 			max-height: 260px;
 		}
 
+		.close-button{
+			background-color: rgb(222, 68, 68) ;
+			color: black;
+			border: none;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 10px;
+    		width:100%;
+		}
+
+		.close-button:hover{
+			background-color: rgb(225, 41, 41) ;
+		}
+
+
 	</style>
 </head>
 <body>
@@ -129,15 +149,14 @@
 
         <div class="header">
             <img id="logo" src="logo.jpeg" alt="Logo">
-
-            <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
-            <ul class="dropdown-list">
-                <li>Announcement: Updated terms and conditions</li>
-                <br>
-                <li>Reminder: Pay electricity bill</li>
-                <br>    
-                <li>Issue Resolution: Thank you for reaching out to be...</li>
-            </ul>
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
 
         </div>
 
@@ -163,10 +182,11 @@
         
     <main class="main-area">
 
-	<h1>Accounts</h1>
+	<h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px; margin:0">Accounts</h1>
 
   <br>
-  <select class="dropdown" id="dropdown-accounts">
+  <label for="dropdown-accounts" class="filter-label">Filter:</label>
+  <select class="filter" id="dropdown-accounts" >
     <option value="all">All Accounts</option>
     <option value="current">Current Accounts</option>
     <option value="savings">Savings Accounts</option>
@@ -179,8 +199,11 @@
 			<p>Available Balance:</p>
 			<p class="balance">$1,234.56</p>
 			<p>Currency: USD</p>
-			<button class="button" id="trans-1-button">View Transactions</button>
-      <button class="button" onclick="window.location='transfer.html'">Make Transfer</button>
+			<br>
+			<button class="box-button" id="trans-1-button">View Transactions</button>
+      		<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
+			<br>
+			<button class="close-button" onclick="confirmAction()">Close Account</button>
 		</div>
 
 		<div class="box" id="current1-id">
@@ -189,8 +212,12 @@
 			<p>Available Balance:</p>
 			<p class="balance">$2,345.67</p>
 			<p>Currency: USD</p>
-			<button class="button" id="trans-2-button">View Transactions</button>
-      <button class="button" onclick="window.location='transfer.html'">Make Transfer</button>
+			<br>
+			<button class="box-button" id="trans-2-button">View Transactions</button>
+      		<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
+			<br>
+			<button class="close-button" onclick="confirmAction()">Close Account</button>
+
 		</div>
 
 		<div class="box" id="current2-id">
@@ -199,8 +226,11 @@
 			<p>Available Balance:</p>
 			<p class="balance">$3,456.78</p>
 			<p>Currency: USD</p>
-			<button class="button" id="trans-3-button">View Transactions</button>
-      <button class="button" onclick="window.location='transfer.html'">Make Transfer</button>
+			<br>
+			<button class="box-button" id="trans-3-button">View Transactions</button>
+      		<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
+			<br>
+			<button class="close-button" onclick="confirmAction()">Close Account</button>
 		</div>
 	</div>
 
@@ -318,9 +348,27 @@
 			</table>
 		</div>
 	</div>
-	</main>
 
-	<script>
+	<div style="text-align: center; margin-top: 20px;">
+		<button style="border: 2px solid white; margin-right: 10px;" class="extra-button" onclick="window.location='newAccount.html'">New Account</button>
+	</div>
+
+</main>
+
+<div class="footer">
+	<footer>
+		<br>
+		&copy; 2023 HSM Bank. All rights reserved.
+	</footer>
+</div>
+<div class="rightbar"> </div>
+
+<script>
+
+		function confirmAction(){
+			var retVal = confirm("Are you sure you want to do this?");
+		}
+
 		var transactionbuttons = document.getElementsByClassName("button");
 		for(var i=0;i<transactionbuttons.length;i++){
 		  var tmpbutton = transactionbuttons[i];

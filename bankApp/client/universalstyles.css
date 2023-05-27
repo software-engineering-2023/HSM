@@ -69,13 +69,19 @@
     transition: 0.5s;
 }
 
-.dropdown{
-    padding: 15px 30px;
+.filter{
+    padding: 7px 12px;
     font-size: 16px;
+    text-align: center;
+    border: 2px solid black;
+    margin-right: 700px;
 }
 
-.dropdown option{
-
+.filter-label{
+    color: black;
+    font-weight: bold; 
+    font-family: sans-serif;
+    font-size: 16px;
 }
 
 .rightbar{
@@ -188,10 +194,11 @@
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 200px;
+    min-width: 40px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     margin-top: 80px;
+    margin-right: 50px;
 }
 
 .dropdown-content a {
@@ -221,7 +228,7 @@
     padding: 20px 30px;
     font-size: 20;
     font-weight: bold;
-    margin-right: 50px;
+    margin-right: 180px;
     float:right;
     transition: 0.5s;
 }
@@ -230,9 +237,6 @@
     border-radius: 30%;
     padding: 23px 33px;
     font-size: 20;
-    font-weight: bold;
-    margin-right: 50px;
-    float:right;
     transition: 0.5s;
 }
 
