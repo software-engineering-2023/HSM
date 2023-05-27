@@ -186,6 +186,7 @@
 
 
 .dropdown {
+    padding: 15px 30px;
     position: relative;
     display: inline-block;
 }
@@ -228,7 +229,7 @@
     padding: 20px 30px;
     font-size: 20;
     font-weight: bold;
-    margin-right: 180px;
+    margin-right: 150px;
     float:right;
     transition: 0.5s;
 }
