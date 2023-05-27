@@ -1,22 +1,134 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>ATM Locator</title>
-    <style>
-      html, body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
-      }
-      img {
-        display: block;
-        max-width: 100%;
-        max-height: 100%;
-        margin: auto;
-      }
-    </style>
-  </head>
-  <body>
-    <img src="atmlocator.jpeg" alt="ATM Locator">
-  </body>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM Locator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f7f7f7;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .search-form {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .search-form input[type="text"] {
+      width: 300px;
+      height: 40px;
+      padding: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+    }
+
+    .search-form button {
+      height: 40px;
+      padding: 0 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    .atm-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .atm-list li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .atm-list li:last-child {
+      border-bottom: none;
+    }
+
+    .atm-name {
+      font-weight: bold;
+    }
+
+    .atm-address {
+      color: #666;
+    }
+
+    .atm-distance {
+      color: #666;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>ATM Locator</h1>
+
+    <form class="search-form">
+      <input type="text" placeholder="Enter location">
+      <button type="submit">Search</button>
+    </form>
+
+    <ul class="atm-list">
+      <li>
+        <div>
+          <p class="atm-name">ATM #01</p>
+          <p class="atm-address">420 South Teseen St., Fifth Settlement, New Cairo</p>
+        </div>
+        <p class="atm-distance">0.5 Kilometres</p>
+      </li>
+      <li>
+        <div>
+          <p class="atm-name">ATM #02</p>
+          <p class="atm-address">69 North Teseen St., Fifth Settlement, New Cairo </p>
+        </div>
+        <p class="atm-distance">1.5 Kilomteres</p>
+      </li>
+      <li>
+        <div>
+          <p class="atm-name">ATM #03</p>
+          <p class="atm-address">666 Mohamed Naguib Axis., Fifth Settlement, New Cairo </p>
+        </div>
+        <p class="atm-distance">2.4 Kilomteres</p>
+      </li>
+      <li>
+        <div>
+          <p class="atm-name">ATM #04</p>
+          <p class="atm-address">555 Gamal Abdelnasser Axis., Third Settlement, New Cairo </p>
+        </div>
+        <p class="atm-distance">2.4 Kilomteres</p>
+      </li>
+      <li>
+        <div>
+          <p class="atm-name">ATM #05</p>
+          <p class="atm-address"> B Building German University in Cairo, Gamal Abdelnasser Axis., Third Settlement, New Cairo </p>
+        </div>
+        <p class="atm-distance">4 Kilomteres</p>
+      </li>
+      <!-- Add more ATM locations as needed -->
+    </ul>
+  </div>
+</body>
+
 </html>
