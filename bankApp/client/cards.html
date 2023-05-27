@@ -33,7 +33,7 @@
 
 		.box {
 			flex: 1;
-			height: 320px;
+			height: 360px;
 			border: 2px solid lightblue;
 			padding: 20px;
 			box-sizing: border-box;
@@ -79,11 +79,45 @@
 			margin: 4px 2px;
 			cursor: pointer;
 		}
+
+		.title-style{
+			font-weight: bold;
+			color: black;
+			font-size: 30px;
+			margin: 0 auto;
+		}
+
+		.request-button{
+			background-color: lightblue;
+			color: black;
+			border: none;
+			padding: 10px 20px;
+			text-decoration: none;
+			display: block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
+		.issue-button{
+			background-color: rgb(205, 88, 133);
+			color: black;
+			border: none;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
 	</style>
 </head>
 <body>
 
-	<h1>Cards</h1>
+	<strong class="title-style">Cards</strong>
+	<button class="request-button" onclick="window.location='requests.html'">Request New Card</button>
 
 	<div class="container">
 		<div class="box">
@@ -95,6 +129,7 @@
 			<button class="button" onclick="window.location='points.html'">View Points</button>
 			<button class="button" onclick="window.location='bills.html'">View Bills</button>
 			<button class="button" id="trans-1-button">View Transactions</button>
+			<button class="issue-button">Report Issue</button>
 		</div>
 
 		<div class="box">
@@ -106,6 +141,7 @@
 			<button class="button" onclick="window.location='points.html'">View Points</button>
 			<button class="button" onclick="window.location='bills.html'">View Bills</button>
 			<button class="button" id="trans-2-button">View Transactions</button>
+			<button class="issue-button">Report Issue</button>
 		</div>
 
 		<div class="box">
@@ -117,6 +153,7 @@
 			<button class="button" onclick="window.location='points.html'">View Points</button>
 			<button class="button" onclick="window.location='bills.html'">View Bills</button>
 			<button class="button" id="trans-3-button">View Transactions</button>
+			<button class="issue-button">Report Issue</button>
 		</div>
 	</div>
 
