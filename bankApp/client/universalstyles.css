@@ -130,6 +130,10 @@
     cursor:pointer;
 }
 
+.extra-button:hover { 
+    background-color: rgb(46, 156, 164);
+}
+
 .sidebar-button:hover{
       border:2px solid black;
       background-color: rgb(66, 143, 149);
