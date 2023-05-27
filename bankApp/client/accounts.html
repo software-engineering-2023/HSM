@@ -41,7 +41,7 @@
 		.box {
 			flex: 1;
 			height: 320px;
-			border: 2px solid lightblue;
+			border: 2px solid rgb(37, 125, 132);
 			padding: 20px;
 			box-sizing: border-box;
 			display: flex;
@@ -49,6 +49,7 @@
 			justify-content: space-between;
 			margin-right: 2pt;
 			max-width: 380px;
+			border-radius: 10px;
 		}
 
 		.box p {
@@ -63,7 +64,7 @@
 		}
 
 		.button {
-			background-color: lightblue;
+			background-color: rgb(84, 199, 199) ;
 			color: black;
 			border: none;
 			padding: 10px 20px;
@@ -73,10 +74,11 @@
 			font-size: 16px;
 			margin: 4px 2px;
 			cursor: pointer;
+			border-radius: 10px;
 		}
 
 		.button-small {
-			background-color: lightblue;
+			background-color: rgb(84, 199, 199) ;
 			color: black;
 			border: none;
 			padding: 5px 10px;
@@ -86,33 +88,17 @@
 			font-size: 12px;
 			margin: 4px 2px;
 			cursor: pointer;
+			border-radius: 10px;
 		}
 
 		.button:hover {
-			background-color: lightblue;
-			color: black;
-			/* border: 1px solid black; */
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			margin: 4px 2px;
-			cursor: pointer;
+			font-weight: bold;
 		}
 
 		.button-small:hover {
-			background-color: lightblue;
-			color: black;
-			/* border: 1px solid black; */
-			padding: 5px 10px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 12px;
-			margin: 4px 2px;
-			cursor: pointer;
+			font-weight: bold;
 		}
+
 		.table-container {
 			margin: 0 auto;
 			width: 80%;
@@ -135,25 +121,47 @@
 			overflow-y: scroll;
 			max-height: 260px;
 		}
+
 	</style>
 </head>
 <body>
+    <header>
 
-	<div class="sidebar" id="sidebar-id">
-        <ul>
-            <br><br><br><br>
-            <li><a href="client.html">Home</a></li>
-            <br>
-            <li><a href="accounts.html">Accounts</a></li>
-            <br>
-            <li><a href="cards.html">Cards</a></li>
-            <br>
-            <li><a href="loans.html">Loans</a></li>
-			<br><br><br>
-            <li><a href="loginPage.html">Log Out</a></li>
-        </ul>
-    </div>
-    <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+        <div class="header">
+            <img id="logo" src="logo.jpeg" alt="Logo">
+
+            <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
+            <ul class="dropdown-list">
+                <li>Announcement: Updated terms and conditions</li>
+                <br>
+                <li>Reminder: Pay electricity bill</li>
+                <br>    
+                <li>Issue Resolution: Thank you for reaching out to be...</li>
+            </ul>
+
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br><br><br>
+                <li><a href="/HSM/bankApp/loginPage.html">Log Out</a></li>
+            </ul>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+
+        </div>
+
+    </header>
+        
+    <main class="main-area">
 
 	<h1>Accounts</h1>
 
@@ -310,6 +318,7 @@
 			</table>
 		</div>
 	</div>
+	</main>
 
 	<script>
 		var transactionbuttons = document.getElementsByClassName("button");

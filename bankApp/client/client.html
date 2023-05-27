@@ -95,15 +95,14 @@
 
         <div class="header">
             <img id="logo" src="logo.jpeg" alt="Logo">
-
-            <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
-            <ul class="dropdown-list">
-                <li>Announcement: Updated terms and conditions</li>
-                <br>
-                <li>Reminder: Pay electricity bill</li>
-                <br>    
-                <li>Issue Resolution: Thank you for reaching out to be...</li>
-            </ul>
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
 
         </div>
 
@@ -128,7 +127,7 @@
     </header>
         
     <main class="main-area">
-        <p>Welcome, Client!</p>
+        <p id="home-page-title">Welcome, Client!</p>
         
         <div class="button-container1">
             <a class="button" href="transfer.html">Transfers<br><br>
