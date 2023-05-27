@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="universalstyles.css">
 	<title>Cards</title>
 	<style>
 		body {
@@ -20,20 +21,23 @@
 
 		.panel#trans1panel {
       		display: none;
-      		margin-top: 50px;
+      		margin-top: 20px;
+			overflow-y: scroll;
     	}
 		.panel#trans2panel {
       		display: none;
-      		margin-top: 50px;
+      		margin-top: 20px;
+			overflow-y: scroll;
     	}
 		.panel#trans3panel {
       		display: none;
-      		margin-top: 50px;
+      		margin-top: 20px;
+			overflow-y: scroll;
     	}
 
 		.box {
 			flex: 1;
-			height: 360px;
+			height: 380px;
 			border: 2px solid lightblue;
 			padding: 20px;
 			box-sizing: border-box;
@@ -81,10 +85,8 @@
 		}
 
 		.title-style {
-			font-weight: bold;
-			color: black;
-			font-size: 30px;
-			margin: 0 auto;
+			margin-top: 30px;
+			margin-bottom: 0px;
 		}
 
 		.request-button {
@@ -92,11 +94,15 @@
 			color: black;
 			border: none;
 			padding: 10px 20px;
+			margin-top: 0px;
+			margin-top: 20px;
 			text-decoration: none;
 			display: block;
 			font-size: 16px;
 			margin: 4px 2px;
+			margin-right: 20px;
 			cursor: pointer;
+			float: right;
 		}
 
 		.issue-button {
@@ -114,12 +120,16 @@
 
 		.table-container {
 			margin: 0 auto;
-			width: 80%;
+			width: 90%;
+			overflow-y: scroll;
+			max-height: 260px;
 		}
 
 		.table-container table {
 			width: 100%;
 			border-collapse: collapse;
+			overflow-y: scroll;
+  			max-height: 260px;
 		}
 
 		.table-container th,
@@ -127,17 +137,34 @@
 			padding: 8px;
 			text-align: left;
 			border-bottom: 1px solid lightblue;
+			overflow-y: scroll;
+			max-height: 260px;
 		}
+
 
 	</style>
 </head>
 <body>
+	<div class="sidebar" id="sidebar-id">
+		<ul>
+			<br><br><br><br>
+            <li><a href="client.html">Home</a></li>
+			<br>
+            <li><a href="accounts.html">Accounts</a></li>
+			<br>
+            <li><a href="cards.html">Cards</a></li>
+			<br>
+            <li><a href="loans.html">Loans</a></li>
+        </ul>
+	</div>
+	<button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
 
-	<strong class="title-style">Cards</strong>
+	<h1 class="title-style">Cards</h1>
 	<button class="request-button" onclick="window.location='requests.html'">Request New Card</button>
-
+	<br><br>
 	<div class="container">
 		<div class="box">
+				<p>Card Type: Credit Card</p>
 				<p>Card Number: 5131 6757 8772 2828</p>
 				<p>Account Number: 08798787675</p>
 				<p>Available Balance:</p>
@@ -150,6 +177,7 @@
 		</div>
 
 		<div class="box">
+				<p>Card Type: Debit Card</p>
 				<p>Card Number: 4762 6757 8772 2828</p>
 				<p>Account Number: 28798787675</p>
 				<p>Available Balance:</p>
@@ -162,6 +190,7 @@
 		</div>
 
 		<div class="box">
+				<p>Card Type:/p>
 				<p>Card Number: 8888 6666 1801 2003</p>
 				<p>Account Number: 9282618926</p>
 				<p>Available Balance:</p>
@@ -231,6 +260,42 @@
 					<td>€50.00</td>
 					<td>Travel</td>
 				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Purchase: Electronics</td>
+					<td>€200.00</td>
+					<td>Technology</td>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Purchase: Electronics</td>
+					<td>€200.00</td>
+					<td>Technology</td>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Purchase: Electronics</td>
+					<td>€200.00</td>
+					<td>Technology</td>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Purchase: Electronics</td>
+					<td>€200.00</td>
+					<td>Technology</td>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Purchase: Electronics</td>
+					<td>€200.00</td>
+					<td>Technology</td>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Purchase: Electronics</td>
+					<td>€200.00</td>
+					<td>Technology</td>
+				</tr>
 			</table>
 		</div>
 	</div>
@@ -242,6 +307,36 @@
 					<th>Description</th>
 					<th>Amount</th>
 					<th>Category</th>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Purchase: Groceries</td>
+					<td>$50.00</td>
+					<td>Grocery</td>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Purchase: Groceries</td>
+					<td>$50.00</td>
+					<td>Grocery</td>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Purchase: Groceries</td>
+					<td>$50.00</td>
+					<td>Grocery</td>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Purchase: Groceries</td>
+					<td>$50.00</td>
+					<td>Grocery</td>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Purchase: Groceries</td>
+					<td>$50.00</td>
+					<td>Grocery</td>
 				</tr>
 				<tr>
 					<td>2023-05-20</td>
@@ -266,6 +361,19 @@
 	</div>
 
 	<script>
+
+		var sidebartmp = document.getElementById("sidebar-id");
+		var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+		sidebarbuttontmp.addEventListener("click", () => {
+			if(sidebartmp.style.width === "20px"){
+				sidebartmp.style.width = "200px";
+				sidebarbuttontmp.style.left="180px";
+			}else{
+				sidebartmp.style.width = "20px";
+				sidebarbuttontmp.style.left="5px";
+			}
+		});
+
 		var transactionbuttons = document.getElementsByClassName("button");
 		for (var i = 0; i < transactionbuttons.length; i++) {
 			var tmpbutton = transactionbuttons[i];
