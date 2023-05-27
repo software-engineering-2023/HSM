@@ -23,6 +23,20 @@
       transition: 0.5s;
 }
 
+.sidebar-button:hover{
+      position: fixed;
+      top: 10px;
+      left: 5px;
+      cursor: pointer;
+      border-radius: 100%;
+      border-color: black;
+      background-color: lightblue;
+      color: lightblue;
+      padding: 20px 3px;
+      font-size: 16px;
+      transition: 0.5s;
+}
+
 .sidebar li a{
     text-align: center;
     font-size: 30;
@@ -31,17 +45,19 @@
     color: rgb(17, 17, 17);
     padding-left: 0px;
     margin-left: 0px;
+    border-color: black;
 }
 
-/* .sidebar li {
+.sidebar li a:hover{
     text-align: center;
     font-size: 30;
     list-style-type: none;
-    text-decoration: none;
+    text-decoration: underline;
     color: rgb(17, 17, 17);
     padding-left: 0px;
     margin-left: 0px;
-} */
+    border-color: black;
+}
 
 .sidebar ul {
     list-style-type: none;

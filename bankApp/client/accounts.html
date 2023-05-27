@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="universalstyles.css">
 	<title>Accounts</title>
 	<style>
 		body {
@@ -16,19 +17,25 @@
 			display: flex;
 			justify-content: space-between;
 			margin: 20px;
+			flex-direction: row;
+			align-items: center;
+			align-content: center;
 		}
 
 		.panel#trans1panel{
       		display: none;
       		margin-top: 50px;
+			overflow-y: scroll;
     	}
 		.panel#trans2panel{
       		display: none;
       		margin-top: 50px;
+     		overflow-y: scroll;
     	}
 		.panel#trans3panel{
       		display: none;
       		margin-top: 50px;
+			overflow-y: scroll;
     	}
 
 		.box {
@@ -41,6 +48,7 @@
 			flex-direction: column;
 			justify-content: space-between;
 			margin-right: 2pt;
+			max-width: 380px;
 		}
 
 		.box p {
@@ -79,14 +87,44 @@
 			margin: 4px 2px;
 			cursor: pointer;
 		}
+
+		.button:hover {
+			background-color: lightblue;
+			color: black;
+			/* border: 1px solid black; */
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
+
+		.button-small:hover {
+			background-color: lightblue;
+			color: black;
+			/* border: 1px solid black; */
+			padding: 5px 10px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 12px;
+			margin: 4px 2px;
+			cursor: pointer;
+		}
 		.table-container {
 			margin: 0 auto;
 			width: 80%;
+			overflow-y: scroll;
+			max-height: 260px;
 		}
 
 		.table-container table {
 			width: 100%;
 			border-collapse: collapse;
+			overflow-y: scroll;
+			max-height: 260px;
 		}
 
 		.table-container th,
@@ -94,10 +132,26 @@
 			padding: 8px;
 			text-align: left;
 			border-bottom: 1px solid lightblue;
+			overflow-y: scroll;
+			max-height: 260px;
 		}
 	</style>
 </head>
 <body>
+
+	<div class="sidebar" id="sidebar-id">
+        <ul>
+            <br><br><br><br>
+            <li><a href="client.html">Home</a></li>
+            <br>
+            <li><a href="accounts.html">Accounts</a></li>
+            <br>
+            <li><a href="cards.html">Cards</a></li>
+            <br>
+            <li><a href="loans.html">Loans</a></li>
+        </ul>
+    </div>
+    <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
 
 	<h1>Accounts</h1>
 
@@ -227,6 +281,30 @@
 					<td>$200.00</td>
 					<td>Category 9</td>
 				</tr>
+				<tr>
+					<td>2023-05-16</td>
+					<td>Transaction 9</td>
+					<td>$200.00</td>
+					<td>Category 9</td>
+				</tr>
+				<tr>
+					<td>2023-05-16</td>
+					<td>Transaction 9</td>
+					<td>$200.00</td>
+					<td>Category 9</td>
+				</tr>
+				<tr>
+					<td>2023-05-16</td>
+					<td>Transaction 9</td>
+					<td>$200.00</td>
+					<td>Category 9</td>
+				</tr>
+				<tr>
+					<td>2023-05-16</td>
+					<td>Transaction 9</td>
+					<td>$200.00</td>
+					<td>Category 9</td>
+				</tr>
 			</table>
 		</div>
 	</div>
@@ -285,6 +363,20 @@
 				document.getElementById("trans1panel").style.display="none";
       }
     });
+
+
+	var sidebartmp = document.getElementById("sidebar-id");
+        var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+        sidebarbuttontmp.addEventListener("click", () => {
+            if(sidebartmp.style.width === "20px"){
+                sidebartmp.style.width = "200px";
+                sidebarbuttontmp.style.left="180px";
+            }else{
+                sidebartmp.style.width = "20px";
+                sidebarbuttontmp.style.left="5px";
+            }
+        });
+
 	</script>
 
 </body>
