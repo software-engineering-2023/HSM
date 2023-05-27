@@ -79,6 +79,22 @@
 			margin: 4px 2px;
 			cursor: pointer;
 		}
+		.table-container {
+			margin: 0 auto;
+			width: 80%;
+		}
+
+		.table-container table {
+			width: 100%;
+			border-collapse: collapse;
+		}
+
+		.table-container th,
+		.table-container td {
+			padding: 8px;
+			text-align: left;
+			border-bottom: 1px solid lightblue;
+		}
 	</style>
 </head>
 <body>
@@ -95,43 +111,124 @@
 	<div class="container">
 		<div class="box" id="savings-id">
       <p>Account Type: Savings</p>
-			<p>Account Number: </p>
+			<p>Account Number: 123456789</p>
 			<p>Available Balance:</p>
-			<p class="balance"></p>
-			<p>Currency:</p>
+			<p class="balance">$1,234.56</p>
+			<p>Currency: USD</p>
 			<button class="button" id="trans-1-button">View Transactions</button>
       <button class="button" onclick="window.location='transfer.html'">Make Transfer</button>
 		</div>
 
 		<div class="box" id="current1-id">
 			<p>Account Type: Current</p>
-			<p>Account Number: </p>
+			<p>Account Number: 987654321</p>
 			<p>Available Balance:</p>
-			<p class="balance"></p>
-			<p>Currency:</p>
+			<p class="balance">$2,345.67</p>
+			<p>Currency: USD</p>
 			<button class="button" id="trans-2-button">View Transactions</button>
       <button class="button" onclick="window.location='transfer.html'">Make Transfer</button>
 		</div>
 
 		<div class="box" id="current2-id">
 			<p>Account Type: Current</p>
-			<p>Account Number: </p>
+			<p>Account Number: 567890123</p>
 			<p>Available Balance:</p>
-			<p class="balance"></p>
-			<p>Currency:</p>
+			<p class="balance">$3,456.78</p>
+			<p>Currency: USD</p>
 			<button class="button" id="trans-3-button">View Transactions</button>
       <button class="button" onclick="window.location='transfer.html'">Make Transfer</button>
 		</div>
 	</div>
 
 	<div class="panel" id="trans1panel">
-		<p>this is transaction of card 1 table</p>
+		<div class="table-container">
+			<table>
+				<tr>
+					<th>Date</th>
+					<th>Description</th>
+					<th>Amount</th>
+					<th>Category</th>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Transaction 1</td>
+					<td>$100.00</td>
+					<td>Category 1</td>
+				</tr>
+				<tr>
+					<td>2023-05-18</td>
+					<td>Transaction 2</td>
+					<td>$50.00</td>
+					<td>Category 2</td>
+				</tr>
+				<tr>
+					<td>2023-05-16</td>
+					<td>Transaction 3</td>
+					<td>$75.00</td>
+					<td>Category 3</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 	<div class="panel" id="trans2panel">
-		<p>this is transaction of card 2 table</p>
+		<div class="table-container">
+			<table>
+				<tr>
+						<th>Date</th>
+						<th>Description</th>
+						<th>Amount</th>
+						<th>Category</th>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Transaction 4</td>
+					<td>$200.00</td>
+					<td>Category 4</td>
+				</tr>
+				<tr>
+					<td>2023-05-18</td>
+					<td>Transaction 5</td>
+					<td>$150.00</td>
+					<td>Category 5</td>
+				</tr>
+				<tr>
+					<td>2023-05-16</td>
+					<td>Transaction 6</td>
+					<td>$100.00</td>
+					<td>Category 6</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 	<div class="panel" id="trans3panel">
-		<p>this is transaction of card 3 table</p>
+		<div class="table-container">
+			<table>
+				<tr>
+						<th>Date</th>
+						<th>Description</th>
+						<th>Amount</th>
+						<th>Category</th>
+				</tr>
+				<tr>
+					<td>2023-05-20</td>
+					<td>Transaction 7</td>
+					<td>$300.00</td>
+					<td>Category 7</td>
+				</tr>
+				<tr>
+					<td>2023-05-18</td>
+					<td>Transaction 8</td>
+					<td>$250.00</td>
+					<td>Category 8</td>
+				</tr>
+				<tr>
+					<td>2023-05-16</td>
+					<td>Transaction 9</td>
+					<td>$200.00</td>
+					<td>Category 9</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 
 	<script>
@@ -188,7 +285,7 @@
 				document.getElementById("trans1panel").style.display="none";
       }
     });
-		</script>
+	</script>
 
 </body>
 </html>
