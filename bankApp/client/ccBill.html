@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Credit Card Bill Payment</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #header {
+        text-align: center;
+        background-color: lightblue;
+        padding: 20px;
+      }
+      #options {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: lightblue;
+        color: white;
+        cursor: pointer;
+      }
+      .popup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 1px solid lightgray;
+        padding: 20px;
+        text-align: center;
+      }
+      .popup .title {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .popup .dropdown {
+        margin-bottom: 10px;
+      }
+      .popup .cancel {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        background-color: darkred;
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+      }
+      .popup .confirm {
+        margin-top: 10px;
+      }
+      .popup .input-box {
+        margin-bottom: 10px;
+      }
+      .popup .input-box input[type="number"] {
+        padding: 5px;
+        width: 200px;
+      }
+      .popup .input-box input[type="number"]:hover::before {
+        content: "The minimum amount to pay is 5,000.00";
+        position: absolute;
+        top: -25px;
+        left: -15px;
+        padding: 5px;
+        background-color: lightgray;
+        color: black;
+        font-size: 14px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Credit Card Bill Payment</h1>
+      <div class="amount">Amount Due: 30,000.00 EGP</div>
+    </div>
+    <div id="options">
+      <h2>Payment Options:</h2>
+      <button class="button" id="full-amount-btn">Pay Amount Fully</button>
+      <button class="button" id="partial-amount-btn">Pay Amount Partially</button>
+    </div>
+    <div id="full-amount-pay" class="popup">
+      <h4 class="title">Choose the account you want to pay from:</h4>
+      <div class="dropdown">
+        <label for="account-select-full">Your Accounts:</label>
+        <select id="account-select-full">
+          <option value="Account 1">Account 1</option>
+          <option value="Account 2">Account 2</option>
+          <option value="Account 3">Account 3</option>
+        </select>
+      </div>
+      <button class="confirm button">Confirm Payment</button>
+      <button class="cancel button">Cancel</button>
+    </div>
+    <div id="partial-amount-pay" class="popup">
+      <h4 class="title">Enter the amount you want to pay:</h4>
+      <div class="input-box">
+        <input type="number" min="5000" max="30000" step="0.01" placeholder="Enter amount" id="payment-amount">
+      </div>
+      <h4 class="title">Choose the account you want to pay from:</h4>
+      <div class="dropdown">
+        <label for="account-select-partial">Your Accounts:</label>
+        <select id="account-select-partial">
+          <option value="Account 1">Account 1</option>
+          <option value="Account 2">Account 2</option>
+          <option value="Account 3">Account 3</option>
+        </select>
+      </div>
+      <button class="confirm button">Confirm Payment</button>
+      <button class="cancel button">Cancel</button>
+    </div>
+    <script>
+      const fullAmountBtn = document.getElementById('full-amount-btn');
+      const partialAmountBtn = document.getElementById('partial-amount-btn');
+      const fullAmountPay = document.getElementById('full-amount-pay');
+      const partialAmountPay = document.getElementById('partial-amount-pay');
+      const cancelBtns = document.querySelectorAll('.popup .cancel');
+      const fullAmountConfirmBtn = document.querySelector('#full-amount-pay .confirm');
+      const partialAmountConfirmBtn = document.querySelector('#partial-amount-pay .confirm');
+      const accountSelectFull = document.getElementById('account-select-full');
+      const accountSelectPartial = document.getElementById('account-select-partial');
+      const paymentAmountInput = document.getElementById('payment-amount');
+
+      fullAmountBtn.addEventListener('click', () => {
+        fullAmountPay.style.display = 'block';
+        partialAmountPay.style.display = 'none';
+      });
+
+      partialAmountBtn.addEventListener('click', () => {
+        partialAmountPay.style.display = 'block';
+        fullAmountPay.style.display = 'none';
+      });
+
+      cancelBtns.forEach((cancelBtn) => {
+        cancelBtn.addEventListener('click', () => {
+          fullAmountPay.style.display = 'none';
+          partialAmountPay.style.display = 'none';
+        });
+      });
+
+      fullAmountConfirmBtn.addEventListener('click', () => {
+        fullAmountPay.style.display = 'none';
+        alert('Payment settled successfully. Thank you!');
+      });
+
+      partialAmountConfirmBtn.addEventListener('click', () => {
+        const amount = parseFloat(paymentAmountInput.value);
+        if (amount >= 5000 && amount <= 30000) {
+          partialAmountPay.style.display = 'none';
+          alert('Payment settled successfully. Thank you!');
+        } else if (amount > 30000) {
+          alert('The entered amount exceeds the required amount. Please enter a valid amount within the limits (Minimum: 5,000.00 and Maximum 30,000.00).');
+        } else {
+          alert('The entered amount is below the minimum requirement. Please enter a valid amount within the limits (Minimum: 5,000.00 and Maximum 30,000.00).');
+        }
+      });
+    </script>
+  </body>
+</html>
