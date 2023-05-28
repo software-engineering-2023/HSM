@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report Technical Issue</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #f7f7f7;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    form {
+      display: grid;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    textarea,
+    input[type="text"],
+    input[type="date"] {
+      width: 100%;
+      padding: 5px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      height: 40px;
+      padding: 0 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Report Technical Issue</h1>
+
+    <form>
+      <label for="problem-nature">Nature of the Problem:</label>
+      <input type="text" id="problem-nature" required>
+
+      <label for="problem-description">Detailed Description:</label>
+      <textarea id="problem-description" rows="4" required></textarea>
+
+      <label for="date-arised">Date the Problem Arised:</label>
+      <input type="date" id="date-arised" required>
+
+      <label for="employee-id">Employee ID:</label>
+      <input type="text" id="employee-id" required>
+
+      <label for="department">Department:</label>
+      <input type="text" id="department" required>
+
+      <div class="button-container">
+        <button type="submit">Submit Report</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
