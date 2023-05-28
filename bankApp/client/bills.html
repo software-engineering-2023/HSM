@@ -2,25 +2,21 @@
 <!DOCTYPE html>
 <html>
 
-  <link rel="stylesheet" href="universalstyles.css">
+  <link rel="stylesheet" href="../universalstyles.css">
 
   <title>Bills</title>
 	<style>
 
-body {
-	margin: 0;
-	padding: 0;
-	font-family: Arial, sans-serif;
-}
+
 
 .shift{
   margin-left: 50px;
 }
 
-header {
+/* header {
 	text-align: center;
 	margin-top: 50px;
-}
+} */
 
 h1 {
 	font-size: 36px;
@@ -31,15 +27,6 @@ h1 {
 p {
 	font-size: 24px;
 	margin-top: 20px;
-}
-
-main {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	margin-top: 50px;
-	padding: 0 50px;
 }
 
 .view-bills-btn {
@@ -59,18 +46,6 @@ main {
 	color: #fff;
 }
 
-footer {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding: 20px;
-	background-color: #fff;
-	box-shadow: 0px -5px 10px rgba(0,0,0,0.1);
-}
 
 .partial-payment-btn,
 .full-payment-btn,
@@ -163,109 +138,225 @@ footer {
 }
 
     .panel {
-      display: none;
+      display: block;
       margin-top: 20px;
       margin-left: 50px;
       margin-right: 50px;
     }
+
     table {
       border-collapse: collapse;
       width: 100%;
     }
+
     th, td {
       padding: 8px;
       text-align: left;
       border-bottom: 1px solid #ddd;
     }
+
     th:last-child, td:last-child {
       text-align: center;
     }
+
     .pay-button {
       padding: 5px 10px;
       background-color: #4CAF50;
       color: white;
       border: none;
       cursor: pointer;
+      border-radius: 10px;
+      text-decoration: none;
     }
+
     .pay-button:hover {
       background-color: #45a049;
+      text-decoration: underline;
     }
-        </style>
+
+    .view-all-bills-button{
+      padding: 7px 15px;
+      background-color: rgb(37, 125, 132);
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .view-all-bills-button:hover{
+      background-color: rgb(28, 104, 110);
+      text-decoration: underline;
+    }
+
+    #utility-panel{
+      display:
+    }
+
+</style>
 
 <html>
-<head> 
+  <body>
+    <header>
 
-  
+        <div class="header">
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
 
-  <div class="sidebar" id="sidebar-id">
-    <ul>
-        <br><br><br><br>
-        <li><a href="client.html">Home</a></li>
-        <br>
-        <li><a href="accounts.html">Accounts</a></li>
-        <br>
-        <li><a href="cards.html">Cards</a></li>
-        <br>
-        <li><a href="loans.html">Loans</a></li>
-        <br><br><br>
-        <li><a href="loginPage.html">Log Out</a></li>
-    </ul>
-</div>
-<button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+            <img id="logo" src="../logo_text.png" alt="Logo">
 
-  <title>Bills</title>
-  
-</head>
-<body>
+            <button class="logout-button" onclick="window.location='../loginPage.html'">Log Out</button>
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="cards.html">Reminders</a></li>
+                <br>
+                <li><a href="cards.html">Bills</a></li>
+                <br><br><br>
+                <li><a href="../loginPage.html">Log Out</a></li>
+            </ul>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+
+        </div>
+
+    </header>
+        
+    <main class="main-area">
+
   <h1 class="title-style">Bills</h1>
   <div>
     <p class="shift">Total Bills: 67,902 EGP</p>
-<a class="shift" href="pay.html" class="pay-button">Pay All Bills</a> 
-    <button id="view-bills-button">View All Bills</button>
+    <a href="pay.html" class="pay-button" style="margin-left: 50px;">Pay All Bills</a> 
+    <!-- <button class="view-all-bills-button">View All Bills</button> -->
   </div>
+  <br><br>
   <div id="bills-panel" class="panel">
-    <table>
-      <tr>
-        <th>Bill</th>
-        <th>Description</th>
-        <th>Amount</th>
-        <th></th>
-      </tr>
-      <tr>
-        <td>Bill 1</td>
-        <td>Credit Card Bill</td>
-        <td>30,000 EGP</td>
-        <td><a href="ccBill.html" class="pay-button">Pay</a></td>
-      </tr>
-      <tr>
-        <td>Bill 2</td>
-        <td>Loan Installment</td>
-        <td>30,000 EGP</td>
-        <td><a href="instBill.html" class="pay-button">Pay</a></td>
-      </tr>
-      <tr>
-        <td>Bill 3</td>
-        <td>Electricity Bill</td>
-        <td>17,902 EGP</td>
-        <td><a href="electBill.html" class="pay-button">Pay</a></td>
-      </tr>
-    </table>
+    <div id="cc-panel">
+      <p>Credit Card Bills:</p>
+      <table>
+        <tr>
+          <th>Card Number</th>
+          <th>Amount</th>
+          <th>Due</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>1111 1111 1111 1111</td>
+          <td>30,000 EGP</td>
+          <td>01/06/2023</td>
+          <td><a href="ccBill.html" class="pay-button">Pay</a></td>
+        </tr>
+        <tr>
+          <td>5555 5555 5555 555</td>
+          <td>2,300.00 EGP</td>
+          <td>20/06/2023</td>
+          <td><a href="ccBill.html" class="pay-button">Pay</a></td>
+        </tr>
+      </table>
+    </div>
+    <br>
+    <div id="loan-panel">
+      <p>Loan Installments Due:</p>
+      <table>
+        <tr>
+          <th>Loan Number</th>
+          <th>Amount</th>
+          <th>Due</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>36475892</td>
+          <td>30,000 EGP</td>
+          <td>12/06/2023</td>
+          <td><a href="instBill.html" class="pay-button">Pay</a></td>
+        </tr>
+        <tr>
+          <td>77777777</td>
+          <td>40,000 EGP</td>
+          <td>22/06/2023</td>
+          <td><a href="instBill.html" class="pay-button">Pay</a></td>
+        </tr>
+        <tr>
+          <td>333333333</td>
+          <td>17,902 EGP</td>
+          <td>30/06/2023</td>
+          <td><a href="instBill.html" class="pay-button">Pay</a></td>
+        </tr>
+      </table>
+    </div>
+    <br>
+    <div id="utility-panel">
+      <p>Utility Bills:</p>
+      <table>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Due</th>
+          <th></th>
+        </tr>
+        <tr>
+          <td>Electricty Bill</td>
+          <td>17,000 EGP</td>
+          <td>14/06/2023</td>
+          <td><a href="electBill.html" class="pay-button">Pay</a></td>
+        </tr>
+        <tr>
+          <td>Phone Bill</td>
+          <td>30,000 EGP</td>
+          <td>17/06/2023</td>
+          <td><a href="electBill.html" class="pay-button">Pay</a></td>
+        </tr>
+      </table>
   </div>
+
+  </div>
+
+</main>
+    
+<br><br><br><br>
+<div class="footer">
+    <footer>
+        <br><br>
+        <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+        <br><br>
+        &copy; 2023 HSM Bank. All rights reserved.
+    </footer>
+</div>
+<div class="rightbar"> </div>
 
   <script>
-    var viewBillsButton = document.getElementById("view-bills-button");
-    var billsPanel = document.getElementById("bills-panel");
+    // var viewBillsButton = document.getElementById("view-bills-button");
+    // var billsPanel = document.getElementById("bills-panel");
 
-    viewBillsButton.addEventListener("click", function() {
-      if (billsPanel.style.display === "none") {
-        billsPanel.style.display = "block";
-      } else {
-        billsPanel.style.display = "none";
-      }
-    });
+    // viewBillsButton.addEventListener("click", function() {
+    //   if (billsPanel.style.display === "none") {
+    //     billsPanel.style.display = "block";
+    //   } else {
+    //     billsPanel.style.display = "none";
+    //   }
+    // });
 
 
-        var sidebartmp = document.getElementById("sidebar-id");
+    var sidebartmp = document.getElementById("sidebar-id");
         var sidebarbuttontmp = document.getElementById("sidebar-button-id");
         sidebarbuttontmp.addEventListener("click", () => {
             if(sidebartmp.style.width === "45px"){
