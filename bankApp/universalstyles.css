@@ -195,10 +195,32 @@ header{
     cursor:pointer;
     text-align: center;
     align-content: center;
+    border-radius: 10px;
 }
 
 .extra-button:hover { 
     background-color: rgb(46, 156, 164);
+}
+
+.cancel-button{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding:10px 15px;
+    background-color: rgb(201, 44, 44);
+    border: 2px solid white;
+    display: inline;
+    color: white;
+    width: 250px;
+    font-size: 20px;
+    cursor:pointer;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+}
+
+.cancel-button:hover{
+    background-color: rgb(171, 37, 37);
+    
 }
 
 .sidebar-button:hover{
