@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="universalstyles.css">
+	<link rel="stylesheet" href="../universalstyles.css">
 	<title>Accounts</title>
 	<style>
+
 		body {
 			text-align: center;
+			background-color: #f0f0f0;
 		}
 
 		h1 {
@@ -99,7 +101,7 @@
 		}
 
 		.close-button:hover{
-			background-color: rgb(255, 35, 35) ;
+			background-color: rgb(255, 76, 76) ;
 			font-weight: bold;
 		}
 
@@ -110,7 +112,6 @@
     <header>
 
         <div class="header">
-            <img id="logo" src="logo.jpeg" alt="Logo">
             <div class="dropdown">
                 <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
                 <div class="dropdown-content">
@@ -120,6 +121,9 @@
                 </div>
             </div>
 
+            <img id="logo" src="../logo_text.png" alt="Logo">
+
+            <button class="logout-button" onclick="window.location='../loginPage.html'">Log Out</button>
         </div>
 
         <div class="sidebar" id="sidebar-id">
@@ -127,13 +131,19 @@
                 <br><br><br><br>
                 <li><a href="client.html">Home</a></li>
                 <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
                 <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
                 <br>
                 <li><a href="cards.html">Cards</a></li>
                 <br>
-                <li><a href="loan.html">Loans</a></li>
+                <li><a href="cards.html">Reminders</a></li>
+                <br>
+                <li><a href="cards.html">Bills</a></li>
                 <br><br><br>
-                <li><a href="/HSM/bankApp/loginPage.html">Log Out</a></li>
+                <li><a href="../loginPage.html">Log Out</a></li>
             </ul>
         </div>
         <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
@@ -195,7 +205,7 @@
 				<button class="close-button" onclick="confirmAction()">Close Account</button>
 			</div>
 		</div>
-
+		<br><br>
 		<div class="panel" id="trans1panel">
 			<div class="table-container">
 				<table>
@@ -371,21 +381,22 @@
 			</div>
 		</div>
 
+		<div style="text-align: center;">
+			<button style="border: 2px solid white; margin-right: 10px;" class="extra-button" onclick="window.location='newAccount.html'">Open New Account</button>
+		</div>
+
 	</main>
-<br>
-
-<div style="text-align: center;">
-	<button style="border: 2px solid white; margin-right: 10px;" class="extra-button" onclick="window.location='newAccount.html'">New Account</button>
-</div>
-
-<div class="footer">
-	<footer>
-		<br>
-		&copy; 2023 HSM Bank. All rights reserved.
-	</footer>
-</div>
-
-<div class="rightbar"> </div>
+    
+    <br><br><br><br>
+    <div class="footer">
+        <footer>
+            <br><br>
+            <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+            <br><br>
+            &copy; 2023 HSM Bank. All rights reserved.
+        </footer>
+    </div>
+    <div class="rightbar"> </div>
 
 <script>
 

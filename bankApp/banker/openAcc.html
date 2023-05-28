@@ -64,7 +64,7 @@
   <div class="container">
     <h1>Open Account</h1>
 
-    <form>
+    <form onsubmit="openAccount(event)">
       <label for="full-name">Full Name:</label>
       <input type="text" id="full-name" required>
 
@@ -100,6 +100,31 @@
   <script>
     function validateNationalId(input) {
       input.value = input.value.replace(/\D/g, '');
+    }
+
+    function openAccount(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get input values
+      var fullName = document.getElementById("full-name").value;
+      var nationalId = document.getElementById("national-id").value;
+      var birthdate = document.getElementById("birthdate").value;
+      var address = document.getElementById("address").value;
+      var accountType = document.getElementById("account-type").value;
+      var currency = document.getElementById("currency").value;
+
+      // Additional checks and validations if needed
+
+      // Display success message
+      alert("Account opened successfully");
+
+      // Reset the form
+      document.getElementById("full-name").value = "";
+      document.getElementById("national-id").value = "";
+      document.getElementById("birthdate").value = "";
+      document.getElementById("address").value = "";
+      document.getElementById("account-type").value = "current";
+      document.getElementById("currency").value = "EGP";
     }
   </script>
 </body>

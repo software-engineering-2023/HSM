@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="universalstyles.css">
+    <link rel="stylesheet" href="../universalstyles.css">
     <title>Home Page</title>
 	<style>
 
@@ -57,7 +57,7 @@
         .button {
             display: inline-block;
             border: 3px solid rgb(84, 199, 199);
-            width: 200px;
+            width: 180px;
             height: 100px;
             margin: 10px;
             padding: 20px;
@@ -68,10 +68,11 @@
             border-radius: 10px;
             transition: background-color 0.5s;
             font-size: 25px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         
         .button:hover {
-            font-weight:bold;
+            transform: scale(1.1);
 
         }
         
@@ -94,7 +95,6 @@
     <header>
 
         <div class="header">
-            <img id="logo" src="logo.jpeg" alt="Logo">
             <div class="dropdown">
                 <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
                 <div class="dropdown-content">
@@ -104,6 +104,9 @@
                 </div>
             </div>
 
+            <img id="logo" src="../logo_text.png" alt="Logo">
+
+            <button class="logout-button" onclick="window.location='../loginPage.html'">Log Out</button>
         </div>
 
         <div class="sidebar" id="sidebar-id">
@@ -111,14 +114,19 @@
                 <br><br><br><br>
                 <li><a href="client.html">Home</a></li>
                 <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
                 <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
                 <br>
                 <li><a href="cards.html">Cards</a></li>
                 <br>
-                <li><a href="loan.html">Loans</a></li>
+                <li><a href="cards.html">Reminders</a></li>
+                <br>
+                <li><a href="cards.html">Bills</a></li>
                 <br><br><br>
                 <li><a href="../loginPage.html">Log Out</a></li>
-
             </ul>
         </div>
         <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
@@ -148,12 +156,14 @@
         </div>
         <br><br>
         <a id="issue-button" href="issue.html">report issue&#9888;</a>
-        <br><br><br>
     </main>
-
+    
+    <br><br><br><br><br>
     <div class="footer">
         <footer>
-            <br>
+            <br><br>
+            <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+            <br><br>
             &copy; 2023 HSM Bank. All rights reserved.
         </footer>
     </div>

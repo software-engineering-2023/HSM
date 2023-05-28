@@ -10,24 +10,31 @@
     font-family: sans-serif;
 }
 
+body{
+    background-color: #f0f0f0;
+}
 
-.header{
+header{
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;
-    background-color: white;
+    background-color: #f0f0f0;
+
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* border: 5px solid lightblue;
-    border-top-color: white; */
+
     
 }
 
+.logo {
+    display:inline-block;
+    width: 200px;
+    height: 200px;
+  }
+
 .footer{
-    background-color: white;
+    background-color: #f0f0f0;
     text-align: center;
     bottom:0;
     width:100%;
@@ -43,7 +50,7 @@
 
 .main-area #home-page-title{
     font-size: 50px;
-    color:rgb(84, 199, 199);
+    color:black;
     font-family: sans-serif;
     font-style: italic;
     font-weight: bold;
@@ -66,6 +73,31 @@
     background-color: rgb(37, 125, 132);
     min-height: 100vh;
     overflow-y: scroll;
+    transition: 0.5s;
+}
+
+.logout-button{
+    /* float:right;
+    margin:0;
+    margin-right: 80px; */
+    padding: 20px 20px;
+    margin-top: 20px;
+    background-color: white;
+    cursor: pointer;
+    border: 3px solid rgb(37, 125, 132);
+    border-radius: 20%;
+    font-family: sans-serif;
+    padding: 20px 30px;
+    font-size: 20;
+    font-weight: bold;
+    transition: 0.5s;
+    display:inline-block;
+}
+
+.logout-button:hover{
+    border-radius: 30%;
+    padding: 23px 33px;
+    font-size: 20;
     transition: 0.5s;
 }
 
@@ -100,7 +132,7 @@
       cursor: pointer;
       border-radius: 100%;
       border:0px solid rgb(37, 125, 132);
-      /* border-color: rgb(37, 125, 132); */
+      border-color: rgb(37, 125, 132);
       background-color: rgb(37, 125, 132);
       color: rgb(37, 125, 132);
       padding: 17px 0px;
@@ -158,9 +190,11 @@
 .sidebar li a{
     text-align: center;
     font-size: 30;
+    font-family: sans-serif;
     list-style-type: none;
     text-decoration: none;
-    color: rgb(17, 17, 17);
+    color: black;
+    font-weight: bold;
     padding-left: 0px;
     margin-left: 12px;
     border-color: black;
@@ -174,7 +208,7 @@
     text-decoration: underline;
     color: rgb(17, 17, 17);
     padding-left: 0px;
-    margin-left: 0px;
+    margin-left: 14px;
     border-color: black;
 }
 
@@ -193,9 +227,12 @@
 
 
 .dropdown {
-    padding: 15px 30px;
+    /* padding: 15px 30px; */
     position: relative;
-    display: inline-block;
+    /* left:0;
+    top:0; */
+    /* margin-top:20px; */
+    /* display: inline-block; */
 }
 
 .dropdown-content {
@@ -236,9 +273,15 @@
     padding: 20px 30px;
     font-size: 20;
     font-weight: bold;
-    margin-right: 150px;
-    float:right;
     transition: 0.5s;
+
+    display:inline-block;
+    /* top:0;
+    left:0;
+    position: relative;
+    left:0;
+    margin-left:80px;
+    margin-top:20px; */
 }
 
 .notification-button:hover {
@@ -248,5 +291,30 @@
     transition: 0.5s;
 }
 
+.grey-container {
+    width: 500px;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #cecdcd;
+    border-bottom: 0;
+    margin-top:0;
+  }
+  
+  .grey-container input {
+    width: 55%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .grey-container button {
+    width: 120px;
+    padding:10px 15px;
+    height: 50px;
+    font-size: 18px;
+    text-align: center;
+  }
 
 
