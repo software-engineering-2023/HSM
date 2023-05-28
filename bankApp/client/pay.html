@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="../universalstyles.css">
 	<title>Payment Options</title>
 	<style>
-		body {
-			font-family: Arial, sans-serif;
-			background-color: #f2f2f2;
-		}
-		h1 {
-			text-align: center;
-			margin-top: 50px;
-		}
-		.container {
-			margin: auto;
-			width: 50%;
-			background-color: white;
-			padding: 20px;
-			border-radius: 5px;
-			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
-		}
-		button {
-			display: block;
-			margin: 10px auto;
-			background-color: #008CBA;
+
+	  .pay {
+			margin-top: 10px;
+			margin-bottom: 20px;
+			padding:16px 21px;
+			background-color: #4CAF50;
+			border: 2px solid white;
+			display: inline;
 			color: white;
-			border-radius: 5px;
-			padding: 10px 20px;
-			border: none;
-			cursor: pointer;
-		}
+			width: 250px;
+			font-size: 20px;
+			cursor:pointer;
+			text-align: center;
+			align-content: center;
+			border-radius: 10px;
+      }
+
+	  .pay:hover {
+			background-color: #5ddb61;
+      }
+
 		button:active {
 			transform: translateY(2px);
 			box-shadow: none;
@@ -42,30 +38,103 @@
 			width: 35%;
 			height: 10%;
 		}
-		.cancel-btn {
-			background-color: #f44336;
-		}
+
 	</style>
 </head>
 <body>
-	<h1>Payment Options</h1>
-	<div class="container">
-		<button>Pay All</button>
-		<button onclick="document.getElementById('partialPayment').style.display = 'block';">Pay Partially</button>
-		<button onclick="document.getElementById('thirdParty').style.display = 'block';">Pay Through Third Party</button>
-		<div id="partialPayment" style="display: none;">
-			<label for="partialAmount">How much do you want to pay?</label>
-			<input type="number" id="partialAmount" name="partialAmount" placeholder="Enter amount in EGP" min="0" step="1">
-			<button onclick="document.getElementById('partialPayment').style.display = 'none';">Submit</button>
-			<button class="cancel-btn" onclick="document.getElementById('partialPayment').style.display = 'none';">Cancel</button>
+    <header>
+
+        <div class="header">
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
+
+            <img id="logo" src="../logo_text.png" alt="Logo">
+
+            <button class="logout-button" onclick="window.location='../loginPage.html'">Log Out</button>
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="viewReminders.html">Reminders</a></li>
+                <br>
+                <li><a href="bills.html">Bills</a></li>
+                <br><br><br>
+                <li><a href="../loginPage.html">Log Out</a></li>
+            </ul>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+
+        </div>
+
+    </header>
+        
+    <main class="main-area">
+		<body>
+	<div style="text-align: center;">
+	<h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Payment Options</h1> 
+	
+	<p>Total Amount: 100000</p>	
+	<br>
+	<h3 class="title">Choose the account you want to pay from:</h3>
+        <div class="dropdown">
+          <label for="account-select">Your Accounts:</label>
+          <select id="account-select">
+            <option value="Account 1">Account 1</option>
+            <option value="Account 2">Account 2</option>
+            <option value="Account 3">Account 3</option>
+          </select>
+        </div>
+		<br>
+			<button class="pay">Pay All</button>
+			<br><br>
+			<button class="redirect-button" onclick="window.location='bills.html'">Go to All Bills</button>
 		</div>
-		<div id="thirdParty" style="display: none;">
-			<label>Third Party Options: </label>
-			<button>Fawry</button>
-			<button>Vodafone Cash</button>
-			<button>WePay</button>
-			<button class="cancel-btn" onclick="document.getElementById('thirdParty').style.display = 'none';">Cancel</button>
-		</div>
+
 	</div>
+
+</main>
+    
+<br><br><br><br>
+<div class="footer">
+	<footer>
+		<br><br>
+		<a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+		<br><br>
+		&copy; 2023 HSM Bank. All rights reserved.
+	</footer>
+</div>
+<div class="rightbar"> </div>
+</body>
+<script>
+	var sidebartmp = document.getElementById("sidebar-id");
+	var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+	sidebarbuttontmp.addEventListener("click", () => {
+		if(sidebartmp.style.width === "45px"){
+			sidebartmp.style.width = "200px";
+			sidebarbuttontmp.style.left="180px";
+		}else{
+			sidebartmp.style.width = "45px";
+			sidebarbuttontmp.style.left="23px";
+		}
+	});
+
+</script>
 </body>
 </html>

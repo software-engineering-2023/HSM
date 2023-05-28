@@ -1,6 +1,7 @@
   <!DOCTYPE html>
   <html>
     <head>
+      <link rel="stylesheet" href="../universalstyles.css">
       <title>Loan Installments Payment</title>
       <style>
         body {
@@ -10,33 +11,26 @@
         }
         #header {
           text-align: center;
-          background-color: lightblue;
           padding: 20px;
         }
         #options {
           text-align: center;
           margin-top: 50px;
         }
-        .button {
-          display: inline-block;
-          padding: 10px 20px;
-          font-size: 16px;
-          border: none;
-          border-radius: 5px;
-          background-color: lightblue;
-          color: white;
-          cursor: pointer;
-        }
+        .extra-button {
+        border-radius: 10px;
+      }
         .popup {
           display: none;
-          position: fixed;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: white;
-          border: 1px solid lightgray;
-          padding: 20px;
-          text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border: 1px solid lightgray;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
         }
         .popup .title {
           font-size: 20px;
@@ -47,13 +41,18 @@
         }
         .popup .cancel {
           position: absolute;
-          bottom: 10px;
-          right: 10px;
-          background-color: darkred;
-          color: white;
-          padding: 5px 10px;
-          font-size: 14px;
+        bottom: 10px;
+        right: 10px;
+        background-color: darkred;
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 10px;
+        cursor:pointer;
         }
+        .popup .cancel:hover {
+        background-color: rgb(107, 0, 0);
+      }
         .popup .amount {
           margin-bottom: 10px;
         }
@@ -62,29 +61,78 @@
         }
         .popup .confirm {
           margin-top: 10px;
+          position: absolute;
+          bottom: 10px;
+          background-color: #45a049;
+          color: white;
+          padding: 5px 10px;
+          font-size: 14px;
+          border-radius: 10px;
+          cursor:pointer;
         }
+        .popup .confirm:hover {
+        background-color: #3b873f;
+      }
       </style>
     </head>
     <body>
+      <header>
+  
+          <div class="header">
+              <div class="dropdown">
+                  <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
+                  <div class="dropdown-content">
+                      <a href="#">Announcement: Updated terms and conditions</a>
+                      <a href="#">Reminder: Pay electricity bill</a>
+                      <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                  </div>
+              </div>
+  
+              <img id="logo" src="../logo_text.png" alt="Logo">
+  
+              <button class="logout-button" onclick="window.location='../loginPage.html'">Log Out</button>
+          </div>
+  
+          <div class="sidebar" id="sidebar-id">
+              <ul>
+                  <br><br><br><br>
+                  <li><a href="client.html">Home</a></li>
+                  <br>
+                  <li><a href="transfer.html">Transfer</a></li>
+                  <br>
+                  <li><a href="accounts.html">Accounts</a></li>
+                  <br>
+                  <li><a href="loan.html">Loans</a></li>
+                  <br>
+                  <li><a href="cards.html">Cards</a></li>
+                  <br>
+                  <li><a href="viewReminders.html">Reminders</a></li>
+                  <br>
+                  <li><a href="bills.html">Bills</a></li>
+                  <br><br><br>
+                  <li><a href="../loginPage.html">Log Out</a></li>
+              </ul>
+          </div>
+          <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+  
+          </div>
+  
+      </header>
+          
+      <main class="main-area">
       <div id="header">
-        <h1>Loan Installments Payment</h1>
+        <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Loan Installments Payment</h1>
+        <div class="amount" id="amount-due">Amount Due: 30,000.00 EGP</div>
       </div>
       <div id="options">
         <h2>Payment Options:</h2>
-        <button class="button" id="full-amount-btn">Pay Full Amount</button>
-      </div>
+        <button class="extra-button" id="full-amount-btn">Pay Full Amount</button>
+      <br>
+      <button class="redirect-button" onclick="window.location='bills.html'">Go to All Bills</button>
+      <button class="redirect-button" onclick="window.location='loan.html'">Go to Loans</button>
+    </div>
+
       <div id="full-amount-pay" class="popup">
-        <h4 class="title">Choose the loan you want to pay:</h4>
-        <div class="dropdown">
-          <label for="loan-select">Your Loans:</label>
-          <select id="loan-select">
-            <option value="Loan 1">Loan 1</option>
-            <option value="Loan 2">Loan 2</option>
-            <option value="Loan 3">Loan 3</option>
-          </select>
-        </div>
-        <div class="amount">Amount Due: </div>
-        <div class="due-date">Due Date: </div>
         <h3 class="title">Choose the account you want to pay from:</h3>
         <div class="dropdown">
           <label for="account-select">Your Accounts:</label>
@@ -94,9 +142,23 @@
             <option value="Account 3">Account 3</option>
           </select>
         </div>
-        <button class="confirm button">Confirm Payment</button>
-        <button class="cancel button">Cancel</button>
+        <br>
+        <button class="confirm">Confirm Payment</button>
+        <button class="cancel">Cancel</button>
       </div>
+    </main>
+    
+    <br><br><br><br>
+    <div class="footer">
+        <footer>
+            <br><br>
+            <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+            <br><br>
+            &copy; 2023 HSM Bank. All rights reserved.
+        </footer>
+    </div>
+    <div class="rightbar"> </div>
+  
       <script>
         const fullAmountBtn = document.getElementById('full-amount-btn');
         const fullAmountPay = document.getElementById('full-amount-pay');
@@ -148,6 +210,18 @@
             dueDateText.textContent = '';
           }
         }
+
+        var sidebartmp = document.getElementById("sidebar-id");
+        var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+        sidebarbuttontmp.addEventListener("click", () => {
+            if(sidebartmp.style.width === "45px"){
+                sidebartmp.style.width = "200px";
+                sidebarbuttontmp.style.left="180px";
+            }else{
+                sidebartmp.style.width = "45px";
+                sidebarbuttontmp.style.left="23px";
+            }
+        });
       </script>
     </body>
   </html>
