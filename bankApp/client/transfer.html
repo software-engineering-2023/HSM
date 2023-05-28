@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="universalstyles.css">
+    <link rel="stylesheet" href="../universalstyles.css">
     <style>
         label {
 			display: block;
@@ -44,7 +44,6 @@
     <header>
 
         <div class="header">
-            <img id="logo" src="logo.jpeg" alt="Logo">
             <div class="dropdown">
                 <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
                 <div class="dropdown-content">
@@ -54,6 +53,9 @@
                 </div>
             </div>
 
+            <img id="logo" src="../logo_text.png" alt="Logo">
+
+            <button class="logout-button" onclick="window.location='../loginPage.html'">Log Out</button>
         </div>
 
         <div class="sidebar" id="sidebar-id">
@@ -61,15 +63,23 @@
                 <br><br><br><br>
                 <li><a href="client.html">Home</a></li>
                 <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
                 <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
                 <br>
                 <li><a href="cards.html">Cards</a></li>
                 <br>
-                <li><a href="loan.html">Loans</a></li>
+                <li><a href="viewReminders.html">Reminders</a></li>
+                <br>
+                <li><a href="bills.html">Bills</a></li>
                 <br><br><br>
-                <li><a href="/HSM/bankApp/loginPage.html">Log Out</a></li>
+                <li><a href="../loginPage.html">Log Out</a></li>
             </ul>
-            <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+
         </div>
 
     </header>
@@ -104,6 +114,9 @@
 
         <panel id="domestic-panel">
             <form action="process_transfer.php" method="post" onsubmit="return validateDomForm()">
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" required>
+
                 <label for="beneficiary-name">Beneficiary Name:</label>
                 <input type="text" id="beneficiary-name" name="beneficiary-name" required>
         
@@ -122,6 +135,9 @@
 
         <panel id="international-panel">
             <form action="process_transfer.php" method="post" onsubmit="return validateInternationalForm()">
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" required>
+                
                 <label for="beneficiary-name">Beneficiary Name:</label>
                 <input type="text" id="beneficiary-name" name="beneficiary-name" required>
         
@@ -142,10 +158,13 @@
         </panel>
 
     </main>
-
+    
+    <br><br><br><br>
     <div class="footer">
         <footer>
-            <br>
+            <br><br>
+            <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+            <br><br>
             &copy; 2023 HSM Bank. All rights reserved.
         </footer>
     </div>
@@ -242,7 +261,7 @@
                 sidebarbuttontmp.style.left="180px";
             }else{
                 sidebartmp.style.width = "45px";
-                sidebarbuttontmp.style.left="5px";
+                sidebarbuttontmp.style.left="23px";
             }
         });
 
