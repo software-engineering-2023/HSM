@@ -34,11 +34,10 @@ body{
 }
 
 .logo {
-    display: block;
-    margin:0;
+    display:inline-block;
+    /* margin:0; */
     width: 200px;
     height: 200px;
-    float:none;
   }
 
 .footer{
@@ -86,9 +85,9 @@ body{
 }
 
 .logout-button{
-    float:right;
+    /* float:right;
     margin:0;
-    margin-right: 80px;
+    margin-right: 80px; */
     padding: 20px 20px;
     margin-top: 20px;
     background-color: white;
@@ -100,7 +99,7 @@ body{
     font-size: 20;
     font-weight: bold;
     transition: 0.5s;
-    display: inline;
+    display:inline-block;
 }
 
 .logout-button:hover{
@@ -238,9 +237,9 @@ body{
 .dropdown {
     /* padding: 15px 30px; */
     position: relative;
-    left:0;
-    top:0;
-    margin-top:20px;
+    /* left:0;
+    top:0; */
+    /* margin-top:20px; */
     /* display: inline-block; */
 }
 
@@ -284,13 +283,13 @@ body{
     font-weight: bold;
     transition: 0.5s;
 
-    display:inline;
-    top:0;
+    display:inline-block;
+    /* top:0;
     left:0;
     position: relative;
     left:0;
     margin-left:80px;
-    margin-top:20px;
+    margin-top:20px; */
 }
 
 .notification-button:hover {
