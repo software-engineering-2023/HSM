@@ -64,7 +64,7 @@
   <div class="container">
     <h1>Report Technical Issue</h1>
 
-    <form>
+    <form onsubmit="submitReport(event)">
       <label for="problem-nature">Nature of the Problem:</label>
       <input type="text" id="problem-nature" required>
 
@@ -85,6 +85,31 @@
       </div>
     </form>
   </div>
+
+  <script>
+    function submitReport(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get input values
+      var problemNature = document.getElementById("problem-nature").value;
+      var problemDescription = document.getElementById("problem-description").value;
+      var dateArised = document.getElementById("date-arised").value;
+      var employeeID = document.getElementById("employee-id").value;
+      var department = document.getElementById("department").value;
+
+      // Additional actions if needed
+
+      // Display success message
+      alert("Report submitted successfully");
+
+      // Reset the form
+      document.getElementById("problem-nature").value = "";
+      document.getElementById("problem-description").value = "";
+      document.getElementById("date-arised").value = "";
+      document.getElementById("employee-id").value = "";
+      document.getElementById("department").value = "";
+    }
+  </script>
 </body>
 
 </html>
