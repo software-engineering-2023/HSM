@@ -123,6 +123,11 @@
     width:100%;
 }
 
+.box-button:hover{
+    border: 1px solid rgb(37, 125, 132);
+    font-weight: bold;
+}
+
  .extra-button { /*outside of the boxes */
     margin-top: 10px;
     margin-bottom: 20px;
