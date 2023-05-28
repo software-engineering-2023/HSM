@@ -1,141 +1,94 @@
 
 <!DOCTYPE html>
 <html>
-
+  <head>
   <link rel="stylesheet" href="../universalstyles.css">
-
   <title>Bills</title>
+
 	<style>
+    .shift{
+      margin-left: 50px;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p {
+      font-size: 24px;
+      margin-top: 20px;
+    }
+
+    .view-bills-btn {
+      padding: 10px 20px;
+      background-color: #fff;
+      border: 2px solid #00bfff;
+      color: #000;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-left: 50px;
+    }
+
+    .view-bills-btn:hover {
+      background-color: #00bfff;
+      color: #fff;
+    }
 
 
+    .partial-payment-btn,
+    .full-payment-btn,
+    .third-party-payment-btn {
+      padding: 10px 20px;
+      background-color: #fff;
+      border: 2px solid #00bfff;
+      color: #000;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-bottom: 20px;
+    }
 
-.shift{
-  margin-left: 50px;
-}
+    .partial-payment-btn:hover,
+    .full-payment-btn:hover,
+    .third-party-payment-btn:hover {
+      background-color: #00bfff;
+      color: #fff;
+    }
 
-/* header {
-	text-align: center;
-	margin-top: 50px;
-} */
+    .pay-bills-btn {
+      padding: 10px 20px;
+      background-color: #00bfff;
+      border: 2px solid #00bfff;
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+      margin-left: auto;
+    }
 
-h1 {
-	font-size: 36px;
-	font-weight: bold;
-	margin: 0;
-}
+    .pay-bills-btn:hover {
+      background-color: #fff;
+      color: #00bfff;
+    }
 
-p {
-	font-size: 24px;
-	margin-top: 20px;
-}
+    .view-bills-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
 
-.view-bills-btn {
-	padding: 10px 20px;
-	background-color: #fff;
-	border: 2px solid #00bfff;
-	color: #000;
-	font-size: 18px;
-	text-decoration: none;
-	border-radius: 5px;
-	transition: background-color 0.3s, color 0.3s;
-	margin-left: 50px;
-}
-
-.view-bills-btn:hover {
-	background-color: #00bfff;
-	color: #fff;
-}
-
-
-.partial-payment-btn,
-.full-payment-btn,
-.third-party-payment-btn {
-	padding: 10px 20px;
-	background-color: #fff;
-	border: 2px solid #00bfff;
-	color: #000;
-	font-size: 18px;
-	text-decoration: none;
-	border-radius: 5px;
-	transition: background-color 0.3s, color 0.3s;
-	margin-bottom: 20px;
-}
-
-.partial-payment-btn:hover,
-.full-payment-btn:hover,
-.third-party-payment-btn:hover {
-	background-color: #00bfff;
-	color: #fff;
-}
-
-.pay-bills-btn {
-	padding: 10px 20px;
-	background-color: #00bfff;
-	border: 2px solid #00bfff;
-	color: #fff;
-	font-size: 18px;
-	text-decoration: none;
-	border-radius: 5px;
-	transition: background-color 0.3s, color 0.3s;
-	margin-left: auto;
-}
-
-.pay-bills-btn:hover {
-	background-color: #fff;
-	color: #00bfff;
-}
-
-.view-bills-page {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 50px;
-}
-
-.view-bills-page h1 {
-	font-size: 36px;
-	font-weight: bold;
-	margin-bottom: 20px;
-}
-
-.dropdown {
-	position: relative;
-	display: inline-block;
-}
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	z-index: 1;
-	background-color: #fff;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	padding: 12px 16px;
-	border-radius: 5px;
-}
-
-.dropdown:hover .dropdown-content {
-	display: block;
-}
-
-.dropdown-content a {
-	color: #000;
-	padding: 8px 0;
-	text-decoration: none;
-	display: block;
-}
-
-.dropdown-content a:hover {
-	color: #00bfff;
-}
-
-.dropdown-content a:first-child {
-	margin-top: 0;
-}
-
-.dropdown-content a:last-child {
-	margin-bottom: 0;
-}
+    .view-bills-page h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
 
     .panel {
       display: block;
@@ -190,11 +143,9 @@ p {
     }
 
 </style>
-
-<html>
+</head>
   <body>
     <header>
-
         <div class="header">
             <div class="dropdown">
                 <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
