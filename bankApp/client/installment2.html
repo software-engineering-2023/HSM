@@ -1,20 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="../universalstyles.css">
     <title>Loan Installments</title>
     <style>
-      header {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-        }
-        
-        #logo {
-            margin-left: 30px;
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
-        }
         
         h2 {
             margin: 0;
@@ -22,39 +11,74 @@
             margin-right: 1000px;
         }
 
-      body {
-        background-color: lightblue;
-      }
       table {
         border-collapse: collapse;
         margin: auto;
+        margin-top: 50px;
         background-color: white;
       }
+
       th, td {
         border: 1px solid black;
         padding: 10px;
         text-align: center;
-        background-color: lightblue;
       }
+
       th {
         background-color: white;
         font-weight: bold;
       }
-
-      footer {
-            text-align: center;
-            vertical-align: bottom;
-            margin-top: 110px;
-        }
         
     </style>
   </head>
   <body>
     <header>
-      <img id="logo" src="logo2.png" alt="Logo">
-      <h2>HSM Bank</h2>
-      </header>
-    <h1 style="text-align:center;">Loan Installments</h1>
+
+        <div class="header">
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
+
+            <img id="logo" src="../logo_text.png" alt="Logo">
+
+            <button class="logout-button" onclick="window.location='../loginPage.html'">Log Out</button>
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="cards.html">Reminders</a></li>
+                <br>
+                <li><a href="cards.html">Bills</a></li>
+                <br><br><br>
+                <li><a href="../loginPage.html">Log Out</a></li>
+            </ul>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+
+        </div>
+
+    </header>
+        
+    <main class="main-area">
+
+    <h1 style="text-align:center;color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Loan Installments</h1>
+    
     <table>
       <tr>
         <th>Due Date</th>
@@ -75,9 +99,37 @@
       <tr>
         <td>31/08/2024</td>
         <td>15,000.00</td>
-      </body>
-
-
-        <footer>
-          &copy; 2023 HSM Bank. All rights reserved.
-      </footer>
+      </tr>
+    </table>
+  </main>
+    
+      <br><br><br><br>
+  
+      <div class="footer">
+          <footer>
+              <br><br>
+              <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+              <br><br>
+              &copy; 2023 HSM Bank. All rights reserved.
+          </footer>
+      </div>
+  
+      <div class="rightbar"> </div>
+        
+    </body>
+  
+    <script>
+          var sidebartmp = document.getElementById("sidebar-id");
+          var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+          sidebarbuttontmp.addEventListener("click", () => {
+              if(sidebartmp.style.width === "45px"){
+                  sidebartmp.style.width = "200px";
+                  sidebarbuttontmp.style.left="180px";
+              }else{
+                  sidebartmp.style.width = "45px";
+                  sidebarbuttontmp.style.left="23px";
+              }
+          });
+  
+    </script>
+</html>
