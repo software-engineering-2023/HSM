@@ -80,7 +80,7 @@
   <body>
     <div id="header">
       <h1>Credit Card Bill Payment</h1>
-      <div class="amount">Amount Due: 30,000.00 EGP</div>
+      <div class="amount" id="amount-due">Amount Due: 30,000.00 EGP</div>
     </div>
     <div id="options">
       <h2>Payment Options:</h2>
@@ -97,7 +97,7 @@
           <option value="Account 3">Account 3</option>
         </select>
       </div>
-      <button class="confirm button">Confirm Payment</button>
+      <button class="confirm button" onclick="payFullAmount()">Confirm Payment</button>
       <button class="cancel button">Cancel</button>
     </div>
     <div id="partial-amount-pay" class="popup">
@@ -114,7 +114,7 @@
           <option value="Account 3">Account 3</option>
         </select>
       </div>
-      <button class="confirm button">Confirm Payment</button>
+      <button class="confirm button" onclick="payPartialAmount()">Confirm Payment</button>
       <button class="cancel button">Cancel</button>
     </div>
     <script>
@@ -128,6 +128,7 @@
       const accountSelectFull = document.getElementById('account-select-full');
       const accountSelectPartial = document.getElementById('account-select-partial');
       const paymentAmountInput = document.getElementById('payment-amount');
+      const amountDue = document.getElementById('amount-due');
 
       fullAmountBtn.addEventListener('click', () => {
         fullAmountPay.style.display = 'block';
@@ -146,22 +147,26 @@
         });
       });
 
-      fullAmountConfirmBtn.addEventListener('click', () => {
-        fullAmountPay.style.display = 'none';
+      function payFullAmount() {
+      
         alert('Payment settled successfully. Thank you!');
-      });
+        amountDue.textContent = 'No Bills to Pay';
+        fullAmountPay.style.display = 'none';
+      }
 
-      partialAmountConfirmBtn.addEventListener('click', () => {
+      function payPartialAmount() {
         const amount = parseFloat(paymentAmountInput.value);
         if (amount >= 5000 && amount <= 30000) {
-          partialAmountPay.style.display = 'none';
+
           alert('Payment settled successfully. Thank you!');
+          amountDue.textContent = (30000 - amount).toFixed(2) + ' EGP';
+          partialAmountPay.style.display = 'none';
         } else if (amount > 30000) {
           alert('The entered amount exceeds the required amount. Please enter a valid amount within the limits (Minimum: 5,000.00 and Maximum 30,000.00).');
         } else {
           alert('The entered amount is below the minimum requirement. Please enter a valid amount within the limits (Minimum: 5,000.00 and Maximum 30,000.00).');
         }
-      });
+      }
     </script>
   </body>
 </html>
