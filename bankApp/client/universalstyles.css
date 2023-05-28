@@ -62,7 +62,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 20px;
+    width: 45px;
     background-color: rgb(37, 125, 132);
     min-height: 100vh;
     overflow-y: scroll;
@@ -88,15 +88,15 @@
     position: fixed;
     top:0;
     right: 0;
-    width: 20px;
+    width: 45px;
     height: 100%;
     background-color: rgb(37, 125, 132);
 }
 
 .sidebar-button {
       position: fixed;
-      top: 30px;
-      left: 5px;
+      top: 0px;
+      left: 23px;
       cursor: pointer;
       border-radius: 100%;
       border:0px solid rgb(37, 125, 132);
@@ -136,9 +136,11 @@
     border: 2px solid white;
     display: inline;
     color: white;
-    width:auto;
+    width: 250px;
     font-size: 20px;
     cursor:pointer;
+    text-align: center;
+    align-content: center;
 }
 
 .extra-button:hover { 
@@ -160,7 +162,7 @@
     text-decoration: none;
     color: rgb(17, 17, 17);
     padding-left: 0px;
-    margin-left: 0px;
+    margin-left: 12px;
     border-color: black;
     margin-top: 100;
 }
