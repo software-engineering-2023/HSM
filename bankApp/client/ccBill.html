@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="../universalstyles.css">
     <title>Credit Card Bill Payment</title>
     <style>
       body {
@@ -10,22 +11,14 @@
       }
       #header {
         text-align: center;
-        background-color: lightblue;
         padding: 20px;
       }
       #options {
         text-align: center;
         margin-top: 50px;
       }
-      .button {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 16px;
-        border: none;
-        border-radius: 5px;
-        background-color: lightblue;
-        color: white;
-        cursor: pointer;
+      .extra-button {
+        border-radius: 10px;
       }
       .popup {
         display: none;
@@ -37,6 +30,7 @@
         border: 1px solid lightgray;
         padding: 20px;
         text-align: center;
+        border-radius: 10px;
       }
       .popup .title {
         font-size: 20px;
@@ -53,12 +47,29 @@
         color: white;
         padding: 5px 10px;
         font-size: 14px;
+        border-radius: 10px;
+        cursor:pointer;
+      }
+      .popup .cancel:hover {
+        background-color: rgb(107, 0, 0);
       }
       .popup .confirm {
         margin-top: 10px;
+        position: absolute;
+        bottom: 10px;
+        background-color: #45a049;
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 10px;
+        cursor:pointer;
+      }
+      .popup .confirm:hover {
+        background-color: #3b873f;
       }
       .popup .input-box {
         margin-bottom: 10px;
+        cursor:pointer;
       }
       .popup .input-box input[type="number"] {
         padding: 5px;
@@ -78,15 +89,64 @@
     </style>
   </head>
   <body>
+    <header>
+
+        <div class="header">
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
+
+            <img id="logo" src="../logo_text.png" alt="Logo">
+
+            <button class="logout-button" onclick="window.location='../loginPage.html'">Log Out</button>
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="viewReminders.html">Reminders</a></li>
+                <br>
+                <li><a href="bills.html">Bills</a></li>
+                <br><br><br>
+                <li><a href="../loginPage.html">Log Out</a></li>
+            </ul>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+
+        </div>
+
+    </header>
+        
+    <main class="main-area">
+
     <div id="header">
-      <h1>Credit Card Bill Payment</h1>
+      <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Credit Card Bill Payment</h1>
       <div class="amount" id="amount-due">Amount Due: 30,000.00 EGP</div>
     </div>
     <div id="options">
       <h2>Payment Options:</h2>
-      <button class="button" id="full-amount-btn">Pay Amount Fully</button>
-      <button class="button" id="partial-amount-btn">Pay Amount Partially</button>
-    </div>
+      <button class="extra-button" id="full-amount-btn">Pay Amount Fully</button>
+      <button class="extra-button" id="partial-amount-btn">Pay Amount Partially</button>
+    <br>
+    <button class="redirect-button" onclick="window.location='bills.html'">Go to All Bills</button>
+   <button class="redirect-button" onclick="window.location='cards.html'">Go to Cards</button>
+  </div>
+
     <div id="full-amount-pay" class="popup">
       <h4 class="title">Choose the account you want to pay from:</h4>
       <div class="dropdown">
@@ -97,6 +157,7 @@
           <option value="Account 3">Account 3</option>
         </select>
       </div>
+      <br><br>
       <button class="confirm button" onclick="payFullAmount()">Confirm Payment</button>
       <button class="cancel button">Cancel</button>
     </div>
@@ -114,9 +175,23 @@
           <option value="Account 3">Account 3</option>
         </select>
       </div>
+      <br><br>
       <button class="confirm button" onclick="payPartialAmount()">Confirm Payment</button>
       <button class="cancel button">Cancel</button>
     </div>
+  </main>
+    
+  <br><br><br><br>
+  <div class="footer">
+      <footer>
+          <br><br>
+          <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+          <br><br>
+          &copy; 2023 HSM Bank. All rights reserved.
+      </footer>
+  </div>
+  <div class="rightbar"> </div>
+
     <script>
       const fullAmountBtn = document.getElementById('full-amount-btn');
       const partialAmountBtn = document.getElementById('partial-amount-btn');
@@ -167,6 +242,18 @@
           alert('The entered amount is below the minimum requirement. Please enter a valid amount within the limits (Minimum: 5,000.00 and Maximum 30,000.00).');
         }
       }
+
+        var sidebartmp = document.getElementById("sidebar-id");
+        var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+        sidebarbuttontmp.addEventListener("click", () => {
+            if(sidebartmp.style.width === "45px"){
+                sidebartmp.style.width = "200px";
+                sidebarbuttontmp.style.left="180px";
+            }else{
+                sidebartmp.style.width = "45px";
+                sidebarbuttontmp.style.left="23px";
+            }
+        });
     </script>
   </body>
 </html>
