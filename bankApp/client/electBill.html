@@ -65,7 +65,7 @@
   <body>
     <div id="header">
       <h1>Utility Bills Payment</h1>
-      <div class="amount">Amount Due: 17,902.00 EGP</div>
+      <div id="amount" class="amount">Amount Due: 17,902.00 EGP</div>
     </div>
     <div id="options">
       <h2>Payment Options:</h2>
@@ -99,6 +99,7 @@
       const thirdPartyPay = document.getElementById('third-party-pay');
       const cancelBtns = document.querySelectorAll('.popup .cancel');
       const confirmBtn = document.querySelector('.popup .confirm');
+      const amountDue = document.getElementById('amount');
 
       fullAmountBtn.addEventListener('click', () => {
         fullAmountPay.style.display = 'block';
@@ -119,6 +120,7 @@
 
       confirmBtn.addEventListener('click', () => {
         fullAmountPay.style.display = 'none';
+        amountDue.textContent = 'No Bills to Pay';
         alert('Payment settled successfully. Thank you!');
       });
     </script>

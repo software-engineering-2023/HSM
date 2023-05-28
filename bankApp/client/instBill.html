@@ -1,145 +1,154 @@
-<!DOCTYPE html>
- <html>
-   <head>
-     <title>Loan Installments Payment</title>
-     <style>
-       body {
-         font-family: Arial, sans-serif;
-         margin: 0;
-         padding: 0;
-       }
-       #header {
-         text-align: center;
-         background-color: lightblue;
-         padding: 20px;
-       }
-       #options {
-         text-align: center;
-         margin-top: 50px;
-       }
-       .button {
-         display: inline-block;
-         padding: 10px 20px;
-         font-size: 16px;
-         border: none;
-         border-radius: 5px;
-         background-color: lightblue;
-         color: white;
-         cursor: pointer;
-       }
-       .popup {
-         display: none;
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         transform: translate(-50%, -50%);
-         background-color: white;
-         border: 1px solid lightgray;
-         padding: 20px;
-         text-align: center;
-       }
-       .popup .title {
-         font-size: 20px;
-         margin-bottom: 10px;
-       }
-       .popup .dropdown {
-         margin-bottom: 10px;
-       }
-       .popup .cancel {
-         position: absolute;
-         bottom: 10px;
-         right: 10px;
-         background-color: darkred;
-         color: white;
-         padding: 5px 10px;
-         font-size: 14px;
-       }
-       .popup .amount {
-         margin-bottom: 10px;
-       }
-       .popup .confirm {
-         margin-top: 10px;
-       }
-     </style>
-   </head>
-   <body>
-     <div id="header">
-       <h1>Loan Installments Payment</h1>
-     </div>
-     <div id="options">
-       <h2>Payment Options:</h2>
-       <button class="button" id="full-amount-btn">Pay Full Amount</button>
-     </div>
-     <div id="full-amount-pay" class="popup">
-       <h4 class="title">Choose the loan you want to pay:</h4>
-       <div class="dropdown">
-         <label for="loan-select">Your Loans:</label>
-         <select id="loan-select">
-           <option value="Loan 1">Loan 1</option>
-           <option value="Loan 2">Loan 2</option>
-           <option value="Loan 3">Loan 3</option>
-         </select>
-       </div>
-       <div class="amount">Amount Due: </div>
-       <div class="due-date">Due Date: </div>
-       <h3 class="title">Choose the account you want to pay from:</h3>
-       <div class="dropdown">
-         <label for="account-select">Your Accounts:</label>
-         <select id="account-select">
-           <option value="Account 1">Account 1</option>
-           <option value="Account 2">Account 2</option>
-           <option value="Account 3">Account 3</option>
-         </select>
-       </div>
-       <button class="confirm button">Confirm Payment</button>
-       <button class="cancel button">Cancel</button>
-     </div>
-     <script>
-       const fullAmountBtn = document.getElementById('full-amount-btn');
-       const fullAmountPay = document.getElementById('full-amount-pay');
-       const cancelBtns = document.querySelectorAll('.popup .cancel');
-       const confirmBtn = document.querySelector('.popup .confirm');
-       const loanSelect = document.getElementById('loan-select');
-       const amountText = document.querySelector('.popup .amount');
-       const dueDateText = document.querySelector('.popup .due-date');
-       const accountSelect = document.getElementById('account-select');
- 
-       fullAmountBtn.addEventListener('click', () => {
-         fullAmountPay.style.display = 'block';
-       });
- 
-       cancelBtns.forEach((cancelBtn) => {
-         cancelBtn.addEventListener('click', () => {
-           fullAmountPay.style.display = 'none';
-         });
-       });
- 
-       confirmBtn.addEventListener('click', () => {
-         fullAmountPay.style.display = 'none';
-         alert('Payment settled successfully. Thank you!');
-       });
- 
-       loanSelect.addEventListener('change', () => {
-         updatePaymentDetails();
-       });
- 
-       function updatePaymentDetails() {
-         const selectedLoan = loanSelect.value;
-         if (selectedLoan === 'Loan 1') {
-           amountText.textContent = 'Amount Due: 2,000.00 EGP';
-           dueDateText.textContent = 'Due Date: 28/05/2023';
-         } else if (selectedLoan === 'Loan 2') {
-           amountText.textContent = 'Amount Due: 15,000.00 EGP';
-           dueDateText.textContent = 'Due Date: 28/05/2024';
-         } else if (selectedLoan === 'Loan 3') {
-           amountText.textContent = 'Amount Due: 1,000.00 USD';
-           dueDateText.textContent = 'Due Date: 30/9/2023';
-         } else {
-           amountText.textContent = '';
-           dueDateText.textContent = '';
-         }
-       }
-     </script>
-   </body>
- </html>
- 
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Loan Installments Payment</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+        }
+        #header {
+          text-align: center;
+          background-color: lightblue;
+          padding: 20px;
+        }
+        #options {
+          text-align: center;
+          margin-top: 50px;
+        }
+        .button {
+          display: inline-block;
+          padding: 10px 20px;
+          font-size: 16px;
+          border: none;
+          border-radius: 5px;
+          background-color: lightblue;
+          color: white;
+          cursor: pointer;
+        }
+        .popup {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: white;
+          border: 1px solid lightgray;
+          padding: 20px;
+          text-align: center;
+        }
+        .popup .title {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+        .popup .dropdown {
+          margin-bottom: 10px;
+        }
+        .popup .cancel {
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          background-color: darkred;
+          color: white;
+          padding: 5px 10px;
+          font-size: 14px;
+        }
+        .popup .amount {
+          margin-bottom: 10px;
+        }
+        .popup .due-date {
+          margin-bottom: 10px;
+        }
+        .popup .confirm {
+          margin-top: 10px;
+        }
+      </style>
+    </head>
+    <body>
+      <div id="header">
+        <h1>Loan Installments Payment</h1>
+      </div>
+      <div id="options">
+        <h2>Payment Options:</h2>
+        <button class="button" id="full-amount-btn">Pay Full Amount</button>
+      </div>
+      <div id="full-amount-pay" class="popup">
+        <h4 class="title">Choose the loan you want to pay:</h4>
+        <div class="dropdown">
+          <label for="loan-select">Your Loans:</label>
+          <select id="loan-select">
+            <option value="Loan 1">Loan 1</option>
+            <option value="Loan 2">Loan 2</option>
+            <option value="Loan 3">Loan 3</option>
+          </select>
+        </div>
+        <div class="amount">Amount Due: </div>
+        <div class="due-date">Due Date: </div>
+        <h3 class="title">Choose the account you want to pay from:</h3>
+        <div class="dropdown">
+          <label for="account-select">Your Accounts:</label>
+          <select id="account-select">
+            <option value="Account 1">Account 1</option>
+            <option value="Account 2">Account 2</option>
+            <option value="Account 3">Account 3</option>
+          </select>
+        </div>
+        <button class="confirm button">Confirm Payment</button>
+        <button class="cancel button">Cancel</button>
+      </div>
+      <script>
+        const fullAmountBtn = document.getElementById('full-amount-btn');
+        const fullAmountPay = document.getElementById('full-amount-pay');
+        const cancelBtns = document.querySelectorAll('.popup .cancel');
+        const confirmBtn = document.querySelector('.popup .confirm');
+        const loanSelect = document.getElementById('loan-select');
+        const amountText = document.querySelector('.popup .amount');
+        const dueDateText = document.querySelector('.popup .due-date');
+        const accountSelect = document.getElementById('account-select');
+  
+        fullAmountBtn.addEventListener('click', () => {
+          fullAmountPay.style.display = 'block';
+        });
+  
+        cancelBtns.forEach((cancelBtn) => {
+          cancelBtn.addEventListener('click', () => {
+            fullAmountPay.style.display = 'none';
+          });
+        });
+  
+        confirmBtn.addEventListener('click', () => {
+          const selectedLoan = loanSelect.value;
+          const selectedOption = document.querySelector(
+            `#loan-select option[value='${selectedLoan}']`
+          );
+          selectedOption.remove();
+  
+          fullAmountPay.style.display = 'none';
+          alert('Payment settled successfully. Thank you!');
+        });
+  
+        loanSelect.addEventListener('change', () => {
+          updatePaymentDetails();
+        });
+  
+        function updatePaymentDetails() {
+          const selectedLoan = loanSelect.value;
+          if (selectedLoan === 'Loan 1') {
+            amountText.textContent = 'Amount Due: 2,000.00 EGP';
+            dueDateText.textContent = 'Due Date: 28/05/2023';
+          } else if (selectedLoan === 'Loan 2') {
+            amountText.textContent = 'Amount Due: 15,000.00 EGP';
+            dueDateText.textContent = 'Due Date: 28/05/2024';
+          } else if (selectedLoan === 'Loan 3') {
+            amountText.textContent = 'Amount Due: 1,000.00 USD';
+            dueDateText.textContent = 'Due Date: 30/9/2023';
+          } else {
+            amountText.textContent = '';
+            dueDateText.textContent = '';
+          }
+        }
+      </script>
+    </body>
+  </html>
+  
