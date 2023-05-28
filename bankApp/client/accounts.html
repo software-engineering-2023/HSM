@@ -24,17 +24,14 @@
 
 		.panel#trans1panel{
       		display: none;
-      		margin-top: 50px;
 			overflow-y: scroll;
     	}
 		.panel#trans2panel{
       		display: none;
-      		margin-top: 50px;
      		overflow-y: scroll;
     	}
 		.panel#trans3panel{
       		display: none;
-      		margin-top: 50px;
 			overflow-y: scroll;
     	}
 
@@ -61,42 +58,6 @@
 			font-size: 24px;
 			font-weight: bold;
 			margin: 20px 0;
-		}
-
-		.button {
-			background-color: rgb(84, 199, 199) ;
-			color: black;
-			border: none;
-			padding: 10px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 10px;
-		}
-
-		.button-small {
-			background-color: rgb(84, 199, 199) ;
-			color: black;
-			border: none;
-			padding: 5px 10px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 12px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 10px;
-		}
-
-		.button:hover {
-			font-weight: bold;
-		}
-
-		.button-small:hover {
-			font-weight: bold;
 		}
 
 		.table-container {
@@ -138,7 +99,8 @@
 		}
 
 		.close-button:hover{
-			background-color: rgb(225, 41, 41) ;
+			background-color: rgb(255, 35, 35) ;
+			font-weight: bold;
 		}
 
 
@@ -182,178 +144,239 @@
         
     <main class="main-area">
 
-	<h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px; margin:0">Accounts</h1>
+		<h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px; margin:0">Accounts</h1>
 
-  <br>
-  <label for="dropdown-accounts" class="filter-label">Filter:</label>
-  <select class="filter" id="dropdown-accounts" >
-    <option value="all">All Accounts</option>
-    <option value="current">Current Accounts</option>
-    <option value="savings">Savings Accounts</option>
-  </select>
-  <br>
-	<div class="container">
-		<div class="box" id="savings-id">
-      <p>Account Type: Savings</p>
-			<p>Account Number: 123456789</p>
-			<p>Available Balance:</p>
-			<p class="balance">$1,234.56</p>
-			<p>Currency: USD</p>
-			<br>
-			<button class="box-button" id="trans-1-button">View Transactions</button>
-      		<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
-			<br>
-			<button class="close-button" onclick="confirmAction()">Close Account</button>
+		<br>
+		<label for="dropdown-accounts" class="filter-label">Filter:</label>
+		<select class="filter" id="dropdown-accounts" >
+			<option value="all">All Accounts</option>
+			<option value="current">Current Accounts</option>
+			<option value="savings">Savings Accounts</option>
+		</select>
+		<br>
+		<div class="container">
+			<div class="box" id="savings-id">
+		<p>Account Type: Savings</p>
+				<p>Account Number: 123456789</p>
+				<p>Available Balance:</p>
+				<p class="balance">$1,234.56</p>
+				<p>Currency: USD</p>
+				<br>
+				<button class="box-button" id="trans-1-button">View Transactions</button>
+				<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
+				<br>
+				<button class="close-button" onclick="confirmAction()">Close Account</button>
+			</div>
+
+			<div class="box" id="current1-id">
+				<p>Account Type: Current</p>
+				<p>Account Number: 987654321</p>
+				<p>Available Balance:</p>
+				<p class="balance">$2,345.67</p>
+				<p>Currency: USD</p>
+				<br>
+				<button class="box-button" id="trans-2-button">View Transactions</button>
+				<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
+				<br>
+				<button class="close-button" onclick="confirmAction()">Close Account</button>
+
+			</div>
+
+			<div class="box" id="current2-id">
+				<p>Account Type: Current</p>
+				<p>Account Number: 567890123</p>
+				<p>Available Balance:</p>
+				<p class="balance">$3,456.78</p>
+				<p>Currency: USD</p>
+				<br>
+				<button class="box-button" id="trans-3-button">View Transactions</button>
+				<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
+				<br>
+				<button class="close-button" onclick="confirmAction()">Close Account</button>
+			</div>
 		</div>
 
-		<div class="box" id="current1-id">
-			<p>Account Type: Current</p>
-			<p>Account Number: 987654321</p>
-			<p>Available Balance:</p>
-			<p class="balance">$2,345.67</p>
-			<p>Currency: USD</p>
-			<br>
-			<button class="box-button" id="trans-2-button">View Transactions</button>
-      		<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
-			<br>
-			<button class="close-button" onclick="confirmAction()">Close Account</button>
-
-		</div>
-
-		<div class="box" id="current2-id">
-			<p>Account Type: Current</p>
-			<p>Account Number: 567890123</p>
-			<p>Available Balance:</p>
-			<p class="balance">$3,456.78</p>
-			<p>Currency: USD</p>
-			<br>
-			<button class="box-button" id="trans-3-button">View Transactions</button>
-      		<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
-			<br>
-			<button class="close-button" onclick="confirmAction()">Close Account</button>
-		</div>
-	</div>
-
-	<div class="panel" id="trans1panel">
-		<div class="table-container">
-			<table>
-				<tr>
-					<th>Date</th>
-					<th>Description</th>
-					<th>Amount</th>
-					<th>Category</th>
-				</tr>
-				<tr>
-					<td>2023-05-20</td>
-					<td>Transaction 1</td>
-					<td>$100.00</td>
-					<td>Category 1</td>
-				</tr>
-				<tr>
-					<td>2023-05-18</td>
-					<td>Transaction 2</td>
-					<td>$50.00</td>
-					<td>Category 2</td>
-				</tr>
-				<tr>
-					<td>2023-05-16</td>
-					<td>Transaction 3</td>
-					<td>$75.00</td>
-					<td>Category 3</td>
-				</tr>
-			</table>
-		</div>
-	</div>
-	<div class="panel" id="trans2panel">
-		<div class="table-container">
-			<table>
-				<tr>
+		<div class="panel" id="trans1panel">
+			<div class="table-container">
+				<table>
+					<tr>
 						<th>Date</th>
 						<th>Description</th>
 						<th>Amount</th>
 						<th>Category</th>
-				</tr>
-				<tr>
-					<td>2023-05-20</td>
-					<td>Transaction 4</td>
-					<td>$200.00</td>
-					<td>Category 4</td>
-				</tr>
-				<tr>
-					<td>2023-05-18</td>
-					<td>Transaction 5</td>
-					<td>$150.00</td>
-					<td>Category 5</td>
-				</tr>
-				<tr>
-					<td>2023-05-16</td>
-					<td>Transaction 6</td>
-					<td>$100.00</td>
-					<td>Category 6</td>
-				</tr>
-			</table>
+					</tr>
+					<tr>
+						<td>2023-05-20</td>
+						<td>Transaction 1</td>
+						<td>$100.00</td>
+						<td>Category 1</td>
+					</tr>
+					<tr>
+						<td>2023-05-18</td>
+						<td>Transaction 2</td>
+						<td>$50.00</td>
+						<td>Category 2</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 3</td>
+						<td>$75.00</td>
+						<td>Category 3</td>
+					</tr>
+				</table>
+			</div>
 		</div>
-	</div>
-	<div class="panel" id="trans3panel">
-		<div class="table-container">
-			<table>
-				<tr>
+		<div class="panel" id="trans2panel">
+			<div class="table-container">
+				<table>
+					<tr>
+							<th>Date</th>
+							<th>Description</th>
+							<th>Amount</th>
+							<th>Category</th>
+					</tr>
+					<tr>
+						<td>2023-05-20</td>
+						<td>Transaction 4</td>
+						<td>$200.00</td>
+						<td>Category 4</td>
+					</tr>
+					<tr>
+						<td>2023-05-18</td>
+						<td>Transaction 5</td>
+						<td>$150.00</td>
+						<td>Category 5</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 6</td>
+						<td>$100.00</td>
+						<td>Category 6</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="panel" id="trans3panel">
+			<div class="table-container">
+				<table>
+					<tr>
 						<th>Date</th>
 						<th>Description</th>
 						<th>Amount</th>
 						<th>Category</th>
-				</tr>
-				<tr>
-					<td>2023-05-20</td>
-					<td>Transaction 7</td>
-					<td>$300.00</td>
-					<td>Category 7</td>
-				</tr>
-				<tr>
-					<td>2023-05-18</td>
-					<td>Transaction 8</td>
-					<td>$250.00</td>
-					<td>Category 8</td>
-				</tr>
-				<tr>
-					<td>2023-05-16</td>
-					<td>Transaction 9</td>
-					<td>$200.00</td>
-					<td>Category 9</td>
-				</tr>
-				<tr>
-					<td>2023-05-16</td>
-					<td>Transaction 9</td>
-					<td>$200.00</td>
-					<td>Category 9</td>
-				</tr>
-				<tr>
-					<td>2023-05-16</td>
-					<td>Transaction 9</td>
-					<td>$200.00</td>
-					<td>Category 9</td>
-				</tr>
-				<tr>
-					<td>2023-05-16</td>
-					<td>Transaction 9</td>
-					<td>$200.00</td>
-					<td>Category 9</td>
-				</tr>
-				<tr>
-					<td>2023-05-16</td>
-					<td>Transaction 9</td>
-					<td>$200.00</td>
-					<td>Category 9</td>
-				</tr>
-			</table>
+					</tr>
+					<tr>
+						<td>2023-05-20</td>
+						<td>Transaction 7</td>
+						<td>$300.00</td>
+						<td>Category 7</td>
+					</tr>
+					<tr>
+						<td>2023-05-18</td>
+						<td>Transaction 8</td>
+						<td>$250.00</td>
+						<td>Category 8</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+					<tr>
+						<td>2023-05-16</td>
+						<td>Transaction 9</td>
+						<td>$200.00</td>
+						<td>Category 9</td>
+					</tr>
+				</table>
+			</div>
 		</div>
-	</div>
 
-	<div style="text-align: center; margin-top: 20px;">
-		<button style="border: 2px solid white; margin-right: 10px;" class="extra-button" onclick="window.location='newAccount.html'">New Account</button>
-	</div>
+	</main>
+<br>
 
-</main>
+<div style="text-align: center;">
+	<button style="border: 2px solid white; margin-right: 10px;" class="extra-button" onclick="window.location='newAccount.html'">New Account</button>
+</div>
 
 <div class="footer">
 	<footer>
@@ -361,6 +384,7 @@
 		&copy; 2023 HSM Bank. All rights reserved.
 	</footer>
 </div>
+
 <div class="rightbar"> </div>
 
 <script>
@@ -369,7 +393,7 @@
 			var retVal = confirm("Are you sure you want to do this?");
 		}
 
-		var transactionbuttons = document.getElementsByClassName("button");
+		var transactionbuttons = document.getElementsByClassName("box-button");
 		for(var i=0;i<transactionbuttons.length;i++){
 		  var tmpbutton = transactionbuttons[i];
 		  var tmpid = tmpbutton.id;
@@ -424,18 +448,17 @@
     });
 
 
-	var sidebartmp = document.getElementById("sidebar-id");
+		var sidebartmp = document.getElementById("sidebar-id");
         var sidebarbuttontmp = document.getElementById("sidebar-button-id");
         sidebarbuttontmp.addEventListener("click", () => {
-            if(sidebartmp.style.width === "20px"){
+            if(sidebartmp.style.width === "45px"){
                 sidebartmp.style.width = "200px";
                 sidebarbuttontmp.style.left="180px";
             }else{
-                sidebartmp.style.width = "20px";
-                sidebarbuttontmp.style.left="5px";
+                sidebartmp.style.width = "45px";
+                sidebarbuttontmp.style.left="23px";
             }
         });
-
 	</script>
 
 </body>

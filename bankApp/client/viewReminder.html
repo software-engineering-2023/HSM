@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="universalstyles.css">
 	<title>Upcoming Reminders</title>
 	<style>
-		body {
-			font-family: Arial, sans-serif;
-			background-color: #f2f2f2;
-		}
-		h1 {
-			text-align: center;
-			margin-top: 50px;
-		}
+
 		table {
 			margin: auto;
 			width: 80%;
@@ -34,36 +28,96 @@
 		input[type=checkbox] {
 			transform: scale(1.5);
 		}
+		
 	</style>
 </head>
 <body>
-	<h1>Upcoming Reminders</h1>
-	<table>
-		<tr>
-			<th>Reminder</th>
-			<th>Date</th>
-			<th>Done</th>
-		</tr>
-		<tr>
-			<td>Pay electricity</td>
-			<td>June 1st, 2023</td>
-			<td><input type="checkbox"></td>
-		</tr>
-		<tr>
-			<td>Check on loan application</td>
-			<td>June 27th, 2023</td>
-			<td><input type="checkbox"></td>
-		</tr>
-		<tr>
-			<td>Change password</td>
-			<td>July 4th, 2023</td>
-			<td><input type="checkbox"></td>
-		</tr>
-		<tr>
-			<td>Transfer tuition fees</td>
-			<td>August 18th, 2023</td>
-			<td><input type="checkbox"></td>
-		</tr>
-	</table>
+    <header>
+
+        <div class="header">
+            <img id="logo" src="logo.jpeg" alt="Logo">
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br><br><br>
+                <li><a href="/HSM/bankApp/loginPage.html">Log Out</a></li>
+            </ul>
+        	<button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+		</div>
+
+		<h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Reminders</h1>
+
+    </header>
+        
+    <main class="main-area">
+		<table>
+			<tr>
+				<th>Reminder</th>
+				<th>Date</th>
+				<th>Done</th>
+			</tr>
+			<tr>
+				<td>Pay electricity</td>
+				<td>June 1st, 2023</td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Check on loan application</td>
+				<td>June 27th, 2023</td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Change password</td>
+				<td>July 4th, 2023</td>
+				<td><input type="checkbox"></td>
+			</tr>
+			<tr>
+				<td>Transfer tuition fees</td>
+				<td>August 18th, 2023</td>
+				<td><input type="checkbox"></td>
+			</tr>
+		</table>
+	</main>
+
+	<div class="footer">
+		<footer>
+			<br>
+			&copy; 2023 HSM Bank. All rights reserved.
+		</footer>
+	</div>
+	<div class="rightbar"> </div>
+	<script>
+		var sidebartmp = document.getElementById("sidebar-id");
+		var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+		sidebarbuttontmp.addEventListener("click", () => {
+			if(sidebartmp.style.width === "20px"){
+				sidebartmp.style.width = "200px";
+				sidebarbuttontmp.style.left="180px";
+			}else{
+				sidebartmp.style.width = "20px";
+				sidebarbuttontmp.style.left="5px";
+			}
+		});
+
+	</script>
+
 </body>
 </html>
