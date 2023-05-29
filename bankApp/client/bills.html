@@ -144,51 +144,57 @@
 
 </style>
 </head>
-  <body>
-    <header>
-        <div class="header">
-            <div class="dropdown">
-                <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
-                <div class="dropdown-content">
-                    <a href="#">Announcement: Updated terms and conditions</a>
-                    <a href="#">Reminder: Pay electricity bill</a>
-                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
-                </div>
-            </div>
+<body>
+  <header>
+      <div class="header">
+          <div class="dropdown">
+              <button class="notification-button" onclick="window.location='notifications.html'">
+                  <img id="bell" src="../Bell.png" alt="bell">
+              </button>
+              <div class="dropdown-content">
+                  <a href="#">Announcement: Updated terms and conditions</a>
+                  <a href="#">Reminder: Pay electricity bill</a>
+                  <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+              </div>
+          </div>
+          
+          <img id="logo" src="../logo_text.png" alt="Logo">
 
-            <img id="logo" src="../logo_text.png" alt="Logo">
+          <button class="logout-button" onclick="window.location='../loginPage.html'">
+              <img id="logout" src="../logout.png" alt="logout">
+          </button>
+      </div>
 
-            <button class="logout-button" onclick="window.location='../loginPage.html'">Log Out</button>
-        </div>
+      <div class="sidebar" id="sidebar-id">
+          <ul>
+              <br><br><br><br>
+              <li><a href="client.html">Home</a></li>
+              <br>
+              <li><a href="transfer.html">Transfer</a></li>
+              <br>
+              <li><a href="accounts.html">Accounts</a></li>
+              <br>
+              <li><a href="loan.html">Loans</a></li>
+              <br>
+              <li><a href="cards.html">Cards</a></li>
+              <br>
+              <li><a href="viewReminders.html">Reminders</a></li>
+              <br>
+              <li><a href="bills.html">Bills</a></li>
+              <br><br><br>
+              <li><a href="../loginPage.html">Log Out</a></li>
+          </ul>
+      </div>
+      <button class="sidebar-button" id="sidebar-button-id">
+          <img id="menu-logo" src="../menu.png" alt="menu">
+      </button>
 
-        <div class="sidebar" id="sidebar-id">
-            <ul>
-                <br><br><br><br>
-                <li><a href="client.html">Home</a></li>
-                <br>
-                <li><a href="transfer.html">Transfer</a></li>
-                <br>
-                <li><a href="accounts.html">Accounts</a></li>
-                <br>
-                <li><a href="loan.html">Loans</a></li>
-                <br>
-                <li><a href="cards.html">Cards</a></li>
-                <br>
-                <li><a href="viewReminders.html">Reminders</a></li>
-                <br>
-                <li><a href="bills.html">Bills</a></li>
-                <br><br><br>
-                <li><a href="../loginPage.html">Log Out</a></li>
-            </ul>
-        </div>
-        <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+      </div>
 
-        </div>
-
-    </header>
-        
-    <main class="main-area">
-
+  </header>
+      
+  <main class="main-area">
+    <br>
   <h1 class="title-style">Bills</h1>
   <div>
     <p class="shift">Total Bills: 67,902 EGP</p>
@@ -281,12 +287,14 @@
     
 <br><br><br><br>
 <div class="footer">
-    <footer>
-        <br><br>
-        <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
-        <br><br>
-        &copy; 2023 HSM Bank. All rights reserved.
-    </footer>
+  <footer>
+    <br><br>
+    <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+    <br><br><br>
+    &copy; 2023 HSM Bank. All rights reserved.
+    <br><br><br>
+    <img id="flower" src="../Flower.png" alt="Logo">
+</footer>
 </div>
 <div class="rightbar"> </div>
 

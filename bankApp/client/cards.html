@@ -150,20 +150,23 @@
 </head>
 <body>
     <header>
-
         <div class="header">
             <div class="dropdown">
-                <button class="notification-button" onclick="window.location='notifications.html'">Notifications</button>
+                <button class="notification-button" onclick="window.location='notifications.html'">
+                    <img id="bell" src="../Bell.png" alt="bell">
+                </button>
                 <div class="dropdown-content">
                     <a href="#">Announcement: Updated terms and conditions</a>
                     <a href="#">Reminder: Pay electricity bill</a>
                     <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
                 </div>
             </div>
-
+            
             <img id="logo" src="../logo_text.png" alt="Logo">
 
-            <button class="logout-button" onclick="window.location='../loginPage.html'">Log Out</button>
+            <button class="logout-button" onclick="window.location='../loginPage.html'">
+                <img id="logout" src="../logout.png" alt="logout">
+            </button>
         </div>
 
         <div class="sidebar" id="sidebar-id">
@@ -186,13 +189,16 @@
                 <li><a href="../loginPage.html">Log Out</a></li>
             </ul>
         </div>
-        <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
+        <button class="sidebar-button" id="sidebar-button-id">
+            <img id="menu-logo" src="../menu.png" alt="menu">
+        </button>
 
         </div>
 
     </header>
         
     <main class="main-area">
+		<br>
 		<h1 class="title-style" style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Cards</h1>
 		<br>
 		<div class="container">
@@ -402,8 +408,10 @@
         <footer>
             <br><br>
             <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
-            <br><br>
+            <br><br><br>
             &copy; 2023 HSM Bank. All rights reserved.
+            <br><br><br>
+            <img id="flower" src="../Flower.png" alt="Logo">
         </footer>
     </div>
     <div class="rightbar"> </div>
