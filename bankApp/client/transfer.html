@@ -101,63 +101,69 @@
         </div>
 
         <panel id="internal-panel">
-            <form action="process_transfer.php" method="post" onsubmit="return validateInternalForm()">
+            <form onsubmit="handleInternalTransfer(event)">                
                 <label for="amount">Amount:</label>
-                <input type="text" id="amount" name="amount" required>
+                <input type="text" id="amount1" name="amount" required>
+
+                <label for="currency">Currency:</label>
+                <input type="text" id="currency1" name="currency" required>
 
                 <label for="to-account">To Account:</label>
-                <input type="text" id="to-account" name="to-account" required>
+                <input type="text" id="to-account1" name="to-account" required>
 
                 <label for="from-account">From Account:</label>
-                <input type="text" id="from-account" name="from-account" required>
+                <input type="text" id="from-account1" name="from-account" required>
 
                 <label for="beneficiary-name">Beneficiary Name:</label>
-                <input type="text" id="beneficiary-name" name="beneficiary-name" required>
+                <input type="text" id="beneficiary-name1" name="beneficiary-name" required>
 
                 <input type="submit" value="Transfer">
 	        </form>
         </panel>
 
         <panel id="domestic-panel">
-            <form action="process_transfer.php" method="post" onsubmit="return validateDomForm()">
+            <form onsubmit="handleDomesticTransfer(event)">
                 <label for="amount">Amount:</label>
-                <input type="text" id="amount" name="amount" required>
-
+                <input type="text" id="amount2" name="amount" required>
+        
+                <label for="currency">Currency:</label>
+                <input type="text" id="currency2" name="currency" required>
+        
+                <label for="to-account">To Account:</label>
+                <input type="text" id="to-account2" name="to-account" required>
+        
+                <label for="from-account">From Account:</label>
+                <input type="text" id="from-account2" name="from-account" required>
+        
                 <label for="beneficiary-name">Beneficiary Name:</label>
-                <input type="text" id="beneficiary-name" name="beneficiary-name" required>
-        
-                <label for="account-number">Account Number:</label>
-                <input type="text" id="account-number" name="account-number" required>
-        
-                <label for="bank-name">Bank Name:</label>
-                <input type="text" id="bank-name" name="bank-name" required>
-        
-                <label for="bank-address">Bank Address:</label>
-                <input type="text" id="bank-address" name="bank-address" required>
+                <input type="text" id="beneficiary-name2" name="beneficiary-name" required>
         
                 <input type="submit" value="Transfer">
             </form>
         </panel>
 
         <panel id="international-panel">
-            <form action="process_transfer.php" method="post" onsubmit="return validateInternationalForm()">
+            <form onsubmit="handleInternationalTransfer(event)">
                 <label for="amount">Amount:</label>
-                <input type="text" id="amount" name="amount" required>
-                
+                <input type="text" id="amount3" name="amount" required>
+        
+                <label for="currency">Currency:</label>
+                <input type="text" id="currency3" name="currency" required>
+        
+                <label for="to-account">To Account:</label>
+                <input type="text" id="to-account3" name="to-account" required>
+        
+                <label for="from-account">From Account:</label>
+                <input type="text" id="from-account3" name="from-account" required>
+        
                 <label for="beneficiary-name">Beneficiary Name:</label>
-                <input type="text" id="beneficiary-name" name="beneficiary-name" required>
+                <input type="text" id="beneficiary-name3" name="beneficiary-name" required>
         
-                <label for="account-number">IBAN:</label>
-                <input type="text" id="IBAN" name="IBAN" required>
+                <label for="IBAN">IBAN:</label>
+                <input type="text" id="IBAN3" name="IBAN" required>
         
-                <label for="swift">SWIFT code:</label>
-                <input type="text" id="bank-name" name="bank-name" required>
-        
-                <label for="bank-name">Bank Name:</label>
-                <input type="text" id="bank-name" name="bank-name" required>
-        
-                <label for="bank-address">Bank Address:</label>
-                <input type="text" id="bank-address" name="bank-address" required>
+                <label for="swift-code">SWIFT code:</label>
+                <input type="text" id="swift-code3" name="swift-code" required>
         
                 <input type="submit" value="Transfer">
             </form>
@@ -195,16 +201,29 @@
             tmp.style.backgroundColor = "rgb(37, 125, 132)";
         }
 
-        function validateInternalForm(){
-            const beneficiaryName = document.getElementById("beneficiary-name").value;
-            const iban = document.getElementById("iban").value;
-            
-            if (!beneficiaryName || !iban) {
-                alert("Please fill in all required fields.");
-                return false;
-            }
+        function handleInternalTransfer(event) {
+            event.preventDefault();
+
+            const amount = document.getElementById("amount1").value;
+            const currency = document.getElementById("currency1").value;
+            const toAccount = document.getElementById("to-account1").value;
+            const fromAccount = document.getElementById("from-account1").value;
+            const beneficiaryName = document.getElementById("beneficiary-name1").value;
+
+			
+			alert("Successful Transaction.");
+			resetInternalForm();
         }
-        
+
+        function resetInternalForm() {
+            document.getElementById("amount1").value = "";
+            document.getElementById("currency1").value = "";
+            document.getElementById("to-account1").value = "";
+            document.getElementById("from-account1").value = "";
+            document.getElementById("beneficiary-name1").value = "";
+        }
+
+        ////////////////////
         function domestic(){
             var tmp = document.getElementById("domestic-panel");
             tmp.style.display="block";
@@ -220,18 +239,29 @@
             tmp.style.backgroundColor = "rgb(37, 125, 132)";
         }
 
-        function validateDomForm() {
-            const beneficiaryName = document.getElementById("beneficiary-name").value;
-            const accNo = document.getElementById("account-number").value;
-            const bankname = document.getElementById("bank-name").value;
-            const bankAddress = document.getElementById("bank-address").value;
-    
-            if (!beneficiaryName || !accNo || !bankname || !bankAddress) {
-                alert("Please fill in all required fields.");
-                return false;
-            }
+        function handleDomesticTransfer(event) {
+            event.preventDefault();
+
+            const amount = document.getElementById("amount2").value;
+            const currency = document.getElementById("currency2").value;
+            const toAccount = document.getElementById("to-account2").value;
+            const fromAccount = document.getElementById("from-account2").value;
+            const beneficiaryName = document.getElementById("beneficiary-name2").value;
+
+			
+            alert("Successful Transaction.");
+			resetDomForm();
+        }
+
+        function resetDomForm() {
+            document.getElementById("amount2").value = "";
+            document.getElementById("currency2").value = "";
+            document.getElementById("to-account2").value = "";
+            document.getElementById("from-account2").value = "";
+            document.getElementById("beneficiary-name2").value = "";
         }
         
+        ///////////////////////
         function international(){
             var tmp = document.getElementById("international-panel");
             tmp.style.display="block";
@@ -247,18 +277,31 @@
             tmp.style.backgroundColor= "rgb(37, 125, 132)";
         }
 
-        function validateInternationalForm(){
-            const beneficiaryName = document.getElementById("beneficiary-name").value;
-            const iban = document.getElementById("iban").value;
-            const swiftCode = document.getElementById("swift-code").value;
-            const bankname = document.getElementById("bank-name").value;
-            const bankAddress = document.getElementById("bank-address").value;
+        function handleInternationalTransfer(event) {
+            event.preventDefault();
 
-            
-            if (!beneficiaryName || !iban || !swiftCode || !bankname || !bankAddress) {
-                alert("Please fill in all required fields.");
-                return false;
-            }
+            const amount = document.getElementById("amount3").value;
+            const currency = document.getElementById("currency3").value;
+            const toAccount = document.getElementById("to-account3").value;
+            const fromAccount = document.getElementById("from-account3").value;
+            const beneficiaryName = document.getElementById("beneficiary-name3").value;
+            const IBAN = document.getElementById("IBAN3").value;
+            const swiftCode = document.getElementById("swift-code3").value;
+			
+            alert("Successful Transaction.");
+			resetInternationalForm();
+        }
+
+        function resetInternationalForm() {
+            document.getElementById("amount3").value = "";
+            document.getElementById("currency3").value = "";
+            document.getElementById("to-account3").value = "";
+            document.getElementById("from-account3").value = "";
+            document.getElementById("beneficiary-name3").value = "";
+            document.getElementById("IBAN3").value = "";
+            document.getElementById("swift-code3").value = "";
+            document.getElementById("bank-name3").value = "";
+            document.getElementById("bank-address3").value = "";
         }
 
         var sidebartmp = document.getElementById("sidebar-id");

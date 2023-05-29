@@ -171,11 +171,11 @@
 		<br>
 		<div class="container">
 			<div class="box" id="savings-id">
-		<p>Account Type: Savings</p>
-				<p>Account Number: 123456789</p>
+				<p>Type: Savings</p>
+				<p>Number: 111111111111 </p>
 				<p>Available Balance:</p>
-				<p class="balance">$1,234.56</p>
-				<p>Currency: USD</p>
+				<p class="balance">40,000</p>
+				<p>Currency: EGP</p>
 				<br>
 				<button class="box-button" id="trans-1-button">View Transactions</button>
 				<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
@@ -184,11 +184,11 @@
 			</div>
 
 			<div class="box" id="current1-id">
-				<p>Account Type: Current</p>
-				<p>Account Number: 987654321</p>
+				<p>Type: Current</p>
+				<p>Number: 222222222222</p>
 				<p>Available Balance:</p>
-				<p class="balance">$2,345.67</p>
-				<p>Currency: USD</p>
+				<p class="balance">100,000</p>
+				<p>Currency: EGP</p>
 				<br>
 				<button class="box-button" id="trans-2-button">View Transactions</button>
 				<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
@@ -198,15 +198,25 @@
 			</div>
 
 			<div class="box" id="current2-id">
-				<p>Account Type: Current</p>
-				<p>Account Number: 567890123</p>
+				<p>Type: Current</p>
+				<p>Number: 333333333333</p>
 				<p>Available Balance:</p>
-				<p class="balance">$3,456.78</p>
-				<p>Currency: USD</p>
+				<p class="balance">300,000</p>
+				<p>Currency: EGP</p>
 				<br>
 				<button class="box-button" id="trans-3-button">View Transactions</button>
 				<button class="box-button" onclick="window.location='transfer.html'">Make Transfer</button>
 				<br>
+				<button class="close-button" onclick="confirmAction()">Close Account</button>
+			</div>
+
+			<div class="box" id="current2-id">
+				<p>Type: Certificate</p>
+				<p>Number: 444444444444</p>
+				<p>Available Balance:</p>
+				<p class="balance">1,000,000</p>
+				<p>Currency: EGP</p>
+				<br><br><br><br><br><br><br>
 				<button class="close-button" onclick="confirmAction()">Close Account</button>
 			</div>
 		</div>
@@ -216,27 +226,19 @@
 				<table>
 					<tr>
 						<th>Date</th>
-						<th>Description</th>
 						<th>Amount</th>
-						<th>Category</th>
 					</tr>
 					<tr>
-						<td>2023-05-20</td>
-						<td>Transaction 1</td>
+						<td>01-01-2023</td>
 						<td>$100.00</td>
-						<td>Category 1</td>
 					</tr>
 					<tr>
-						<td>2023-05-18</td>
-						<td>Transaction 2</td>
+						<td>01-02-2023</td>>
 						<td>$50.00</td>
-						<td>Category 2</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 3</td>
+						<td>01-03-2023</td>
 						<td>$75.00</td>
-						<td>Category 3</td>
 					</tr>
 				</table>
 			</div>
@@ -245,28 +247,20 @@
 			<div class="table-container">
 				<table>
 					<tr>
-							<th>Date</th>
-							<th>Description</th>
-							<th>Amount</th>
-							<th>Category</th>
+						<th>Date</th>
+						<th>Amount</th>
 					</tr>
 					<tr>
-						<td>2023-05-20</td>
-						<td>Transaction 4</td>
+						<td>01-31-2023</td>
 						<td>$200.00</td>
-						<td>Category 4</td>
 					</tr>
 					<tr>
-						<td>2023-05-18</td>
-						<td>Transaction 5</td>
+						<td>01-30-2023</td>
 						<td>$150.00</td>
-						<td>Category 5</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 6</td>
+						<td>01-29-2023</td>
 						<td>$100.00</td>
-						<td>Category 6</td>
 					</tr>
 				</table>
 			</div>
@@ -276,111 +270,77 @@
 				<table>
 					<tr>
 						<th>Date</th>
-						<th>Description</th>
 						<th>Amount</th>
-						<th>Category</th>
 					</tr>
 					<tr>
-						<td>2023-05-20</td>
-						<td>Transaction 7</td>
+						<td>01-28-2023</td>
 						<td>$300.00</td>
-						<td>Category 7</td>
 					</tr>
 					<tr>
-						<td>2023-05-18</td>
-						<td>Transaction 8</td>
+						<td>01-27-2023</td>
 						<td>$250.00</td>
-						<td>Category 8</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-26-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-25-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-24-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-23-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-22-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-21-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-20-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
+						<td>01-19-2023</td>
 						<td>Transaction 9</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
+						<td>01-18-2023</td>
 						<td>Transaction 9</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-17-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-16-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-15-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-14-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-13-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Transaction 9</td>
+						<td>01-12-2023</td>
 						<td>$200.00</td>
-						<td>Category 9</td>
 					</tr>
 				</table>
 			</div>
