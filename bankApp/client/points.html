@@ -4,14 +4,11 @@
   <link rel="stylesheet" href="../universalstyles.css">
   <title>My Page</title>
   <style>
-    body {
-      font-family: sans-serif;
-      background-color: #ffffff;
-    }
     
     table {
       border-collapse: collapse;
-      width: 100%;
+      width: 60%;
+      margin: auto;
     }
     
     th, td {
@@ -26,12 +23,117 @@
     td {
       text-align: left;
     }
+
+    form {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ccc;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        }
+        
+        label {
+          display: block;
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+
+          input[type="submit"] {
+          background-color: #006280;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0 0 5px #ccc;
+          cursor: pointer;
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        input[type="submit"]:hover {
+          background-color: #005069;
+        }
+
+        input[type="text"], select {
+        display: block;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        width: 100%;
+      }
+
+      h1 {
+            text-align: center;
+        } 
+
   </style>
 </head>
 <body>
-  <h1>My Points</h1>
+  <header>
+      <div class="header">
+          <div class="dropdown">
+              <button class="notification-button" onclick="window.location='notifications.html'">
+                  <img id="bell" src="../Bell.png" alt="bell">
+              </button>
+              <div class="dropdown-content">
+                  <a href="#">Announcement: Updated terms and conditions</a>
+                  <a href="#">Reminder: Pay electricity bill</a>
+                  <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+              </div>
+          </div>
+          
+          <img id="logo" src="../logo_text.png" alt="Logo">
+
+          <button class="logout-button" onclick="window.location='../loginPage.html'">
+              <img id="logout" src="../logout.png" alt="logout">
+          </button>
+      </div>
+
+      <div class="sidebar" id="sidebar-id">
+          <ul>
+              <br><br><br><br>
+              <li><a href="client.html">Home</a></li>
+              <br>
+              <li><a href="transfer.html">Transfer</a></li>
+              <br>
+              <li><a href="accounts.html">Accounts</a></li>
+              <br>
+              <li><a href="loan.html">Loans</a></li>
+              <br>
+              <li><a href="cards.html">Cards</a></li>
+              <br>
+              <li><a href="viewReminders.html">Reminders</a></li>
+              <br>
+              <li><a href="bills.html">Bills</a></li>
+              <br><br><br>
+              <li><a href="../loginPage.html">Log Out</a></li>
+          </ul>
+      </div>
+      <button class="sidebar-button" id="sidebar-button-id">
+          <img id="menu-logo" src="../menu.png" alt="menu">
+      </button>
+
+      </div>
+
+  </header>
+      
+  <main class="main-area">
+    <br>
+  <div style="text-align:center;">
+      <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">My Points</h1>
+  </div>
+
   <div style="text-align: left;">
-    <p>Total points: 3450</p>
+    <p style="margin-left:200px">Total points: 3450</p>
   </div>
   <table>
     <thead>
@@ -69,5 +171,64 @@
       </tr>
     </tbody>
   </table>
-</body>
+  <br><br>
+
+<div style="text-align:center;">
+  <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 25px;">Redeem Points</h1>
+</div>
+
+<form action="" method="post">
+  <label for="redeem-acc">Target Account:</label>
+  <select id="redeem-acc" name="redeem-acc" required>
+    <option value="" disabled selected>Choose an account</option>
+    <option value="Account 1">Account 1</option>
+    <option value="Account 2">Account 2</option>
+    <option value="Account 3">Account 3</option>
+  </select><br>
+
+<label for="redeem-amount">Points to Redeem:</label>
+<select id="redeem-amount" name="redeem-amount" required>
+  <option value="" disabled selected>Select an amount</option>
+  <option value="1,000">1,000</option>
+  <option value="5,000">5,000</option>
+  <option value="10,000">10,000</option>
+</select><br>
+
+<input class="extra-button" type="submit" value="Redeem Points" />
+</form>
+<br>
+<div style="text-align: center;">
+<button class="redirect-button" onclick="window.location='cards.html'">Back to Cards</button>
+</div>
+
+
+    <br><br><br><br>
+    <div class="footer">
+        <footer>
+            <br><br>
+            <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+            <br><br><br>
+            &copy; 2023 HSM Bank. All rights reserved.
+            <br><br><br>
+            <img id="flower" src="../Flower.png" alt="Logo">
+        </footer>
+    </div>
+    <div class="rightbar"> </div>
+  </main>
+
+    <script>
+      var sidebartmp = document.getElementById("sidebar-id");
+      var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+      sidebarbuttontmp.addEventListener("click", () => {
+          if(sidebartmp.style.width === "45px"){
+              sidebartmp.style.width = "200px";
+              sidebarbuttontmp.style.left="180px";
+          }else{
+              sidebartmp.style.width = "45px";
+              sidebarbuttontmp.style.left="23px";
+          }
+      });
+
+  </script>
+
 </html>
