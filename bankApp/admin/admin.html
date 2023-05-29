@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>My System App</title>
+    <title>Banker App</title>
     <style>
         .button {
-            background-color: rgb(0, 98, 128); /* Green */
+            background-color: #006280; /* Green */
             border: none;
             color: white;
             padding: 15px 32px;
@@ -18,7 +18,7 @@
 
 
         body {
-            background-color: lightblue;
+            background-color: rgb(241, 241, 241);
             font-family: sans-serif;
         }
 
@@ -39,16 +39,22 @@
 			height: 50 px;
 		}
 
+
         h1 {
+            background-color: rgb(241, 241, 241);
             margin: 0;
             font-size: 20px;
             margin-right: 1000px;
         }
 		h2 {
-            margin: 0;
-            font-size: 30px;
-        }
-        
+      font-size: 24px;
+      text-align: center;
+      padding: 20px;
+      padding-left: 50px;
+      padding-right: 50px;
+      background-color: rgb(37, 125, 132);
+      color: #fff;
+    }
 
         #logout-button {
             float: right;
@@ -76,7 +82,7 @@
             height: 100px;
             margin: 10px;
             padding: 20px;
-            background-color: white;
+            background-color: rgb(255, 255, 255);
             color: black;
             text-align: center;
             text-decoration: none;
@@ -85,11 +91,12 @@
         }
 
         .button:hover {
+            background-color: rgb(255, 255, 255);
             transform: scale(1.1);
         }
 
         .button-container1 {
-            margin-top: 100px;
+            margin-top: 0px;
             text-align: center;
         }
 
@@ -109,23 +116,18 @@
         <h1>Bank</h1>
         <a id="logout-button" href="../loginPage.html">Log Out&#10162;</a>
     </header>
-    
-
         <div class="button-container1">
 			<h2>Admin Portal</h2>
 			<br>
 			<br>
             <a class="button" href="issues.html">View Technical Issues <br><br>
-                <img id = "icon" src="iss.png" alt="issues Image"></a>
-            <a class="button" href="analytics.html">
-                View System Analytics
-                <br><br>
-                <img id = "icon" src="analyt.png" alt="Analytics Image">
-            </a>
+                <img id = "icon" src="iss.png" alt="Issues Image"></a>
+            <a class="button" href="analytics.html"> View System Analytics <br><br>
+                <img id = "icon" src="analyt.png" alt="Analytics Image"> </a>
 		</div>
 		<div class="button-container2">
             <a class="button" href="notifs.html">Create System Notifications<br><br>
-                <img id = "icon" src="not.png" alt="notifs Image"></a>
+                <img id = "icon" src="not.png" alt="close Image"></a>
 			<br><br><br>
         </div>
 

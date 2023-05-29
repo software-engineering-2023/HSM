@@ -20,8 +20,13 @@
         }
 
         h1 {
-            text-align: center;
-        }
+      font-size: 24px;
+      text-align: center;
+      padding: 20px;
+      margin-top: 0;
+      background-color: rgb(37, 125, 132);
+      color: #fff;
+    }
 
         .search-form {
             display: flex;
@@ -119,7 +124,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Close Client Accounts</h1>
+        <h1>View Client Accounts</h1>
         <div class="search-form">
             <input type="text" id="clientIdInput" placeholder="Client ID" oninput="searchAccounts()">
             <button id="searchButton">Search</button>
@@ -130,6 +135,7 @@
                     <th>Account Number</th>
                     <th>Account Type</th>
                     <th>Balance</th>
+                    <th>Card Number</th>
                 </tr>
             </thead>
             <tbody>
@@ -197,9 +203,9 @@
 
             // Mock data - replace with actual data
             var mockData = [
-                { accountNumber: "123456789", accountType: "Savings", balance: "$10,000" },
-                { accountNumber: "987654321", accountType: "Checking", balance: "$5,000" },
-                { accountNumber: "567891234", accountType: "Investment", balance: "$20,000" },
+                { accountNumber: "123456789", accountType: "Savings", balance: "$10,000", cardnumber: "134567876543456" },
+                { accountNumber: "987654321", accountType: "Checking", balance: "$5,000", cardnumber: "786543456788765" },
+                { accountNumber: "567891234", accountType: "Investment", balance: "$20,000", cardnumber: "49876545654543" },
                 // Add more rows...
             ];
 
@@ -209,6 +215,7 @@
                     <td>${mockData[i].accountNumber}</td>
                     <td>${mockData[i].accountType}</td>
                     <td>${mockData[i].balance}</td>
+                    <td>${mockData[i].cardnumber}</td>
                 `;
 
                 // Add click event listener to each row
@@ -224,12 +231,14 @@
             var accountNumber = row.cells[0].innerHTML;
             var accountType = row.cells[1].innerHTML;
             var balance = row.cells[2].innerHTML;
+            var cardnumber = row.cells[3].innerHTML;
 
             // Populate the modal with the account information
             document.getElementById("accountInfo").innerHTML = `
                 <strong>Account Number:</strong> ${accountNumber}<br>
                 <strong>Account Type:</strong> ${accountType}<br>
-                <strong>Balance:</strong> ${balance}
+                <strong>Balance:</strong> ${balance}<br>
+                <strong>Card Number:</strong> ${cardnumber}
             `;
 
             // Show the modal
