@@ -4,41 +4,133 @@
     <link rel="stylesheet" href="../universalstyles.css">
     <title>Report Missing, Lost or Damaged Card</title>
     <style>
-      /* Add some basic styles for the page */
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
 
       /* Add some styles for the input boxes */
       input[type="text"], select {
+        display: block;
+        margin-bottom: 20px;
         padding: 10px;
-        margin: 10px;
-        width: 300px;
-        border-radius: 5px;
         border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        width: 100%;
       }
 
-      /* Add some styles for the submit button */
-      input[type="submit"] {
-        padding: 10px 20px;
-        margin: 10px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
+      h1 {
+            text-align: center;
+        } 
+
+        form {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
         border-radius: 5px;
-        cursor: pointer;
-      }
+        box-shadow: 0 0 5px #ccc;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        }
+        
+        label {
+          display: block;
+          margin-bottom: 10px;
+          font-weight: bold;
+        }
+
+          input[type="submit"] {
+          background-color: #006280;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0 0 5px #ccc;
+          cursor: pointer;
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        input[type="submit"]:hover {
+          background-color: #005069;
+        }
+
+        input[type="datetime-local"] {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-family: sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+       }
+
     </style>
   </head>
   <body>
-    <h1>Report Missing, Lost or Damaged Card</h1>
-    <form action="#" method="post">
-      <label for="credit-card-number">Credit Card Number:</label><br>
+    <header>
+        <div class="header">
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">
+                    <img id="bell" src="../Bell.png" alt="bell">
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
+            
+            <img id="logo" src="../logo_text.png" alt="Logo">
+
+            <button class="logout-button" onclick="window.location='../loginPage.html'">
+                <img id="logout" src="../logout.png" alt="logout">
+            </button>
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="viewReminders.html">Reminders</a></li>
+                <br>
+                <li><a href="bills.html">Bills</a></li>
+                <br><br><br>
+                <li><a href="../loginPage.html">Log Out</a></li>
+            </ul>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">
+            <img id="menu-logo" src="../menu.png" alt="menu">
+        </button>
+
+        </div>
+
+    </header>
+        
+    <main class="main-area">
+      <div style="text-align:center;">
+        <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Report Missing, Lost or Damaged Card</h1>
+      </div>
+
+      <form action="" method="post">
+      <label for="credit-card-number">Credit Card Number:</label>
       <input type="text" id="credit-card-number" name="credit-card-number" /><br>
 
-      <label for="reason-of-replacement">Reason of Replacement:</label><br>
+      <label for="reason-of-replacement">Reason of Replacement:</label>
       <select id="reason-of-replacement" name="reason-of-replacement">
         <option value="" disabled selected>Select a reason</option>
         <option value="stolen">Stolen</option>
@@ -46,10 +138,44 @@
         <option value="damaged">Damaged</option>
       </select><br>
 
-      <label for="date-of-loss">Date of Loss:</label><br>
-      <input type="text" id="date-of-loss" name="date-of-loss" /><br>
+      <label for="date-of-loss">Date of Loss:</label>
+      <input type="datetime-local" id="date-of-loss" name="date-of-loss" />
 
       <input type="submit" value="Submit" />
     </form>
+    <br>
+    <div style="text-align: center;">
+      <button class="redirect-button" onclick="window.location='cards.html'">Back to Cards</button>
+    </div>
+  </main>
+    
+    <br><br><br><br>
+    <div class="footer">
+        <footer>
+            <br><br>
+            <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+            <br><br><br>
+            &copy; 2023 HSM Bank. All rights reserved.
+            <br><br><br>
+            <img id="flower" src="../Flower.png" alt="Logo">
+        </footer>
+    </div>
+    <div class="rightbar"> </div>
+
+    <script>
+      var sidebartmp = document.getElementById("sidebar-id");
+      var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+      sidebarbuttontmp.addEventListener("click", () => {
+          if(sidebartmp.style.width === "45px"){
+              sidebartmp.style.width = "200px";
+              sidebarbuttontmp.style.left="180px";
+          }else{
+              sidebartmp.style.width = "45px";
+              sidebarbuttontmp.style.left="23px";
+          }
+      });
+
+  </script>
+
   </body>
 </html>

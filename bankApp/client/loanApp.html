@@ -4,13 +4,8 @@
     <link rel="stylesheet" href="../universalstyles.css">
 	<title>Apply to loan</title>
     <style>
-		.container {
-			display: flex;
-			align-items: center;
-            text-align: center;
-		}
 
-        button {
+        /* button {
 		
 			margin-bottom: 10px;
             margin-right: 10px;
@@ -18,37 +13,170 @@
             display: inline-block;
 			margin-top: 20px;
 
-		}
+		}*/
 
         h1 {
             text-align: center;
+        } 
+
+        form {
+      max-width: 400px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #ccc;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+        input[type="submit"] {
+      background-color: #006280;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #ccc;
+      cursor: pointer;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    input[type="submit"]:hover {
+      background-color: #005069;
+    }
+
+        #tickGif {
+        display: none;
+        width: 200px;
+        height: 200px;
         }
 
 	</style>
 </head>
 <body>
-    <h1>Apply for a loan</h1>
-    <div class="center-container">
-    <button style="background-color: rgb(0, 98, 128);
-        color: white;
-        font-size: 20px;">
-        Amount
-        </button> 
-        <input type="text">
-        <button style="background-color: rgb(0, 98, 128);
-        color: white;
-        font-size: 20px;">
+    <header>
+        <div class="header">
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">
+                    <img id="bell" src="../Bell.png" alt="bell">
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
+            
+            <img id="logo" src="../logo_text.png" alt="Logo">
 
-        Account
-        </button> 
-        <input type="text">
-    </div>
-    <div class="center-container">
-        <button style="background-color: rgb(0, 98, 128);
-        color: white;
-        font-size: 20px;">
-        Apply
-        </button> 
-    </div>
+            <button class="logout-button" onclick="window.location='../loginPage.html'">
+                <img id="logout" src="../logout.png" alt="logout">
+            </button>
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="viewReminders.html">Reminders</a></li>
+                <br>
+                <li><a href="bills.html">Bills</a></li>
+                <br><br><br>
+                <li><a href="../loginPage.html">Log Out</a></li>
+            </ul>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">
+            <img id="menu-logo" src="../menu.png" alt="menu">
+        </button>
+
+        </div>
+
+    </header>
+        
+    <main class="main-area">
+    <br>
+    <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Apply for a loan</h1>
+    <br>
+    <form action="requests.html" method="post" id="myForm">
+        <label for="radio1">Loan Type:</label>
+        <input type="radio" name="loan_type" value="personal" id="radio1" required> Personal Loan
+        <br>
+        <input type="radio" name="loan_type" value="car" required> Car Loan
+        <br><br>
+        <label for="amount1">Amount:</label>
+        <input type="number" name="loan_amount" placeholder="Loan Amount" id="amount1" required>
+        <br>
+        <input type="submit" value="Submit" class="extra-button">
+      </form>
+      <br>
+      <img id="tickGif" src="../tick.gif" alt="Loan Approved!" style="display: none;">
+
+</main>
+    
+<br><br><br><br>
+<div class="footer">
+    <footer>
+        <br><br>
+        <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+        <br><br><br>
+        &copy; 2023 HSM Bank. All rights reserved.
+        <br><br><br>
+        <img id="flower" src="../Flower.png" alt="Logo">
+    </footer>
+</div>
+<div class="rightbar"> </div>
+
+<script>
+
+function submitForm() {
+      // Get the form
+      var form = document.getElementById("myForm");
+
+      // Get the gif
+      var gif = document.getElementById("tickGif");
+
+      // Empty the form
+      form.reset();
+
+      // Show the gif
+      gif.style.display = "block";
+
+      // Wait until the gif is done
+      waitUntilGifIsDone("tickGif");
+
+      // Redirect the user
+      window.location.href = "requests.html";
+    }
+
+
+    var sidebartmp = document.getElementById("sidebar-id");
+    var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+    sidebarbuttontmp.addEventListener("click", () => {
+        if(sidebartmp.style.width === "45px"){
+            sidebartmp.style.width = "200px";
+            sidebarbuttontmp.style.left="180px";
+        }else{
+            sidebartmp.style.width = "45px";
+            sidebarbuttontmp.style.left="23px";
+        }
+    });
+
+</script>
 </body>
 </html>

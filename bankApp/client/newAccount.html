@@ -1,6 +1,8 @@
  <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="../universalstyles.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,19 +14,9 @@
             padding: 20px;
         }
 
-        .form-field {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .form-label {
-            display: block;
-            text-align: left;
-            font-weight: bold;
-        }
-
         input[type="text"],
         input[type="date"],
+        input[type="email"],
         select,
         textarea {
             width: 100%;
@@ -34,7 +26,7 @@
             box-sizing: border-box;
         }
 
-        .submit-button {
+        /* .submit-button {
             background-color: #4CAF50;
             color: white;
             padding: 10px 20px;
@@ -42,138 +34,157 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+        } */
+
+        /* .submit-button:hover {
+            background-color: #45a049;
+        } */
+
+        form {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ccc;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        }
+        label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
         }
 
-        .submit-button:hover {
-            background-color: #45a049;
+        .submit-button {
+        background-color: #006280;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #ccc;
+        cursor: pointer;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
         }
+        .submit-button:hover {
+        background-color: #005069;
+        }
+
     </style>
 </head>
 <body>
-<header>
-    <div class="sidebar" id="sidebar-id">
-        <ul class="sidebar-list">
-            <li><a href="dashboard.html">Dashboard</a></li>
-            <li><a href="transactions.html">Transactions</a></li>
-            <li><a href="balance.html">Balance</a></li>
-            <li><a href="statements.html">Statements</a></li>
-            <li><a href="../loginPage.html">Log Out</a></li>
-        </ul>
+    <header>
+        <div class="header">
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">
+                    <img id="bell" src="../Bell.png" alt="bell">
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
+            
+            <img id="logo" src="../logo_text.png" alt="Logo">
+
+            <button class="logout-button" onclick="window.location='../loginPage.html'">
+                <img id="logout" src="../logout.png" alt="logout">
+            </button>
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="viewReminders.html">Reminders</a></li>
+                <br>
+                <li><a href="bills.html">Bills</a></li>
+                <br><br><br>
+                <li><a href="../loginPage.html">Log Out</a></li>
+            </ul>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">
+            <img id="menu-logo" src="../menu.png" alt="menu">
+        </button>
+
+        </div>
+
+    </header>
+        
+    <main class="main-area">
+    <br><br><br>
+    <div style="text-align:center;">
+        <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Open a New Bank Account</h1>
     </div>
-    <button class="sidebar-button" id="sidebar-button-id">Sidebar</button>
-</header>
 
-<main class="main-area">
-    <h1>Open a New Bank Account</h1>
-
-    <form id="account-form">
+    <form id="account-form" action="accounts.html">
         <div class="form-field">
-            <label class="form-label" for="full-name">Full Name:</label>
-            <input type="text" id="full-name" name="full-name" required>
+            <label class="form-label" for="acc-name">Account Name:</label>
+            <input type="text" id="acc-name" name="acc-name" required>
         </div>
         <br>
         <div class="form-field">
-            <label class="form-label" for="date-of-birth">Date of Birth:</label>
-            <input type="date" id="date-of-birth" name="date-of-birth" required>
+            <label class="form-label" for="acc-type">Account Type:</label>
+            <input type="radio" name="acc-type" value="personal" id="acc-type" required> Savings
+        <br>
+            <input type="radio" name="acc-type" value="car" required> Current
         </div>
         <br>
         <div class="form-field">
-            <label class="form-label" for="gender">Gender:</label>
-            <select id="gender" name="gender" required>
-                <option value="">Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
+            <label class="form-label" for="gender">Currency:</label>
+            <select id="currency" name="currency" required>
+                <option value="">Currency</option>
+                <option value="male">EGP</option>
+                <option value="female">USD</option>
+                <option value="other">EUR</option>
             </select>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="nationality">Nationality:</label>
-            <input type="text" id="nationality" name="nationality" required>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="ssn">Social Security Number (SSN) or Tax Identification Number (TIN):</label>
-            <input type="text" id="ssn" name="ssn" required>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="address">Address:</label>
-            <textarea id="address" name="address" rows="4" required></textarea>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="phone-number">Phone Number:</label>
-            <input type="text" id="phone-number" name="phone-number" required>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="account-type">Account Type:</label>
-            <select id="account-type" name="account-type" required>
-                <option value="">Select Account Type</option>
-                <option value="savings">Savings</option>
-                <option value="checking">Checking</option>
-                <option value="business">Business</option>
-            </select>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="id-number">ID Number:</label>
-            <input type="text" id="id-number" name="id-number" required>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="issuing-country">Issuing Country:</label>
-            <input type="text" id="issuing-country" name="issuing-country" required>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="expiration-date">Expiration Date:</label>
-            <input type="date" id="expiration-date" name="expiration-date" required>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="employment-status">Employment Status:</label>
-            <select id="employment-status" name="employment-status" required>
-                <option value="">Select Employment Status</option>
-                <option value="employed">Employed</option>
-                <option value="self-employed">Self-Employed</option>
-                <option value="unemployed">Unemployed</option>
-            </select>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="employer">Employer:</label>
-            <input type="text" id="employer" name="employer" required>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="annual-income">Annual Income:</label>
-            <input type="text" id="annual-income" name="annual-income" required>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="initial-deposit">Initial Deposit:</label>
-            <input type="text" id="initial-deposit" name="initial-deposit" required>
         </div>
         <br>
         <button class="submit-button" type="submit">Open Account</button>
     </form>
 </main>
-
-<br><br><br><br><br>
+    
+<br><br><br><br>
 <div class="footer">
     <footer>
         <br><br>
-        <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us & FAQs</a> | <a href="aboutus.html">About Us</a>
-        <br><br>
+        <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+        <br><br><br>
+        &copy; 2023 HSM Bank. All rights reserved.
+        <br><br><br>
+        <img id="flower" src="../Flower.png" alt="Logo">
     </footer>
 </div>
+<div class="rightbar"> </div>
+
+<script>
+    var sidebartmp = document.getElementById("sidebar-id");
+    var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+    sidebarbuttontmp.addEventListener("click", () => {
+        if(sidebartmp.style.width === "45px"){
+            sidebartmp.style.width = "200px";
+            sidebarbuttontmp.style.left="180px";
+        }else{
+            sidebartmp.style.width = "45px";
+            sidebarbuttontmp.style.left="23px";
+        }
+    });
+
+</script>
+
 <script src="script.js"></script>
 </body>
 </html> 
