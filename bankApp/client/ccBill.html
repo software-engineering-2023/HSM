@@ -152,7 +152,7 @@
    <button class="redirect-button" onclick="window.location='cards.html'">Go to Cards</button>
   </div>
 
-    <form onsubmit="payFullAmount(event)" id="full-amount-pay" class="popup">
+    <div id="full-amount-pay" class="popup">
       <h4 class="title">Choose the account you want to pay from:</h4>
       <div class="dropdown">
         <label for="account-select-full">Your Accounts:</label>
@@ -164,14 +164,13 @@
         </select>
       </div>
       <br><br>
-      <button class="confirm button">Confirm Payment</button>
-      <button type="submit" class="cancel">Cancel</button>
-    </form>
-
-    <form id="partial-amount-pay" class="popup" onsubmit="payPartialAmount(event)">
+      <button class="confirm button" onclick="payFullAmount()">Confirm Payment</button>
+      <button class="cancel button">Cancel</button>
+    </div>
+    <div id="partial-amount-pay" class="popup">
       <h4 class="title">Enter the amount you want to pay:</h4>
       <div class="input-box">
-        <input type="number" step="0.01" placeholder="Enter amount" id="payment-amount" required>
+        <input type="number" min="5000" max="30000" step="0.01" placeholder="Enter amount" id="payment-amount">
       </div>
       <h4 class="title">Choose the account you want to pay from:</h4>
       <div class="dropdown">
@@ -184,10 +183,9 @@
         </select>
       </div>
       <br><br>
-      <button type="submit" class="confirm button">Confirm Payment</button>
-      <button class="cancel">Cancel</button>
-    </form>
-
+      <button class="confirm button" onclick="payPartialAmount()">Confirm Payment</button>
+      <button class="cancel button">Cancel</button>
+    </div>
   </main>
     
   <br><br><br><br>
@@ -204,14 +202,6 @@
   <div class="rightbar"> </div>
 
     <script>
-
-      document.addEventListener("DOMContentLoaded", function() {
-
-
-      var element = document.getElementById("ccbill1page");
-      element.textContent = localStorage.getItem("ccbill1");
-      });
-
       const fullAmountBtn = document.getElementById('full-amount-btn');
       const partialAmountBtn = document.getElementById('partial-amount-btn');
       const fullAmountPay = document.getElementById('full-amount-pay');
@@ -241,55 +231,66 @@
         });
       });
 
-      function payFullAmount(event) {
-        event.preventDefault();
-        var accid=document.getElementById("account-select-partial").value;
-            var balanceid;
-            if(accid == "222222222222"){
-                balanceid="2-balance";
-            }else if(accid == "111111111111"){
-                balanceid="1-balance";
-            }else{
-                balanceid="3-balance";
-            }
+      function payFullAmount() {
+      
+        // alert('Payment settled successfully. Thank you!');
+        // amountDue.textContent = 'No Bills to Pay';
+        // fullAmountPay.style.display = 'none';
 
-            var storedBalance = parseFloat(localStorage.getItem(balanceid)); //40000.00
-            var storedBill = parseFloat(localStorage.getItem("ccbill1"));
-            if(storedBill>storedBalance){
-                alert("You do not have enough in your account for this transaction.");
-                return;
-            }else{
-                alert("Successful Transaction.");
-                updateBalance(balanceid, storedBill, storedBill);
-                updateTransaction(accid, storedBill);
+        var accid=document.getElementById("account-select-full").value;
+        var balanceid;
+        if(accid == "222222222222"){
+          balanceid="2-balance";
+        }else if(accid == "111111111111"){
+          balanceid="1-balance";
+        }else if((accid == "333333333333")){
+          balanceid="3-balance";
+        }else{
+          alert("Please choose an account to pay from.");
+          return;
+        }
+
+        var storedBalance = parseFloat(localStorage.getItem(balanceid)); //40000.00
+        var storedBill = parseFloat(localStorage.getItem("ccbill1"));
+        if(storedBill>storedBalance){
+         alert("You do not have enough in your account for this transaction.");
+            return;
+        }else{
+          alert("Successful Transaction.");
+          updateBalance(balanceid, storedBill, storedBill);
+          updateTransaction(accid, storedBill);
                 
-                document.getElementById("account-select-partial").value="";
-                document.getElementById("full-amount-pay").style="none";
-            }
-
+          document.getElementById("account-select-full").value="";
+          document.getElementById("full-amount-pay").style="none";
+          var element = document.getElementById("ccbill1page");
+          element.textContent = localStorage.getItem("ccbill1");
+                
+        }
       }
 
-      function payPartialAmount(event) {
-        event.preventDefault();
+      function payPartialAmount() {
         const amount = parseFloat(paymentAmountInput.value);
         var storedBill = parseFloat(localStorage.getItem("ccbill1"));
         
         if (amount > storedBill) {
           alert('The entered amount exceeds the required amount. Please enter a valid amount within the limits.');
           return;
-        } else if (amount<500){
-          alert('The entered amount is below the minimum requirement. Please enter a valid amount within the limits (Minimum: 500.00 and Maximum 30,000.00).');
+        } else if (amount<50){
+          alert('The entered amount is below the minimum requirement. Please enter a valid amount within the limits (Minimum: 50.00 and Maximum 30,000.00).');
           return;
         }
 
             var accid=document.getElementById("account-select-partial").value;
             var balanceid;
             if(accid == "222222222222"){
-                balanceid="2-balance";
+            balanceid="2-balance";
             }else if(accid == "111111111111"){
-                balanceid="1-balance";
+              balanceid="1-balance";
+            }else if((accid == "333333333333")){
+              balanceid="3-balance";
             }else{
-                balanceid="3-balance";
+              alert("Please choose an account to pay from.");
+              return;
             }
 
             var storedBalance = parseFloat(localStorage.getItem(balanceid)); //40000.00
@@ -305,12 +306,17 @@
                 document.getElementById("account-select-partial").value="";
                 document.getElementById("payment-amount").value="";
                 document.getElementById("partial-amount-pay").style="none";
+                var element = document.getElementById("ccbill1page");
+                element.textContent = localStorage.getItem("ccbill1");
             }
-
-
       }
 
 
+
+      document.addEventListener("DOMContentLoaded", function() {
+        var element = document.getElementById("ccbill1page");
+        element.textContent = localStorage.getItem("ccbill1");
+      });
 
       function updateBalance(balanceid, amount, storedBill){
             
@@ -347,9 +353,7 @@
             transactions.unshift(newtransaction);
             localStorage.setItem(transid, JSON.stringify(transactions));
             
-        }     
-
-
+        }
 
 
         var sidebartmp = document.getElementById("sidebar-id");
