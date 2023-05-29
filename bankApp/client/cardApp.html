@@ -1,19 +1,13 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="../universalstyles.css">
-
+	<title>Apply for a Credit Card</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
 
-        .main-area {
-            margin: 0 auto;
-            max-width: 600px;
-            padding: 20px;
-        }
-
+        h1 {
+            text-align: center;
+        } 
         input[type="text"],
         input[type="date"],
         input[type="email"],
@@ -37,29 +31,54 @@
         font-size: 16px;
         line-height: 1.5;
         }
+        
         label {
-        display: block;
-        margin-bottom: 10px;
-        font-weight: bold;
+          display: block;
+          margin-bottom: 10px;
+          font-weight: bold;
         }
 
-        .submit-button {
-        background-color: #006280;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
+          input[type="submit"] {
+          background-color: #006280;
+          color: #fff;
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          box-shadow: 0 0 5px #ccc;
+          cursor: pointer;
+          font-family: Arial, sans-serif;
+          font-size: 16px;
+          line-height: 1.5;
+        }
+        input[type="submit"]:hover {
+          background-color: #005069;
+        }
+
+        input[type="text"], select {
+        display: block;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
         border-radius: 5px;
-        box-shadow: 0 0 5px #ccc;
-        cursor: pointer;
-        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+        font-family: sans-serif;
         font-size: 16px;
         line-height: 1.5;
-        }
-        .submit-button:hover {
-        background-color: #005069;
+        width: 100%;
+      }
+
+      h1 {
+            text-align: center;
+        } 
+
+
+        #tickGif {
+        display: none;
+        width: 200px;
+        height: 200px;
         }
 
-    </style>
+	</style>
 </head>
 <body>
     <header>
@@ -111,36 +130,32 @@
     </header>
         
     <main class="main-area">
-    <br><br><br>
-    <div style="text-align:center;">
-        <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Open a New Bank Account</h1>
-    </div>
+    <br>
+    <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Credit Card Application</h1>
+    <br>
+    <form action="requests.html" method="post" id="myForm">
+        <label for="cardh-name">Displayed Name:</label>
+        <input type="text" name="cardh-name" placeholder="Name" id="cardh-name" required>
+        <br>
+        <label for="radio1">Credit Card Type:</label>
+        <input type="radio" name="cc-type" value="Silver" id="radio1" required> Silver
+        <br>
+        <input type="radio" name="cc-type" value="Gold" required> Gold
+        <br>
+        <input type="radio" name="cc-type" value="Platinum" required> Platinum
+        <br><br>
+        <label for="acc">Account:</label>
+        <select id="acc" name="acc" required>
+            <option value="" disabled selected>Choose an account</option>
+            <option value="Account 1">Account 1</option>
+            <option value="Account 2">Account 2</option>
+            <option value="Account 3">Account 3</option>
+          </select><br>
+        <input type="submit" value="Submit" class="extra-button">
+      </form>
+      <br>
+      <img id="tickGif" src="../tick.gif" alt="Loan Approved!" style="display: none;">
 
-    <form id="account-form" action="accounts.html">
-        <div class="form-field">
-            <label class="form-label" for="acc-name">Account Name:</label>
-            <input type="text" id="acc-name" name="acc-name" required>
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="acc-type">Account Type:</label>
-            <input type="radio" name="acc-type" value="personal" id="acc-type" required> Savings
-        <br>
-            <input type="radio" name="acc-type" value="car" required> Current
-        </div>
-        <br>
-        <div class="form-field">
-            <label class="form-label" for="gender">Currency:</label>
-            <select id="currency" name="currency" required>
-                <option value="">Currency</option>
-                <option value="male">EGP</option>
-                <option value="female">USD</option>
-                <option value="other">EUR</option>
-            </select>
-        </div>
-        <br>
-        <button class="submit-button" type="submit">Open Account</button>
-    </form>
 </main>
     
 <br><br><br><br>
@@ -157,6 +172,28 @@
 <div class="rightbar"> </div>
 
 <script>
+
+function submitForm() {
+      // Get the form
+      var form = document.getElementById("myForm");
+
+      // Get the gif
+      var gif = document.getElementById("tickGif");
+
+      // Empty the form
+      form.reset();
+
+      // Show the gif
+      gif.style.display = "block";
+
+      // Wait until the gif is done
+      waitUntilGifIsDone("tickGif");
+
+      // Redirect the user
+      window.location.href = "requests.html";
+    }
+
+
     var sidebartmp = document.getElementById("sidebar-id");
     var sidebarbuttontmp = document.getElementById("sidebar-button-id");
     sidebarbuttontmp.addEventListener("click", () => {
@@ -170,10 +207,5 @@
     });
 
 </script>
-
-<script src="script.js"></script>
 </body>
-</html> 
-
-
-
+</html>

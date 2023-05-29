@@ -45,28 +45,145 @@
 			border-radius: 5px;
 			text-align: center;
 		}
+
+		table {
+			margin: auto;
+			width: 80%;
+			border-collapse: collapse;
+			background-color: white;
+			padding: 20px;
+			border-radius: 5px;
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
+		}
+		th {
+			background-color: rgb(76, 176, 176);
+			color: white;
+			padding: 10px;
+			text-align: left;
+		}
+		td {
+			padding: 10px;
+			border-bottom: 1px solid #ddd;
+			text-align: left;
+		}
+		input[type=checkbox] {
+			transform: scale(1.5);
+		}
+
+		.extra-button{
+			background-color: rgb(76, 176, 176);
+		}
+
 	</style>
 </head>
 <body>
-	<div class="container">
-		<div>
-			<label class="label">User's name:</label>
-			<input type="text" class="textbox" value="Ben Dover" disabled>
+    <header>
+        <div class="header">
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">
+                    <img id="bell" src="../Bell.png" alt="bell">
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
+            
+            <img id="logo" src="../logo_text.png" alt="Logo">
+
+            <button class="logout-button" onclick="window.location='../loginPage.html'">
+                <img id="logout" src="../logout.png" alt="logout">
+            </button>
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="viewReminders.html">Reminders</a></li>
+                <br>
+                <li><a href="bills.html">Bills</a></li>
+                <br><br><br>
+                <li><a href="../loginPage.html">Log Out</a></li>
+            </ul>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">
+            <img id="menu-logo" src="../menu.png" alt="menu">
+        </button>
+
+        </div>
+
+    </header>
+        
+    <main class="main-area">
+
+		<div style="text-align: center;">
+			<h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Requests</h1>
 		</div>
-		<div>
-			<label class="label">Account number:</label>
-			<input type="text" class="textbox" value="123456789" disabled>
+
+		<table>
+			<tr>
+				<th>Application Number</th>
+				<th>Request Type</th>
+				<th>Request Date</th>
+				<th>status</th>
+			</tr>
+			<tr>
+				<td>111111</td>
+				<td>Credit Card</td>
+				<td>01/01/2023</td>
+				<td id="CC-req" style="color:rgb(51, 51, 51); font-weight:bold;">Pending</td>
+			</tr>
+			<tr>
+				<td>222222</td>
+				<td>Personal Loan</td>
+				<td>02/01/2023</td>
+				<td id="CC-req" style="color:rgb(0, 140, 19); font-weight:bold;">Approved</td>
+			</tr>
+		</table>
+		<br>
+		<div style="text-align: center;">
+			<button class="redirect-button" onclick="window.location='cards.html'">Go to Cards</button>
+			<button class="redirect-button" onclick="window.location='loan.html'">Go to Loans</button>
 		</div>
-		<div>
-			<label class="label">Credit card application status:</label>
-			<input type="text" class="status-accepted" value="Accepted" disabled>
-			<span>Number: CCA42069</span>
-		</div>
-		<div>
-			<label class="label">Loan application status:</label>
-			<input type="text" class="status-rejected" value="Rejected" disabled>
-			<span>Number: LA666</span>
-		</div>
-	</div>
+</main>
+    
+<br><br><br><br>
+<div class="footer">
+	<footer>
+		<br><br>
+		<a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+		<br><br><br>
+		&copy; 2023 HSM Bank. All rights reserved.
+		<br><br><br>
+		<img id="flower" src="../Flower.png" alt="Logo">
+	</footer>
+</div>
+<div class="rightbar"> </div>
+
+<script>
+	var sidebartmp = document.getElementById("sidebar-id");
+	var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+	sidebarbuttontmp.addEventListener("click", () => {
+		if(sidebartmp.style.width === "45px"){
+			sidebartmp.style.width = "200px";
+			sidebarbuttontmp.style.left="180px";
+		}else{
+			sidebartmp.style.width = "45px";
+			sidebarbuttontmp.style.left="23px";
+		}
+	});
+
+</script>
 </body>
 </html>
