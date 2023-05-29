@@ -197,7 +197,7 @@
     <br>
   <h1 class="title-style">Bills</h1>
   <div>
-    <p class="shift">Total Bills: 67,902 EGP</p>
+    <p class="shift">Total Bills:</p> <p id="total-bills-page">84550.00</p>
     <a href="pay.html" class="pay-button" style="margin-left: 50px;">Pay All Bills</a> 
     <!-- <button class="view-all-bills-button">View All Bills</button> -->
   </div>
@@ -214,13 +214,13 @@
         </tr>
         <tr>
           <td>4321 4321 4321 4321</td>
-          <td>10000.00 EGP</td>
+          <td id="1">10000.00</td>
           <td>20/06/2023</td>
           <td><a href="ccBill.html" class="pay-button">Pay</a></td>
         </tr>
         <tr>
           <td>1234 1234 1234 1234</td>
-          <td>550.00</td>
+          <td id="2">550.00</td>
           <td>31/06/2023</td>
           <td><a href="ccBill2.html" class="pay-button">Pay</a></td>
         </tr>
@@ -238,13 +238,13 @@
         </tr>
         <tr>
           <td>80123456</td>
-          <td>25000.00</td>
+          <td id="3">25000.00</td>
           <td>25/06/2023</td>
           <td><a href="instBill.html" class="pay-button">Pay</a></td>
         </tr>
         <tr>
           <td>12345678</td>
-          <td>25000.00</td>
+          <td id="4">25000.00</td>
           <td>30/06/2023</td>
           <td><a href="instBill.html" class="pay-button">Pay</a></td>
         </tr>
@@ -262,13 +262,13 @@
         </tr>
         <tr>
           <td>Electricty Bill</td>
-          <td>17000.00 EGP</td>
+          <td id="5">17000.00</td>
           <td>14/06/2023</td>
           <td><a href="electBill.html" class="pay-button">Pay</a></td>
         </tr>
         <tr>
           <td>Phone Bill</td>
-          <td>7000.00 EGP</td>
+          <td id="6">7000.00</td>
           <td>17/06/2023</td>
           <td><a href="electBill.html" class="pay-button">Pay</a></td>
         </tr>
@@ -303,6 +303,26 @@
     //     billsPanel.style.display = "none";
     //   }
     // });
+
+    document.addEventListener("DOMContentLoaded", function(){
+        var element=document.getElementById("1");
+        element.textContent = localStorage.getItem("ccbill1");
+        var element2=document.getElementById("2");
+        element.textContent = localStorage.getItem("ccbill2");
+        var element3=document.getElementById("3");
+        element.textContent = localStorage.getItem("loanbill1");
+        var element4=document.getElementById("4");
+        element.textContent = localStorage.getItem("loanbill2");
+        var element5=document.getElementById("5");
+        element.textContent = localStorage.getItem("ebill");
+        var element6=document.getElementById("6");
+        element.textContent = localStorage.getItem("phbill");
+        // var total = parseFloat(element) + parseFloat(element2) + parseFloat(element3) + parseFloat(element4) + parseFloat(element5) + parseFloat(element6);
+        // localStorage.setItem("total-bills", total.toFixed(2));
+        
+        // var element7 = document.getElementById("total-bills-page");
+        // element7.textContent = localStorage.getItem("total-bills");
+      });
 
 
     var sidebartmp = document.getElementById("sidebar-id");
