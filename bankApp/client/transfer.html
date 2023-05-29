@@ -161,6 +161,7 @@
                 <label for="from-account2">From Account::</label>
                 <select id="from-account2" name="from-account2" required>
                     <option value="" disabled selected>Account No.</option>
+                    <option value="111111111111">111111111111</option>
                     <option value="222222222222">222222222222</option>
                     <option value="333333333333">333333333333</option>
                 </select>
@@ -191,6 +192,7 @@
                 <label for="from-account3">From Account::</label>
                 <select id="from-account3" name="from-account3" required>
                     <option value="" disabled selected>Account No.</option>
+                    <option value="111111111111">111111111111</option>
                     <option id="2-accnum" value="222222222222">222222222222</option>
                     <option id="3-accnum" value="333333333333">333333333333</option>
                 </select>
@@ -248,10 +250,28 @@
             const fromAccount = document.getElementById("from-account1").value;
             const toAccount = document.getElementById("to-account1").value;
 			
-			alert("Successful Transaction.");
-            updateBalance(document.getElementById("from-account1").value, parseFloat(document.getElementById("amount1").value));
-            updateTransaction(document.getElementById("from-account1").value, parseFloat(document.getElementById("amount1").value));
-			resetInternalForm();
+
+			var accid=document.getElementById("from-account1").value;
+            var balanceid;
+            if(accid == "222222222222"){
+                balanceid="2-balance";
+            }else if(accid == "111111111111"){
+                balanceid="1-balance";
+            }else{
+                balanceid="3-balance";
+            }
+
+            var storedBalance = parseFloat(localStorage.getItem(balanceid));
+            var transfer= parseFloat(amount);
+            if(transfer>storedBalance){
+                alert("You do not have enough in your account for this transaction.")
+            }else{
+                alert("Successful Transaction.");
+
+                updateBalance(document.getElementById("from-account1").value, parseFloat(document.getElementById("amount1").value));
+                updateTransaction(document.getElementById("from-account1").value, parseFloat(document.getElementById("amount1").value));
+                resetDomForm();
+            }
 
         }
 
@@ -287,12 +307,27 @@
             const fromAccount = document.getElementById("from-account2").value;
             const beneficiaryName = document.getElementById("beneficiary-name2").value;
 
-			
-            alert("Successful Transaction.");
+            var accid=document.getElementById("from-account2").value;
+            var balanceid;
+            if(accid == "222222222222"){
+                balanceid="2-balance";
+            }else if(accid == "111111111111"){
+                balanceid="1-balance";
+            }else{
+                balanceid="3-balance";
+            }
 
-            updateBalance(document.getElementById("from-account2").value, parseFloat(document.getElementById("amount2").value));
-            updateTransaction(document.getElementById("from-account2").value, parseFloat(document.getElementById("amount2").value));
-			resetDomForm();
+            var storedBalance = parseFloat(localStorage.getItem(balanceid));
+            var transfer= parseFloat(amount);
+            if(transfer>storedBalance){
+                alert("Failed Transaction. You do not have enough in your account for this transaction.")
+            }else{
+                alert("Successful Transaction.");
+
+                updateBalance(document.getElementById("from-account2").value, parseFloat(document.getElementById("amount2").value));
+                updateTransaction(document.getElementById("from-account2").value, parseFloat(document.getElementById("amount2").value));
+                resetDomForm();
+            }
         }
 
         function resetDomForm() {
@@ -330,11 +365,27 @@
             const IBAN = document.getElementById("IBAN3").value;
             const swiftCode = document.getElementById("swift-code3").value;
 			
-            alert("Successful Transaction.");
+            var accid=document.getElementById("from-account3").value;
+            var balanceid;
+            if(accid == "222222222222"){
+                balanceid="2-balance";
+            }else if(accid == "111111111111"){
+                balanceid="1-balance";
+            }else{
+                balanceid="3-balance";
+            }
 
-            updateBalance(document.getElementById("from-account3").value, parseFloat(document.getElementById("amount3").value));
-            updateTransaction(document.getElementById("from-account3").value, parseFloat(document.getElementById("amount3").value));
-			resetInternationalForm();
+            var storedBalance = parseFloat(localStorage.getItem(balanceid));
+            var transfer= parseFloat(amount);
+            if(transfer>storedBalance){
+                alert("You do not have enough in your account for this transaction.")
+            }else{
+                alert("Successful Transaction.");
+
+                updateBalance(document.getElementById("from-account3").value, parseFloat(document.getElementById("amount3").value));
+                updateTransaction(document.getElementById("from-account3").value, parseFloat(document.getElementById("amount3").value));
+                resetDomForm();
+            }
         }
 
         function resetInternationalForm() {

@@ -203,11 +203,11 @@
 		<br>
 		<div class="container">
 			<div class="box">
-					<p>Card Type: Credit Card</p>
-					<p>Card Number: 5131 6757 8772 2828</p>
-					<p>Account Number: 08798787675</p>
+					<p>Card Type: Debit Card</p>
+					<p>Card Number: 2222 2222 2222 2222</p>
+					<p>Account Number: 222222222222</p>
 					<p>Available Balance:</p>
-					<p class="balance">28,974.68</p>
+					<p id="2-balance" class="balance">39450.00</p>
 					<p>Currency: EGP</p>
 					<button class="box-button" onclick="window.location='bills.html'">View Bills</button>
 					<button class="box-button" id="trans-1-button">View Transactions</button>
@@ -215,30 +215,31 @@
 			</div>
 
 			<div class="box">
-					<p>Card Type: Debit Card</p>
-					<p>Card Number: 4762 6757 8772 2828</p>
-					<p>Account Number: 28798787675</p>
-					<p>Available Balance:</p>
-					<p class="balance">14,792.64</p>
-					<p>Currency: EUR</p>
-					<br>
-					<button class="box-button" id="trans-2-button">View Transactions</button>
-					<button class="issue-button" onclick="window.location='missing.html'">Report Issue</button>
+				<p>Card Type: Credit Card</p>
+				<p>Card Number: 1234 1234 1234 1234</p>
+				<p>Limit: 30000.00</p>
+				<p>Available:</p>
+				<p class="balance">29450.00</p>
+				<p>Currency: EGP</p>
+				<br>
+				<button class="box-button" id="trans-2-button">View Transactions</button>
+				<button class="issue-button" onclick="window.location='missing.html'">Report Issue</button>
 			</div>
 
 			<div class="box">
-					<p>Card Type:</p>
-					<p>Card Number: 8888 6666 1801 2003</p>
-					<p>Account Number: 9282618926</p>
-					<p>Available Balance:</p>
-					<p class="balance">10,000.00</p>
-					<p>Currency: USD</p>
-					<button class="box-button" onclick="window.location='bills.html'">View Bills</button>
-					<button class="box-button" id="trans-3-button">View Transactions</button>
-					<button class="issue-button" onclick="window.location='missing.html'">Report Issue</button>
+				<p>Card Type: Credit Card</p>
+				<p>Card Number: 4321 4321 4321 4321</p>
+				<p>Limit: 50000.00</p>
+				<p>Available:</p>
+				<p class="balance">40000.00</p>
+				<p>Currency: EGP</p>
+				<br>
+				<button class="box-button" id="trans-3-button">View Transactions</button>
+				<button class="issue-button" onclick="window.location='missing.html'">Report Issue</button>
 			</div>
+
 		</div>
-		<label for="view-button" style="font-size: 20px; font-family: sans-serif; margin-right: 40px;">Total Points: </label>
+		<label for="view-button" style="font-size: 20px; font-family: sans-serif;">Total Points: </label><p id="total-points" style="font-size: 30;">1500</p>
 		<button style="border: 2px solid white; margin-right: 10px;" class="extra-button" onclick="window.location='points.html'" id="view-button">View Points</button>
 
 		<div class="panel" id="trans1panel">
@@ -246,27 +247,7 @@
 				<table>
 					<tr>
 						<th>Date</th>
-						<th>Description</th>
 						<th>Amount</th>
-						<th>Category</th>
-					</tr>
-					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Clothing</td>
-						<td>EGP100.00</td>
-						<td>Fashion</td>
-					</tr>
-					<tr>
-						<td>2023-05-18</td>
-						<td>ATM Withdrawal</td>
-						<td>EGP50.00</td>
-						<td>Finance</td>
-					</tr>
-					<tr>
-						<td>2023-05-16</td>
-						<td>Online Payment: Entertainment</td>
-						<td>EGP20.00</td>
-						<td>Entertainment</td>
 					</tr>
 				</table>
 			</div>
@@ -275,64 +256,29 @@
 			<div class="table-container">
 				<table>
 					<tr>
-						<th>Date</th>
 						<th>Description</th>
+						<th>Date</th>
 						<th>Amount</th>
-						<th>Category</th>
 					</tr>
 					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Electronics</td>
-						<td>€200.00</td>
-						<td>Technology</td>
+						<td>Purchase</td>
+						<td>22-05-2023</td>
+						<td>200.00</td>
 					</tr>
 					<tr>
-						<td>2023-05-18</td>
-						<td>ATM Withdrawal</td>
-						<td>€100.00</td>
-						<td>Finance</td>
+						<td>Withdrawal</td>
+						<td>21-05-2023</td>
+						<td>100.00</td>
 					</tr>
 					<tr>
-						<td>2023-05-16</td>
-						<td>Online Payment: Travel</td>
-						<td>€50.00</td>
-						<td>Travel</td>
+						<td>Purchase</td>
+						<td>20-05-2023</td>
+						<td>50.00</td>
 					</tr>
 					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Electronics</td>
-						<td>€200.00</td>
-						<td>Technology</td>
-					</tr>
-					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Electronics</td>
-						<td>€200.00</td>
-						<td>Technology</td>
-					</tr>
-					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Electronics</td>
-						<td>€200.00</td>
-						<td>Technology</td>
-					</tr>
-					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Electronics</td>
-						<td>€200.00</td>
-						<td>Technology</td>
-					</tr>
-					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Electronics</td>
-						<td>€200.00</td>
-						<td>Technology</td>
-					</tr>
-					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Electronics</td>
-						<td>€200.00</td>
-						<td>Technology</td>
+						<td>Purchase</td>
+						<td>19-05-2023</td>
+						<td>200.00</td>
 					</tr>
 				</table>
 			</div>
@@ -341,58 +287,14 @@
 			<div class="table-container">
 				<table>
 					<tr>
-						<th>Date</th>
 						<th>Description</th>
+						<th>Date</th>
 						<th>Amount</th>
-						<th>Category</th>
 					</tr>
 					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Groceries</td>
-						<td>$50.00</td>
-						<td>Grocery</td>
-					</tr>
-					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Groceries</td>
-						<td>$50.00</td>
-						<td>Grocery</td>
-					</tr>
-					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Groceries</td>
-						<td>$50.00</td>
-						<td>Grocery</td>
-					</tr>
-					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Groceries</td>
-						<td>$50.00</td>
-						<td>Grocery</td>
-					</tr>
-					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Groceries</td>
-						<td>$50.00</td>
-						<td>Grocery</td>
-					</tr>
-					<tr>
-						<td>2023-05-20</td>
-						<td>Purchase: Groceries</td>
-						<td>$50.00</td>
-						<td>Grocery</td>
-					</tr>
-					<tr>
-						<td>2023-05-18</td>
-						<td>Online Payment: Utilities</td>
-						<td>$80.00</td>
-						<td>Utilities</td>
-					</tr>
-					<tr>
-						<td>2023-05-16</td>
-						<td>Purchase: Dining</td>
-						<td>$30.00</td>
-						<td>Food</td>
+						<td>Purchase</td>
+						<td>31-05-2023</td>
+						<td>10000.00</td>
 					</tr>
 				</table>
 			</div>
@@ -417,6 +319,15 @@
     <div class="rightbar"> </div>
 
 	<script>
+
+			document.addEventListener("DOMContentLoaded", function() {
+			var element = document.getElementById("2-balance");
+			element.textContent = localStorage.getItem("2-balance");
+			var element = document.getElementById("total-points");
+			element.textContent = localStorage.getItem("total-points");
+			});
+
+
 
 		var sidebartmp = document.getElementById("sidebar-id");
         var sidebarbuttontmp = document.getElementById("sidebar-button-id");
