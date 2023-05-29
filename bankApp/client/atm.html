@@ -43,10 +43,13 @@
       height: 40px;
       padding: 0 20px;
       font-size: 16px;
-      background-color: #007bff;
+      background-color: rgb(37, 125, 132);
       color: #fff;
       border: none;
       cursor: pointer;
+    }
+    .search-form button:hover {
+      background-color: rgb(84, 199, 199);
     }
 
     .atm-list {
@@ -86,12 +89,12 @@
   <div class="container">
     <h1>ATM Locator</h1>
 
-    <form class="search-form">
-      <input type="text" placeholder="Enter location">
+    <form class="search-form" onsubmit="searchLocations(event)" oninput="searchLocations(event)">
+      <input id="locationInput" type="text" placeholder="Enter location">
       <button type="submit">Search</button>
     </form>
 
-    <ul class="atm-list">
+    <ul id="atmList" class="atm-list">
       <li>
         <div>
           <p class="atm-name">ATM #01</p>
@@ -130,6 +133,30 @@
       <!-- Add more ATM locations as needed -->
     </ul>
   </div>
+
+  <script>
+    function searchLocations(event) {
+      event.preventDefault();
+      
+      var locationInput = document.getElementById("locationInput");
+      var searchTerm = locationInput.value.trim().toLowerCase();
+      
+      var atmList = document.getElementById("atmList");
+      var atmItems = atmList.getElementsByTagName("li");
+
+      for (var i = 0; i < atmItems.length; i++) {
+        var atmItem = atmItems[i];
+        var atmAddress = atmItem.getElementsByClassName("atm-address")[0];
+        var addressText = atmAddress.textContent.toLowerCase();
+
+        if (addressText.includes(searchTerm)) {
+          atmItem.style.display = "flex";
+        } else {
+          atmItem.style.display = "none";
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>
