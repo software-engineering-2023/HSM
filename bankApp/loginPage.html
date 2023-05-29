@@ -115,11 +115,14 @@
             margin-left: 20px;
             padding: 10px 20px;
             color: rgb(255, 255, 255);
-            background-color: #4222c2;
+            background-color: #005EB8;
             border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+        }
+        .header-button:hover{
+            background-color: #002776;
         }
 
         .carousel-button:hover {
@@ -226,7 +229,7 @@
 
             carouselButton.addEventListener('click', function() {
                 // Redirect to related content
-                window.location.href = 'related_content.html';
+                window.location.href = 'content.html';
             });
         });
 
@@ -285,7 +288,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <a href="home.html" class="logo"></a>
+            <a href="loginPage.html" class="logo"></a>
             <div class="header-buttons">
                 <button class="header-button" id="login-button">Login</button>
                 <a href = "register.html"  class="header-button">Register</a>
@@ -299,7 +302,7 @@
                     <input type="text" id="username" placeholder="Username" />
                     <input type="password" id="password" placeholder="Password" />
                     <button>Login</button>
-                    <p><a href="#">Forgot password?</a></p>
+                    <p><a href="forgetpassword.html">Forgot password?</a></p>
                 </form>
             </div>
         </div>
