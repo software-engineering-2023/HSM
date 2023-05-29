@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../universalstyles.css">
+    <title>Loan Installments Payment</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      #header {
+        text-align: center;
+        padding: 20px;
+      }
+      #options {
+        text-align: center;
+        margin-top: 50px;
+      }
+      .extra-button {
+      border-radius: 10px;
+    }
+      .popup {
+        display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      border: 1px solid lightgray;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      }
+      .popup .title {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .popup .dropdown {
+        margin-bottom: 10px;
+      }
+      .popup .cancel {
+        position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: darkred;
+      color: white;
+      padding: 5px 10px;
+      font-size: 14px;
+      border-radius: 10px;
+      cursor:pointer;
+      }
+      .popup .cancel:hover {
+      background-color: rgb(107, 0, 0);
+    }
+      .popup .amount {
+        margin-bottom: 10px;
+      }
+      .popup .due-date {
+        margin-bottom: 10px;
+      }
+      .popup .confirm {
+        margin-top: 10px;
+        position: absolute;
+        bottom: 10px;
+        background-color: #45a049;
+        color: white;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 10px;
+        cursor:pointer;
+      }
+      .popup .confirm:hover {
+      background-color: #3b873f;
+    }
+    </style>
+  </head>
+  <body>
+    <header>
+        <div class="header">
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">
+                    <img id="bell" src="../Bell.png" alt="bell">
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Announcement: Updated terms and conditions</a>
+                    <a href="#">Reminder: Pay electricity bill</a>
+                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
+            
+            <img id="logo" src="../logo_text.png" alt="Logo">
+
+            <button class="logout-button" onclick="window.location='../loginPage.html'">
+                <img id="logout" src="../logout.png" alt="logout">
+            </button>
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="viewReminders.html">Reminders</a></li>
+                <br>
+                <li><a href="bills.html">Bills</a></li>
+                <br><br><br>
+                <li><a href="../loginPage.html">Log Out</a></li>
+            </ul>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">
+            <img id="menu-logo" src="../menu.png" alt="menu">
+        </button>
+
+        </div>
+
+    </header>
+        
+    <main class="main-area">
+    <div id="header">
+      <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Loan Installments Payment</h1>
+      <div class="amount">Amount Due:</div> <div id="instBill2page">25000.00</div>
+    </div>
+    <div id="options">
+      <h2>Payment Options:</h2>
+      <button class="extra-button" id="full-amount-btn">Pay Full Amount</button>
+    <br>
+    <button class="redirect-button" onclick="window.location='bills.html'">Go to All Bills</button>
+    <button class="redirect-button" onclick="window.location='loan.html'">Go to Loans</button>
+  </div>
+
+    <div id="full-amount-pay" class="popup">
+      <h3 class="title">Choose the account you want to pay from:</h3>
+      <br>
+      <div class="dropdown">
+        <label for="account-select">Your Accounts:</label>
+        <br><br>
+        <select id="account-select" required>
+            <option value="111111111111">111111111111</option>
+            <option value="222222222222">222222222222</option>
+            <option value="333333333333">333333333333</option>
+        </select>
+      </div>
+      <br><br><br>
+      <button class="confirm">Confirm Payment</button>
+      <button class="cancel">Cancel</button>
+    </div>
+  </main>
+  
+  <br><br><br><br>
+  <div class="footer">
+    <footer>
+      <br><br>
+      <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+      <br><br><br>
+      &copy; 2023 HSM Bank. All rights reserved.
+      <br><br><br>
+      <img id="flower" src="../Flower.png" alt="Logo">
+  </footer>
+  </div>
+  <div class="rightbar"> </div>
+
+    <script>
+      const fullAmountBtn = document.getElementById('full-amount-btn');
+      const fullAmountPay = document.getElementById('full-amount-pay');
+      const cancelBtns = document.querySelectorAll('.popup .cancel');
+      const confirmBtn = document.querySelector('.popup .confirm');
+      const loanSelect = document.getElementById('loan-select');
+      const amountText = document.querySelector('.popup .amount');
+      const dueDateText = document.querySelector('.popup .due-date');
+      const accountSelect = document.getElementById('account-select');
+
+      fullAmountBtn.addEventListener('click', () => {
+        fullAmountPay.style.display = 'block';
+      });
+
+      cancelBtns.forEach((cancelBtn) => {
+        cancelBtn.addEventListener('click', () => {
+          fullAmountPay.style.display = 'none';
+        });
+      });
+
+      confirmBtn.addEventListener('click', () => {
+        const selectedLoan = loanSelect.value;
+        const selectedOption = document.querySelector(
+          `#loan-select option[value='${selectedLoan}']`
+        );
+        selectedOption.remove();
+
+        fullAmountPay.style.display = 'none';
+        alert('Payment settled successfully. Thank you!');
+      });
+
+      loanSelect.addEventListener('change', () => {
+        updatePaymentDetails();
+      });
+
+      function updatePaymentDetails() {
+        const selectedLoan = loanSelect.value;
+        if (selectedLoan === 'Loan 1') {
+          amountText.textContent = 'Amount Due: 2,000.00 EGP';
+          dueDateText.textContent = 'Due Date: 28/05/2023';
+        } else if (selectedLoan === 'Loan 2') {
+          amountText.textContent = 'Amount Due: 15,000.00 EGP';
+          dueDateText.textContent = 'Due Date: 28/05/2024';
+        } else if (selectedLoan === 'Loan 3') {
+          amountText.textContent = 'Amount Due: 1,000.00 USD';
+          dueDateText.textContent = 'Due Date: 30/9/2023';
+        } else {
+          amountText.textContent = '';
+          dueDateText.textContent = '';
+        }
+      }
+
+      var sidebartmp = document.getElementById("sidebar-id");
+      var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+      sidebarbuttontmp.addEventListener("click", () => {
+          if(sidebartmp.style.width === "45px"){
+              sidebartmp.style.width = "200px";
+              sidebarbuttontmp.style.left="180px";
+          }else{
+              sidebartmp.style.width = "45px";
+              sidebarbuttontmp.style.left="23px";
+          }
+      });
+    </script>
+  </body>
+</html>
+
