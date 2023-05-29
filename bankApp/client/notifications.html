@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 	<link rel="stylesheet" href="../universalstyles.css">
@@ -89,6 +89,154 @@
 		<div class="notification">This is a notification. Welcome to the banking system.</div>
 		<div class="notification">sherifasherifasherifasherifasherifasherifa</div>
 		<div class="notification">RAAAAAAAAAAAAAAAAAAAAAAAA</div>
+	</div>
+</main>
+    
+<br><br><br><br>
+<div class="footer">
+	<footer>
+		<br><br>
+		<a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
+		<br><br><br>
+		&copy; 2023 HSM Bank. All rights reserved.
+		<br><br><br>
+		<img id="flower" src="../Flower.png" alt="Logo">
+	</footer>
+</div>
+<div class="rightbar"> </div>
+
+<script>
+	var sidebartmp = document.getElementById("sidebar-id");
+	var sidebarbuttontmp = document.getElementById("sidebar-button-id");
+	sidebarbuttontmp.addEventListener("click", () => {
+		if(sidebartmp.style.width === "45px"){
+			sidebartmp.style.width = "200px";
+			sidebarbuttontmp.style.left="180px";
+		}else{
+			sidebartmp.style.width = "45px";
+			sidebarbuttontmp.style.left="23px";
+		}
+	});
+
+</script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="../universalstyles.css">
+	<title>Banking System Notifications</title>
+	<style>
+		.notification-container {
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: center;
+		  align-items: center;
+		  /* height: 100vh; */
+		  width: 100%;
+		  margin: 0;
+		  padding: 0;
+		  background-color: #f2f2f2;
+		}
+		.notification-heading {
+		  color: black;
+		  font-weight: bold;
+		  font-family: 'Times New Roman', Times, serif;
+		  font-size: 24px;
+		  margin-bottom: 10px;
+		}
+		.notification {
+		  background-color: white;
+		  border: 2px solid #4CAF50;
+		  color: black;
+		  padding: 10px;
+		  font-size: 16px;
+		  margin-bottom: 10px;
+		  max-width: 400px;
+		  text-align: center;
+		  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+		  border-radius: 5px;
+		}
+		.notification-announcement {
+		  background-color: rgb(255, 255, 255)0;
+		  border-color: rgb(84, 199, 199);
+		}
+		.notification-reminder {
+		  background-color: rgb(255, 255, 255);
+		  border-color: rgb(84, 199, 199);
+		}
+		.notification-issue {
+		  background-color: #ffffff;
+		  border-color:  rgb(84, 199, 199);
+		}
+	</style>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div class="dropdown">
+                <button class="notification-button" onclick="window.location='notifications.html'">
+                    <img id="bell" src="../Bell.png" alt="bell">
+                </button>
+                <div class="dropdown-content">
+                    <a href="#" class="notification-announcement">Announcement: Updated terms and conditions</a>
+                    <a href="#" class="notification-reminder">Reminder: Pay electricity bill</a>
+                    <a href="#" class="notification-issue">Issue Resolution: Thank you for reaching out to be...</a>
+                </div>
+            </div>
+            
+            <img id="logo" src="../logo_text.png" alt="Logo">
+
+            <button class="logout-button" onclick="window.location='../loginPage.html'">
+                <img id="logout" src="../logout.png" alt="logout">
+            </button>
+        </div>
+
+        <div class="sidebar" id="sidebar-id">
+            <ul>
+                <br><br><br><br>
+                <li><a href="client.html">Home</a></li>
+                <br>
+                <li><a href="transfer.html">Transfer</a></li>
+                <br>
+                <li><a href="accounts.html">Accounts</a></li>
+                <br>
+                <li><a href="loan.html">Loans</a></li>
+                <br>
+                <li><a href="cards.html">Cards</a></li>
+                <br>
+                <li><a href="viewReminders.html">Reminders</a></li>
+                <br>
+                <li><a href="bills.html">Bills</a></li>
+                <br><br><br>
+                <li><a href="../loginPage.html">Log Out</a></li>
+            </ul>
+        </div>
+        <button class="sidebar-button" id="sidebar-button-id">
+            <img id="menu-logo" src="../menu.png" alt="menu">
+        </button>
+
+        </div>
+
+    </header>
+        
+    <main class="main-area">
+
+		<div style="text-align:center;">
+			<br><br>
+			<h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Notifications</h1>
+		</div>
+
+	<div class="notification-container">
+		<h2 class="notification-heading">Announcements</h2>
+		<div class="notification notification-announcement">Update to our Terms & Conditions.</div>
+		<h2 class="notification-heading">Reminders</h2>
+		<div class="notification notification-reminder">Electricity Bill due on 2/6/2023.</div>
+		<div class="notification notification-reminder">Phone Bill due on 7/6/2023.</div>
+		<h2 class="notification-heading">Issue Resolution</h2>
+		<div class="notification notification-issue">An update to complaint #234: Issue resolved successfully, thank you for reaching out to us.</div>
 	</div>
 </main>
     
