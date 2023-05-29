@@ -3,9 +3,13 @@
 <head>
     <title>Close Client Accounts</title>
     <style>
+        /* CSS styles */
+
         body {
-            font-family: sans-serif;
-            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
         }
 
         .container {
@@ -34,19 +38,23 @@
 
         .search-form button {
             padding: 8px 16px;
-            background-color: #4CAF50;
+            background-color: rgb(37, 125, 132);
             color: white;
             border: none;
             cursor: pointer;
         }
 
+        .search-form button:hover {
+            background-color: rgb(84, 199, 199);
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
-            display: none;
         }
 
-        th, td {
+        th,
+        td {
             padding: 8px;
             border-bottom: 1px solid #ddd;
             text-align: left;
@@ -103,13 +111,17 @@
             border: none;
             cursor: pointer;
         }
+
+        .close-account-button:hover {
+            background-color: rgb(192, 8, 8);
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Close Client Accounts</h1>
         <div class="search-form">
-            <input type="text" id="clientIdInput" placeholder="Client ID">
+            <input type="text" id="clientIdInput" placeholder="Client ID" oninput="searchAccounts()">
             <button id="searchButton">Search</button>
         </div>
         <table id="accountTable">
@@ -143,7 +155,7 @@
         var span = document.getElementsByClassName("close")[0];
 
         // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
+        span.onclick = function () {
             modal.style.display = "none";
         };
 
@@ -152,7 +164,18 @@
         var clientIdInput = document.getElementById("clientIdInput");
 
         // Add event listener to the search button
-        document.getElementById("searchButton").addEventListener("click", function() {
+        document.getElementById("searchButton").addEventListener("click", searchAccounts);
+
+        // Submit the form when Enter key is pressed in the input field
+        function submitOnEnter(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                searchAccounts();
+            }
+        }
+
+        // Function to search for accounts based on client ID
+        function searchAccounts() {
             var clientId = clientIdInput.value.trim();
 
             if (clientId === "12345") {
@@ -163,10 +186,10 @@
                 // Add new rows with mock data
                 addMockRows();
             } else {
-                // Display an alert if no accounts found
-                alert("No accounts found");
+                // Hide the table if no accounts found
+                table.style.display = "none";
             }
-        });
+        }
 
         // Function to add mock rows to the table
         function addMockRows() {
@@ -189,7 +212,7 @@
                 `;
 
                 // Add click event listener to each row
-                row.addEventListener("click", function() {
+                row.addEventListener("click", function () {
                     showModal(this);
                 });
             }
@@ -212,6 +235,24 @@
             // Show the modal
             modal.style.display = "block";
         }
+
+        // Confirm and delete account when the close account button is clicked
+        document.querySelector('.close-account-button').addEventListener('click', function () {
+            var result = confirm("Are you sure you want to close this account?");
+
+            if (result) {
+                // Delete the account and remove the row
+                var selectedRow = document.querySelector("#accountTable tbody tr:hover");
+                if (selectedRow) {
+                    selectedRow.remove();
+                }
+
+                alert("Account has been closed.");
+                modal.style.display = "none";
+            } else {
+                modal.style.display = "none";
+            }
+        });
     </script>
 </body>
 </html>
