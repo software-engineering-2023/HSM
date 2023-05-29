@@ -121,6 +121,7 @@
           </button>
   
           </div>
+          
   
       </header>
           
@@ -169,6 +170,7 @@
     <div class="rightbar"> </div>
   
       <script>
+
         const fullAmountBtn = document.getElementById('full-amount-btn');
         const fullAmountPay = document.getElementById('full-amount-pay');
         const cancelBtns = document.querySelectorAll('.popup .cancel');
@@ -194,6 +196,7 @@
             `#loan-select option[value='${selectedLoan}']`
           );
           selectedOption.remove();
+
   
           fullAmountPay.style.display = 'none';
           alert('Payment settled successfully. Thank you!');

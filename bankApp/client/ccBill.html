@@ -256,7 +256,7 @@
             var storedBalance = parseFloat(localStorage.getItem(balanceid)); //40000.00
             var storedBill = parseFloat(localStorage.getItem("ccbill1"));
             if(storedBill>storedBalance){
-                alert("You do not have enough in your account for this transaction.");
+                alert("You do not have enough balance in your account for this transaction.");
                 return;
             }else{
                 alert("Successful Transaction.");
