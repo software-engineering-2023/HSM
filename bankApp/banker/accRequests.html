@@ -5,26 +5,36 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 40px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
+            margin-top: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
         }
 
         th, td {
-            padding: 8px;
+            padding: 12px 20px;
             border-bottom: 1px solid #ddd;
             text-align: left;
         }
 
         th {
             background-color: #f2f2f2;
+            font-weight: bold;
+            color: #333;
         }
 
         tr:hover {
             background-color: #f5f5f5;
-            cursor: pointer;
         }
 
         .info-window {
@@ -37,6 +47,8 @@
             border: 1px solid #ccc;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
             display: none;
+            max-width: 400px;
+            width: 90%;
         }
 
         .info-window h2 {
@@ -51,17 +63,40 @@
             position: absolute;
             top: 10px;
             right: 10px;
+            font-size: 18px;
+            color: #999;
             cursor: pointer;
         }
 
-        .accept-button {
+        .accept-button,
+        .reject-button {
             display: inline-block;
-            padding: 8px 16px;
+            padding: 10px 20px;
             background-color: #4CAF50;
             color: white;
             border: none;
             cursor: pointer;
             border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        .reject-button {
+            background-color: #FF5252;
+        }
+
+        .status-accepted {
+            color: green;
+            font-weight: bold;
+        }
+
+        .status-rejected {
+            color: red;
+            font-weight: bold;
+        }
+
+        .status-pending {
+            color: orange;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -72,20 +107,19 @@
             <th>Client Username</th>
             <th>Client ID</th>
             <th>Date Requested</th>
-            <!-- Add more table headers for additional info -->
+            <th>Status</th>
         </tr>
         <tr>
             <td>John Doe</td>
             <td>12345</td>
             <td>2023-05-01</td>
-            <!-- Add more table cells for additional info -->
+            <td class="status-pending">Pending</td>
         </tr>
-        <!-- Add more table rows with mock entries -->
         <tr>
             <td>Jane Smith</td>
             <td>67890</td>
             <td>2023-05-05</td>
-            <!-- Add more table cells for additional info -->
+            <td class="status-pending">Pending</td>
         </tr>
         <!-- Add more table rows with mock entries -->
         <!-- Add 20 more table rows -->
@@ -93,13 +127,13 @@
             <td>Emily Johnson</td>
             <td>24680</td>
             <td>2023-05-10</td>
-            <!-- Add more table cells for additional info -->
+            <td class="status-pending">Pending</td>
         </tr>
         <tr>
             <td>Michael Smith</td>
             <td>13579</td>
             <td>2023-05-15</td>
-            <!-- Add more table cells for additional info -->
+            <td class="status-pending">Pending</td>
         </tr>
         <!-- Add more table rows with mock entries -->
         <!-- Add 20 more table rows -->
@@ -107,13 +141,13 @@
             <td>William Davis</td>
             <td>98765</td>
             <td>2023-05-20</td>
-            <!-- Add more table cells for additional info -->
+            <td class="status-pending">Pending</td>
         </tr>
         <tr>
             <td>Olivia Johnson</td>
             <td>54321</td>
             <td>2023-05-25</td>
-            <!-- Add more table cells for additional info -->
+            <td class="status-pending">Pending</td>
         </tr>
     </table>
 
@@ -123,26 +157,65 @@
         <p><strong>Client Username:</strong> <span class="username"></span></p>
         <p><strong>Client ID:</strong> <span class="id"></span></p>
         <p><strong>Date Requested:</strong> <span class="date"></span></p>
-        <!-- Add more information fields as needed -->
-        <button class="accept-button">Accept Request</button>
+        <div>
+            <button class="accept-button">Accept</button>
+            <button class="reject-button">Reject</button>
+        </div>
     </div>
 
-    <script>
+   <script>
         var rows = document.getElementsByTagName('tr');
         for (var i = 1; i < rows.length; i++) {
             rows[i].addEventListener('click', function() {
                 var username = this.cells[0].innerText;
                 var id = this.cells[1].innerText;
                 var date = this.cells[2].innerText;
+                var status = this.cells[3].innerText;
 
                 var infoWindow = document.querySelector('.info-window');
                 var usernameElement = infoWindow.querySelector('.username');
                 var idElement = infoWindow.querySelector('.id');
                 var dateElement = infoWindow.querySelector('.date');
+                var acceptButton = infoWindow.querySelector('.accept-button');
+                var rejectButton = infoWindow.querySelector('.reject-button');
 
                 usernameElement.innerText = username;
                 idElement.innerText = id;
                 dateElement.innerText = date;
+
+                // Reset button states and remove previous event listeners
+                acceptButton.disabled = false;
+                acceptButton.classList.remove('status-accepted');
+                acceptButton.removeEventListener('click', handleAccept);
+
+                rejectButton.disabled = false;
+                rejectButton.classList.remove('status-rejected');
+                rejectButton.removeEventListener('click', handleReject);
+
+                // Set initial button states based on status
+                if (status === 'Accepted') {
+                    acceptButton.disabled = true;
+                    acceptButton.classList.add('status-accepted');
+                } else if (status === 'Rejected') {
+                    rejectButton.disabled = true;
+                    rejectButton.classList.add('status-rejected');
+                }
+
+                // Store the selected row
+                var selectedRow = this;
+                // Add 'selected' class to the selected row
+                selectedRow.classList.add('selected');
+
+                // Add event listeners to the accept and reject buttons
+                acceptButton.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    handleAccept(selectedRow);
+                });
+
+                rejectButton.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    handleReject(selectedRow);
+                });
 
                 infoWindow.style.display = 'block';
             });
@@ -154,17 +227,33 @@
             infoWindow.style.display = 'none';
         });
 
-        var acceptBtn = document.querySelector('.accept-button');
-        acceptBtn.addEventListener('click', function(event) {
-            event.stopPropagation();
-            var infoWindow = document.querySelector('.info-window');
-            infoWindow.style.display = 'none';
+        // ...
 
-            var selectedRow = document.querySelector('tr.selected');
-            if (selectedRow) {
-                selectedRow.remove();
-            }
-        });
+        function handleAccept(row) {
+    var statusCell = row.cells[3];
+    if (statusCell.textContent === 'Pending') {
+        statusCell.innerHTML = '<span class="status-accepted">Accepted</span>';
+        row.classList.remove('selected');
+        closeInfoWindow();
+    }
+}
+
+function handleReject(row) {
+    var statusCell = row.cells[3];
+    if (statusCell.textContent === 'Pending') {
+        statusCell.innerHTML = '<span class="status-rejected">Rejected</span>';
+        row.classList.remove('selected');
+        closeInfoWindow();
+    }
+}
+
+function closeInfoWindow() {
+    var infoWindow = document.querySelector('.info-window');
+    infoWindow.style.display = 'none';
+}
+
+// ...
+
     </script>
 </body>
 </html>
