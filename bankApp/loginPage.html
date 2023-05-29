@@ -219,7 +219,7 @@
 
             function carousel() {
                 counter++;
-                if (counter >= carouselImages.length) {
+                if (counter > carouselImages.length-3) {
                     counter = 0;
                 }
                 carouselSlide.style.transform = `translateX(${-counter * 100}%)`;
@@ -323,6 +323,8 @@
                     <img src="image4.jpeg" alt="Image 4">
                     <img src="image5.jpg" alt="Image 5">
                     <img src="car.jpg" alt="Image 6">
+                    <img src="image6.png" alt="Image 7">
+                    <img src="image2.jpg" alt="Image 2">
                 </div>
                 <button class="carousel-button">Learn More</button>
             </div>
