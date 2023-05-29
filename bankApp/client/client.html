@@ -184,8 +184,6 @@
         document.addEventListener("DOMContentLoaded", function(){
 
             var storedBalance2 = localStorage.getItem("2-balance");
-            var storedBalance3 = localStorage.getItem("3-balance");
-            var storedBalance1 = localStorage.getItem("1-balance");
 
             if(storedBalance2){
                 return;
@@ -198,6 +196,20 @@
                 localStorage.setItem("1-balance", bal.toFixed(2));
                 bal=1500;
                 localStorage.setItem("total-points", bal.toFixed());
+                bal=84550.00;
+                localStorage.setItem("total-bills", bal.toFixed(2));
+                bal=10000.00;
+                localStorage.setItem("ccbill1", bal.toFixed(2));
+                bal=550.00;
+                localStorage.setItem("ccbill2", bal.toFixed(2));
+                bal=25000.00;
+                localStorage.setItem("loanbill1", bal.toFixed(2));
+                bal=25000.00;
+                localStorage.setItem("loanbill1", bal.toFixed(2));
+                bal=17000.00;
+                localStorage.setItem("ebill", bal.toFixed(2));
+                bal=7000.00;
+                localStorage.setItem("phbill", bal.toFixed(2));
             }
 
         });
