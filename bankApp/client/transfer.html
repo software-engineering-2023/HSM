@@ -38,6 +38,20 @@
             margin-left: 110px;
         }
 
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+			margin-bottom: 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -102,20 +116,27 @@
 
         <panel id="internal-panel">
             <form onsubmit="handleInternalTransfer(event)">                
-                <label for="amount">Amount:</label>
-                <input type="text" id="amount1" name="amount" required>
+                <label for="amount">Amount: (num)</label>
+                <input type="text" id="amount1" name="amount" pattern="\d+" placeholder="1234" required>
 
-                <label for="currency">Currency:</label>
-                <input type="text" id="currency1" name="currency" required>
+                <label for="currency1">Currency:</label>
+                <select id="currency1" name="currency1" required>
+                    <option value="" disabled selected>Currency</option>
+                    <option value="EGYP">EGP</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
 
                 <label for="to-account">To Account:</label>
-                <input type="text" id="to-account1" name="to-account" required>
+                <input type="text" id="to-account1" name="to-account" pattern="\d+" required>
 
-                <label for="from-account">From Account:</label>
-                <input type="text" id="from-account1" name="from-account" required>
-
-                <label for="beneficiary-name">Beneficiary Name:</label>
-                <input type="text" id="beneficiary-name1" name="beneficiary-name" required>
+                <label for="from-account1">From Account::</label>
+                <select id="from-account1" name="from-account1" required>
+                    <option value="" disabled selected>Account No.</option>
+                    <option value="111111111111">111111111111</option>
+                    <option value="222222222222">222222222222</option>
+                    <option value="333333333333">333333333333</option>
+                </select>
 
                 <input type="submit" value="Transfer">
 	        </form>
@@ -123,17 +144,26 @@
 
         <panel id="domestic-panel">
             <form onsubmit="handleDomesticTransfer(event)">
-                <label for="amount">Amount:</label>
-                <input type="text" id="amount2" name="amount" required>
+                <label for="amount">Amount: (num)</label>
+                <input type="text" id="amount2" name="amount" pattern="\d+" placeholder="1234" required>
         
-                <label for="currency">Currency:</label>
-                <input type="text" id="currency2" name="currency" required>
+                <label for="currency2">Currency:</label>
+                <select id="currency2" name="currency2" required>
+                    <option value="" disabled selected>Currency</option>
+                    <option value="EGYP">EGP</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
         
                 <label for="to-account">To Account:</label>
                 <input type="text" id="to-account2" name="to-account" required>
         
-                <label for="from-account">From Account:</label>
-                <input type="text" id="from-account2" name="from-account" required>
+                <label for="from-account2">From Account::</label>
+                <select id="from-account2" name="from-account2" required>
+                    <option value="" disabled selected>Account No.</option>
+                    <option value="222222222222">222222222222</option>
+                    <option value="333333333333">333333333333</option>
+                </select>
         
                 <label for="beneficiary-name">Beneficiary Name:</label>
                 <input type="text" id="beneficiary-name2" name="beneficiary-name" required>
@@ -144,17 +174,26 @@
 
         <panel id="international-panel">
             <form onsubmit="handleInternationalTransfer(event)">
-                <label for="amount">Amount:</label>
-                <input type="text" id="amount3" name="amount" required>
+                <label for="amount">Amount: (num)</label>
+                <input type="text" id="amount3" name="amount" pattern="\d+" placeholder="1234" required>
         
-                <label for="currency">Currency:</label>
-                <input type="text" id="currency3" name="currency" required>
+                <label for="currency3">Currency:</label>
+                <select id="currency3" name="currency3" required>
+                    <option value="" disabled selected>Currency</option>
+                    <option value="EGYP">EGP</option>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                </select>
         
                 <label for="to-account">To Account:</label>
                 <input type="text" id="to-account3" name="to-account" required>
         
-                <label for="from-account">From Account:</label>
-                <input type="text" id="from-account3" name="from-account" required>
+                <label for="from-account3">From Account::</label>
+                <select id="from-account3" name="from-account3" required>
+                    <option value="" disabled selected>Account No.</option>
+                    <option id="2-accnum" value="222222222222">222222222222</option>
+                    <option id="3-accnum" value="333333333333">333333333333</option>
+                </select>
         
                 <label for="beneficiary-name">Beneficiary Name:</label>
                 <input type="text" id="beneficiary-name3" name="beneficiary-name" required>
@@ -206,21 +245,21 @@
 
             const amount = document.getElementById("amount1").value;
             const currency = document.getElementById("currency1").value;
-            const toAccount = document.getElementById("to-account1").value;
             const fromAccount = document.getElementById("from-account1").value;
-            const beneficiaryName = document.getElementById("beneficiary-name1").value;
-
+            const toAccount = document.getElementById("to-account1").value;
 			
 			alert("Successful Transaction.");
+            updateBalance(document.getElementById("from-account1").value, parseFloat(document.getElementById("amount1").value));
+            updateTransaction(document.getElementById("from-account1").value, parseFloat(document.getElementById("amount1").value));
 			resetInternalForm();
+
         }
 
         function resetInternalForm() {
             document.getElementById("amount1").value = "";
             document.getElementById("currency1").value = "";
-            document.getElementById("to-account1").value = "";
             document.getElementById("from-account1").value = "";
-            document.getElementById("beneficiary-name1").value = "";
+            document.getElementById("to-account1").value = "";
         }
 
         ////////////////////
@@ -250,6 +289,9 @@
 
 			
             alert("Successful Transaction.");
+
+            updateBalance(document.getElementById("from-account2").value, parseFloat(document.getElementById("amount2").value));
+            updateTransaction(document.getElementById("from-account2").value, parseFloat(document.getElementById("amount2").value));
 			resetDomForm();
         }
 
@@ -289,6 +331,9 @@
             const swiftCode = document.getElementById("swift-code3").value;
 			
             alert("Successful Transaction.");
+
+            updateBalance(document.getElementById("from-account3").value, parseFloat(document.getElementById("amount3").value));
+            updateTransaction(document.getElementById("from-account3").value, parseFloat(document.getElementById("amount3").value));
 			resetInternationalForm();
         }
 
@@ -304,6 +349,48 @@
             document.getElementById("bank-address3").value = "";
         }
 
+        function updateBalance(accid,amount){
+            var balanceid;
+            if(accid == "222222222222"){
+                balanceid="2-balance";
+            }else if(accid == "111111111111"){
+                balanceid="1-balance";
+            }else{
+                balanceid="3-balance";
+            }
+            
+            var storedBalance = parseFloat(localStorage.getItem(balanceid));
+
+            var newbalance=parseFloat(storedBalance)-parseFloat(amount);
+            localStorage.setItem(balanceid, newbalance.toFixed(2));
+        }
+
+        function updateTransaction(accid, amount){
+            var newtransaction =
+            {
+                "Date": "01-06-2023",
+                "Amount": parseFloat(amount)
+            };
+
+            var transid;
+            if(accid == "222222222222"){
+                transid="transactions2";
+            }else if(accid == "111111111111"){
+                transid="transactions1";
+            }else{
+                transid="transactions3";
+            }
+
+
+            var transactions = JSON.parse(localStorage.getItem(transid)) || [];
+            
+            transactions.unshift(newtransaction);
+            localStorage.setItem(transid, JSON.stringify(transactions));
+            
+        }       
+
+
+
         var sidebartmp = document.getElementById("sidebar-id");
         var sidebarbuttontmp = document.getElementById("sidebar-button-id");
         sidebarbuttontmp.addEventListener("click", () => {
@@ -315,6 +402,8 @@
                 sidebarbuttontmp.style.left="23px";
             }
         });
+
+
 
     </script>
 

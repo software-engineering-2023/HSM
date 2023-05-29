@@ -174,7 +174,7 @@
 				<p>Type: Savings</p>
 				<p>Number: 111111111111 </p>
 				<p>Available Balance:</p>
-				<p class="balance">40,000</p>
+				<p id="1-balance" class="balance">40000.00</p>
 				<p>Currency: EGP</p>
 				<br>
 				<button class="box-button" id="trans-1-button">View Transactions</button>
@@ -187,7 +187,7 @@
 				<p>Type: Current</p>
 				<p>Number: 222222222222</p>
 				<p>Available Balance:</p>
-				<p class="balance">100,000</p>
+				<p id="2-balance" class="balance">1000000.00</p>
 				<p>Currency: EGP</p>
 				<br>
 				<button class="box-button" id="trans-2-button">View Transactions</button>
@@ -199,9 +199,9 @@
 
 			<div class="box" id="current2-id">
 				<p>Type: Current</p>
-				<p>Number: 333333333333</p>
+				<p id="3-accnum">Number: 333333333333</p>
 				<p>Available Balance:</p>
-				<p class="balance">300,000</p>
+				<p id="3-balance" class="balance">300000.00</p>
 				<p>Currency: EGP</p>
 				<br>
 				<button class="box-button" id="trans-3-button">View Transactions</button>
@@ -214,133 +214,40 @@
 				<p>Type: Certificate</p>
 				<p>Number: 444444444444</p>
 				<p>Available Balance:</p>
-				<p class="balance">1,000,000</p>
+				<p class="balance">1000000.00</p>
 				<p>Currency: EGP</p>
 				<br><br><br><br><br><br><br>
 				<button class="close-button" onclick="confirmAction()">Close Account</button>
 			</div>
 		</div>
+		<h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 20px;">Transactions</h1>
 		<br><br>
 		<div class="panel" id="trans1panel">
 			<div class="table-container">
-				<table>
+				<table id="table1">
 					<tr>
 						<th>Date</th>
 						<th>Amount</th>
-					</tr>
-					<tr>
-						<td>01-01-2023</td>
-						<td>$100.00</td>
-					</tr>
-					<tr>
-						<td>01-02-2023</td>>
-						<td>$50.00</td>
-					</tr>
-					<tr>
-						<td>01-03-2023</td>
-						<td>$75.00</td>
 					</tr>
 				</table>
 			</div>
 		</div>
 		<div class="panel" id="trans2panel">
 			<div class="table-container">
-				<table>
+				<table id="table2">
 					<tr>
 						<th>Date</th>
 						<th>Amount</th>
-					</tr>
-					<tr>
-						<td>01-31-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-30-2023</td>
-						<td>$150.00</td>
-					</tr>
-					<tr>
-						<td>01-29-2023</td>
-						<td>$100.00</td>
 					</tr>
 				</table>
 			</div>
 		</div>
 		<div class="panel" id="trans3panel">
 			<div class="table-container">
-				<table>
+				<table id="table3">
 					<tr>
 						<th>Date</th>
 						<th>Amount</th>
-					</tr>
-					<tr>
-						<td>01-28-2023</td>
-						<td>$300.00</td>
-					</tr>
-					<tr>
-						<td>01-27-2023</td>
-						<td>$250.00</td>
-					</tr>
-					<tr>
-						<td>01-26-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-25-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-24-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-23-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-22-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-21-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-20-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-19-2023</td>
-						<td>Transaction 9</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-18-2023</td>
-						<td>Transaction 9</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-17-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-16-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-15-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-14-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-13-2023</td>
-						<td>$200.00</td>
-					</tr>
-					<tr>
-						<td>01-12-2023</td>
-						<td>$200.00</td>
 					</tr>
 				</table>
 			</div>
@@ -366,6 +273,62 @@
     <div class="rightbar"> </div>
 
 <script>
+
+		document.addEventListener("DOMContentLoaded", function() {
+			var element = document.getElementById("2-balance");
+			element.textContent = localStorage.getItem("2-balance");
+			var element = document.getElementById("3-balance");
+			element.textContent = localStorage.getItem("3-balance");
+			var element = document.getElementById("1-balance");
+			element.textContent = localStorage.getItem("1-balance");
+
+			var tableBody = document.querySelector("#table2 tbody");
+			var savedTransactions = JSON.parse(localStorage.getItem("transactions2"));
+			if (savedTransactions && savedTransactions.length > 0) {
+
+				savedTransactions.forEach(function(transaction) {
+					var row = document.createElement("tr");
+					row.innerHTML = `
+					<td>${transaction.Date}</td>
+					<td>${transaction.Amount}</td>
+					`;
+
+					// Append the row to the table body
+					tableBody.appendChild(row);
+				});
+			}
+			var tableBody = document.querySelector("#table3 tbody");
+			var savedTransactions = JSON.parse(localStorage.getItem("transactions3"));
+			if (savedTransactions && savedTransactions.length > 0) {
+
+				savedTransactions.forEach(function(transaction) {
+					var row = document.createElement("tr");
+					row.innerHTML = `
+					<td>${transaction.Date}</td>
+					<td>${transaction.Amount}</td>
+					`;
+
+					// Append the row to the table body
+					tableBody.appendChild(row);
+				});
+			}
+			var tableBody = document.querySelector("#table1 tbody");
+			var savedTransactions = JSON.parse(localStorage.getItem("transactions1"));
+			if (savedTransactions && savedTransactions.length > 0) {
+
+				savedTransactions.forEach(function(transaction) {
+					var row = document.createElement("tr");
+					row.innerHTML = `
+					<td>${transaction.Date}</td>
+					<td>${transaction.Amount}</td>
+					`;
+
+					// Append the row to the table body
+					tableBody.appendChild(row);
+				});
+			}
+
+		});
 
 		function confirmAction(){
 			var retVal = confirm("Are you sure you want to do this?");
