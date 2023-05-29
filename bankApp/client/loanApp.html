@@ -145,22 +145,20 @@
 <script>
 
 function submitForm() {
-      // Get the form
+
       var form = document.getElementById("myForm");
 
-      // Get the gif
+
       var gif = document.getElementById("tickGif");
 
-      // Empty the form
+   
       form.reset();
 
-      // Show the gif
       gif.style.display = "block";
 
-      // Wait until the gif is done
       waitUntilGifIsDone("tickGif");
 
-      // Redirect the user
+
       window.location.href = "requests.html";
     }
 
