@@ -38,15 +38,16 @@
         border-radius: 10px;
       }
 
-      .option{
+      .option {
         background-color: rgb(37, 125, 132);
         color: white;
         padding: 5px 10px;
         font-size: 14px;
         border-radius: 10px;
-        cursor:pointer;
+        cursor: pointer;
       }
-      .option:hover{
+
+      .option:hover {
         background-color: rgb(30, 106, 112);
       }
 
@@ -68,14 +69,17 @@
         padding: 5px 10px;
         font-size: 14px;
         border-radius: 10px;
-        cursor:pointer;
+        cursor: pointer;
       }
+
       .popup .cancel:hover {
         background-color: rgb(107, 0, 0);
       }
+
       .popup .amount {
-        margin-bottom: 10prgb(110, 0, 0)
+        margin-bottom: 10px;
       }
+
       .popup .confirm {
         margin-top: 10px;
         position: absolute;
@@ -85,8 +89,9 @@
         padding: 5px 10px;
         font-size: 14px;
         border-radius: 10px;
-        cursor:pointer;
+        cursor: pointer;
       }
+
       .popup .confirm:hover {
         background-color: #3b873f;
       }
@@ -94,158 +99,154 @@
   </head>
   <body>
     <header>
-        <div class="header">
-            <div class="dropdown">
-                <button class="notification-button" onclick="window.location='notifications.html'">
-                    <img id="bell" src="../Bell.png" alt="bell">
-                </button>
-                <div class="dropdown-content">
-                    <a href="#">Announcement: Updated terms and conditions</a>
-                    <a href="#">Reminder: Pay electricity bill</a>
-                    <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
-                </div>
-            </div>
-            
-            <img id="logo" src="../logo_text.png" alt="Logo">
-
-            <button class="logout-button" onclick="window.location='../loginPage.html'">
-                <img id="logout" src="../logout.png" alt="logout">
-            </button>
+      <div class="header">
+        <div class="dropdown">
+          <button class="notification-button" onclick="window.location='notifications.html'">
+            <img id="bell" src="../Bell.png" alt="bell">
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Announcement: Updated terms and conditions</a>
+            <a href="#">Reminder: Pay electricity bill</a>
+            <a href="#">Issue Resolution: Thank you for reaching out to be...</a>
+          </div>
         </div>
 
-        <div class="sidebar" id="sidebar-id">
-            <ul>
-                <br><br><br><br>
-                <li><a href="client.html">Home</a></li>
-                <br>
-                <li><a href="transfer.html">Transfer</a></li>
-                <br>
-                <li><a href="accounts.html">Accounts</a></li>
-                <br>
-                <li><a href="loan.html">Loans</a></li>
-                <br>
-                <li><a href="cards.html">Cards</a></li>
-                <br>
-                <li><a href="viewReminders.html">Reminders</a></li>
-                <br>
-                <li><a href="bills.html">Bills</a></li>
-                <br><br><br>
-                <li><a href="../loginPage.html">Log Out</a></li>
-            </ul>
-        </div>
-        <button class="sidebar-button" id="sidebar-button-id">
-            <img id="menu-logo" src="../menu.png" alt="menu">
+        <img id="logo" src="../logo_text.png" alt="Logo">
+
+        <button class="logout-button" onclick="window.location='../loginPage.html'">
+          <img id="logout" src="../logout.png" alt="logout">
         </button>
+      </div>
 
-        </div>
-
+      <div class="sidebar" id="sidebar-id">
+        <ul>
+          <br><br><br><br>
+          <li><a href="client.html">Home</a></li>
+          <br>
+          <li><a href="transfer.html">Transfer</a></li>
+          <br>
+          <li><a href="accounts.html">Accounts</a></li>
+          <br>
+          <li><a href="loan.html">Loans</a></li>
+          <br>
+          <li><a href="cards.html">Cards</a></li>
+          <br>
+          <li><a href="viewReminders.html">Reminders</a></li>
+          <br>
+          <li><a href="bills.html">Bills</a></li>
+          <br><br><br>
+          <li><a href="../loginPage.html">Log Out</a></li>
+        </ul>
+      </div>
+      <button class="sidebar-button" id="sidebar-button-id">
+        <img id="menu-logo" src="../menu.png" alt="menu">
+      </button>
     </header>
-        
+
     <main class="main-area">
-    <div id="header">
-      <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Utility Bills Payment</h1>
-      <div id="amount" class="amount">Amount Due: 17,902.00 EGP</div>
-    </div>
-    <div id="options">
-      <h2>Payment Options:</h2>
-      <button class="extra-button" id="full-amount-btn">Pay Full Amount</button>
-      <button class="extra-button" id="third-party-btn">Pay Through a Third Party</button>
-    <br>
-    <button class="redirect-button" onclick="window.location='bills.html'">Go to All Bills</button>
-  </div>
-
-    <div id="full-amount-pay" class="popup">
-      <h3 class="title">Choose the account you want to pay from:</h3>
-      <div class="dropdown">
-        <label for="account-select">Your Accounts:</label>
-        <select id="account-select">
-          <option value="Account 1">Account 1</option>
-          <option value="Account 2">Account 2</option>
-          <option value="Account 3">Account 3</option>
-        </select>
+      <div id="header">
+        <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Utility Bills Payment</h1>
+        <div id="amount" class="amount">Amount Due: 17,902.00 EGP</div>
       </div>
-      <br>
-      <button class="confirm">Confirm Payment</button>
-      <br>
-      <button class="cancel">Cancel</button>
-    </div>
-    <div id="third-party-pay" class="popup">
-      <button class="cancel">Cancel</button>
-      <h3 class="title">Choose the account you want to pay from:</h3>
-      <div class="dropdown">
-        <label for="account-select">Your Accounts:</label>
-        <select id="account-select">
-          <option value="Account 1">Account 1</option>
-          <option value="Account 2">Account 2</option>
-          <option value="Account 3">Account 3</option>
-        </select>
+      <div id="options">
+        <h2>Payment Options:</h2>
+        <button class="extra-button" id="full-amount-btn">Pay Full Amount</button>
+        <button class="extra-button" id="third-party-btn">Pay Through a Third Party</button>
+        <br>
+        <button class="redirect-button" onclick="window.location='bills.html'">Go to All Bills</button>
       </div>
-      <br>
-      <h3 class="title">Choose a third-party payment provider:</h3>
-      <button class="option">Fawry</button>
-      <button class="option">Vodafone Cash</button>
-      <button class="option">WePay</button>
-      <br>
-    </div>
-  </main>
-    
-  <br><br><br><br>
-  <div class="footer">
-    <footer>
-      <br><br>
-      <a href="atm.html">ATM Locator</a> | <a href="settings.html">Settings</a> | <a href="contactus.html">Contact Us &phone;</a>
-      <br><br><br>
-      &copy; 2023 HSM Bank. All rights reserved.
-      <br><br><br>
-      <img id="flower" src="../Flower.png" alt="Logo">
-  </footer>
-  </div>
-  <div class="rightbar"> </div>
 
+      <div id="full-amount-pay" class="popup">
+        <h3 class="title">Choose the account you want to pay from:</h3>
+        <div class="dropdown">
+          <label for="account-select">Your Accounts:</label>
+          <select id="account-select">
+            <option value="Account 1">Account 1</option>
+            <option value="Account 2">Account 2</option>
+            <option value="Account 3">Account 3</option>
+          </select>
+        </div>
+        <br>
+        <button class="confirm">Confirm Payment</button>
+        <br>
+        <button class="cancel">Cancel</button>
+      </div>
+      <div id="third-party-pay" class="popup">
+        <h3 class="title">Choose the account you want to pay from:</h3>
+        <div class="dropdown">
+          <label for="account-select">Your Accounts:</label>
+          <select id="account-select">
+            <option value="Account 1">Account 1</option>
+            <option value="Account 2">Account 2</option>
+            <option value="Account 3">Account 3</option>
+          </select>
+        </div>
+        <br>
+        <h3 class="title">Choose a third-party payment provider:</h3>
+        <button class="option" onclick="selectPaymentProvider(this)">Fawry</button>
+        <button class="option" onclick="selectPaymentProvider(this)">Vodafone Cash</button>
+        <button class="option" onclick="selectPaymentProvider(this)">WePay</button>
+        <br>
+        <button class="confirm">Confirm Payment</button>
+        <br>
+        <button class="cancel">Cancel</button>
+      </div>
+    </main>
 
     <script>
       const fullAmountBtn = document.getElementById('full-amount-btn');
-      const fullAmountPay = document.getElementById('full-amount-pay');
       const thirdPartyBtn = document.getElementById('third-party-btn');
-      const thirdPartyPay = document.getElementById('third-party-pay');
-      const cancelBtns = document.querySelectorAll('.popup .cancel');
-      const confirmBtn = document.querySelector('.popup .confirm');
-      const amountDue = document.getElementById('amount');
+
+      const fullAmountPopup = document.getElementById('full-amount-pay');
+      const thirdPartyPopup = document.getElementById('third-party-pay');
+
+      const confirmFullAmountBtn = fullAmountPopup.querySelector('.confirm');
+      const confirmThirdPartyBtn = thirdPartyPopup.querySelector('.confirm');
 
       fullAmountBtn.addEventListener('click', () => {
-        fullAmountPay.style.display = 'block';
-        thirdPartyPay.style.display = 'none';
+        fullAmountPopup.style.display = 'block';
+        thirdPartyPopup.style.display = 'none';
       });
 
       thirdPartyBtn.addEventListener('click', () => {
-        thirdPartyPay.style.display = 'block';
-        fullAmountPay.style.display = 'none';
+        thirdPartyPopup.style.display = 'block';
+        fullAmountPopup.style.display = 'none';
       });
 
-      cancelBtns.forEach((cancelBtn) => {
-        cancelBtn.addEventListener('click', () => {
-          fullAmountPay.style.display = 'none';
-          thirdPartyPay.style.display = 'none';
+      confirmFullAmountBtn.addEventListener('click', () => {
+        document.getElementById('amount').textContent = 'No Bills to Pay';
+        alert('Payment Settled Successfully. Thank you!');
+      });
+
+      function selectPaymentProvider(button) {
+        const options = document.querySelectorAll('.option');
+        options.forEach((option) => {
+          option.style.backgroundColor = 'rgb(37, 125, 132)';
+          option.style.color = 'white';
+        });
+
+        button.style.backgroundColor = 'darkblue';
+        button.style.color = 'lightblue';
+      }
+
+      confirmThirdPartyBtn.addEventListener('click', () => {
+      const selectedProvider = document.querySelector('.option[style*="darkblue"]');
+      if (selectedProvider) {
+      alert(`Thank you for using ${selectedProvider.textContent} to pay.`);
+      document.getElementById('amount').textContent = 'No Bills to Pay';
+      thirdPartyPay.style.display = 'none';
+      } else {
+       alert('Please select a third-party payment provider');
+     }
+    });
+
+      const cancelButtons = document.querySelectorAll('.cancel');
+      cancelButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          fullAmountPopup.style.display = 'none';
+          thirdPartyPopup.style.display = 'none';
         });
       });
-
-      confirmBtn.addEventListener('click', () => {
-        fullAmountPay.style.display = 'none';
-        amountDue.textContent = 'No Bills to Pay';
-        alert('Payment settled successfully. Thank you!');
-      });
-
-      var sidebartmp = document.getElementById("sidebar-id");
-        var sidebarbuttontmp = document.getElementById("sidebar-button-id");
-        sidebarbuttontmp.addEventListener("click", () => {
-            if(sidebartmp.style.width === "45px"){
-                sidebartmp.style.width = "200px";
-                sidebarbuttontmp.style.left="180px";
-            }else{
-                sidebartmp.style.width = "45px";
-                sidebarbuttontmp.style.left="23px";
-            }
-        });
     </script>
   </body>
 </html>
