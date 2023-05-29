@@ -127,7 +127,7 @@
     <main class="main-area">
     <div id="header">
       <h1 style="color: black; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 40px;">Loan Installments Payment</h1>
-      <div class="amount">Amount Due:</div> <div id="instBill2page">25000.00</div>
+      <div class="amount">Amount Due:</div> <div id="loanbill2page">25000.00</div>
     </div>
     <div id="options">
       <h2>Payment Options:</h2>
@@ -144,9 +144,10 @@
         <label for="account-select">Your Accounts:</label>
         <br><br>
         <select id="account-select" required>
-            <option value="111111111111">111111111111</option>
-            <option value="222222222222">222222222222</option>
-            <option value="333333333333">333333333333</option>
+          <option value="Acc No." disabled selected>Acc No.</option>
+          <option value="111111111111">111111111111</option>
+          <option value="222222222222">222222222222</option>
+          <option value="333333333333">333333333333</option>
         </select>
       </div>
       <br><br><br>
@@ -189,36 +190,38 @@
       });
 
       confirmBtn.addEventListener('click', () => {
-        const selectedLoan = loanSelect.value;
-        const selectedOption = document.querySelector(
-          `#loan-select option[value='${selectedLoan}']`
-        );
-        selectedOption.remove();
 
-        fullAmountPay.style.display = 'none';
-        alert('Payment settled successfully. Thank you!');
-      });
+          var accid=document.getElementById("account-select").value;
+          var balanceid;
 
-      loanSelect.addEventListener('change', () => {
-        updatePaymentDetails();
-      });
+            if(accid == "222222222222"){
+                balanceid="2-balance";
+            }else if(accid == "111111111111"){
+                balanceid="1-balance";
+            }else if(accid == "333333333333"){ 
+                balanceied="3-balance";
+            }else{
+                alert("Please choose an account.");
+                return;
+            }
 
-      function updatePaymentDetails() {
-        const selectedLoan = loanSelect.value;
-        if (selectedLoan === 'Loan 1') {
-          amountText.textContent = 'Amount Due: 2,000.00 EGP';
-          dueDateText.textContent = 'Due Date: 28/05/2023';
-        } else if (selectedLoan === 'Loan 2') {
-          amountText.textContent = 'Amount Due: 15,000.00 EGP';
-          dueDateText.textContent = 'Due Date: 28/05/2024';
-        } else if (selectedLoan === 'Loan 3') {
-          amountText.textContent = 'Amount Due: 1,000.00 USD';
-          dueDateText.textContent = 'Due Date: 30/9/2023';
-        } else {
-          amountText.textContent = '';
-          dueDateText.textContent = '';
-        }
-      }
+            var storedBalance = parseFloat(localStorage.getItem(balanceid)); //40000.00
+            var storedBill = parseFloat(localStorage.getItem("loanbill2"));
+            if(storedBill>storedBalance){
+                alert("You do not have enough in your account for this transaction.");
+                return;
+            }else{
+                alert("Successful Transaction.");
+                updateBalance(balanceid, storedBill, storedBill);
+                updateTransaction(accid, storedBill);
+                
+                document.getElementById("account-select").value="";
+                document.getElementById("full-amount-pay").style="none";
+                var element = document.getElementById("loanbill2page");
+                element.textContent = localStorage.getItem("loanbill2");
+                window.location='bills.html';
+            }
+        });
 
       var sidebartmp = document.getElementById("sidebar-id");
       var sidebarbuttontmp = document.getElementById("sidebar-button-id");
@@ -230,8 +233,44 @@
               sidebartmp.style.width = "45px";
               sidebarbuttontmp.style.left="23px";
           }
+
+          function updateBalance(balanceid, amount, storedBill){
+            
+            var storedBalance = parseFloat(localStorage.getItem(balanceid));
+
+            var newbalance=parseFloat(storedBalance)-parseFloat(amount);
+            localStorage.setItem(balanceid, newbalance.toFixed(2));
+
+            var newbill=parseFloat(storedBill)-parseFloat(amount);
+            localStorage.setItem("loanbill2", newbill);
+
+
+        }
+
+        function updateTransaction(accid, amount){
+            var newtransaction =
+            {
+                "Date": "01-06-2023",
+                "Amount": parseFloat(amount)
+            };
+
+            var transid;
+            if(accid == "222222222222"){
+                transid="transactions2";
+            }else if(accid == "111111111111"){
+                transid="transactions1";
+            }else{
+                transid="transactions3";
+            }
+
+
+            var transactions = JSON.parse(localStorage.getItem(transid)) || [];
+            
+            transactions.unshift(newtransaction);
+            localStorage.setItem(transid, JSON.stringify(transactions));
+            
+        }
       });
     </script>
   </body>
 </html>
-
