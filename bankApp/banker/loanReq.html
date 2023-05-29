@@ -5,13 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loan Requests</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-        }
+       body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
 
         h1 {
       font-size: 24px;
+      text-align: center;
+      padding: 20px;
+      margin-top: 0;
+      background-color: rgb(37, 125, 132);
+      color: #fff;
+    }
+    h2 {
+      font-size: 20px;
       text-align: center;
       padding: 20px;
       margin-top: 0;
@@ -121,46 +131,44 @@
             <td>John Doe</td>
             <td>12345</td>
             <td>2023-05-01</td>
-            <td>$100.00</td> <!-- Replace with the actual amount value -->
+            <td>$100.00</td>
             <td class="status-pending">Pending</td>
         </tr>
         <tr>
             <td>Jane Smith</td>
             <td>67890</td>
             <td>2023-05-05</td>
-            <td>$200.00</td> <!-- Replace with the actual amount value -->
+            <td>$200.00</td> 
             <td class="status-pending">Pending</td>
         </tr>
-        <!-- Add more table rows with mock entries -->
-        <!-- Add 20 more table rows -->
+   
         <tr>
             <td>Emily Johnson</td>
             <td>24680</td>
             <td>2023-05-10</td>
-            <td>$300.00</td> <!-- Replace with the actual amount value -->
+            <td>$300.00</td> 
             <td class="status-pending">Pending</td>
         </tr>
         <tr>
             <td>Michael Smith</td>
             <td>13579</td>
             <td>2023-05-15</td>
-            <td>$400.00</td> <!-- Replace with the actual amount value -->
+            <td>$400.00</td> 
             <td class="status-pending">Pending</td>
         </tr>
-        <!-- Add more table rows with mock entries -->
-        <!-- Add 20 more table rows -->
+       
         <tr>
             <td>William Davis</td>
             <td>98765</td>
             <td>2023-05-20</td>
-            <td>$500.00</td> <!-- Replace with the actual amount value -->
+            <td>$500.00</td> 
             <td class="status-pending">Pending</td>
         </tr>
         <tr>
             <td>Olivia Johnson</td>
             <td>54321</td>
             <td>2023-05-25</td>
-            <td>$600.00</td> <!-- Replace with the actual amount value -->
+            <td>$600.00</td> 
             <td class="status-pending">Pending</td>
         </tr>
         
@@ -198,7 +206,7 @@
                 idElement.innerText = id;
                 dateElement.innerText = date;
 
-                // Reset button states and remove previous event listeners
+                
                 acceptButton.disabled = false;
                 acceptButton.classList.remove('status-accepted');
                 acceptButton.removeEventListener('click', handleAccept);
@@ -207,7 +215,7 @@
                 rejectButton.classList.remove('status-rejected');
                 rejectButton.removeEventListener('click', handleReject);
 
-                // Set initial button states based on status
+                
                 if (status === 'Accepted') {
                     acceptButton.disabled = true;
                     acceptButton.classList.add('status-accepted');
@@ -216,12 +224,12 @@
                     rejectButton.classList.add('status-rejected');
                 }
 
-                // Store the selected row
+                
                 var selectedRow = this;
-                // Add 'selected' class to the selected row
+                
                 selectedRow.classList.add('selected');
 
-                // Add event listeners to the accept and reject buttons
+                
                 acceptButton.addEventListener('click', function(event) {
                     event.stopPropagation();
                     handleAccept(selectedRow);
@@ -242,7 +250,7 @@
             infoWindow.style.display = 'none';
         });
 
-        // ...
+       
 
         function handleAccept(row) {
     var statusCell = row.cells[4];
@@ -267,7 +275,7 @@ function closeInfoWindow() {
     infoWindow.style.display = 'none';
 }
 
-// ...
+
 
     </script>
 </body>

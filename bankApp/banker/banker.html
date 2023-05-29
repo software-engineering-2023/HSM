@@ -44,7 +44,7 @@
             background-color: rgb(241, 241, 241);
             margin: 0;
             font-size: 20px;
-            margin-right: 1000px;
+            margin-right: 1200px;
         }
 		h2 {
       font-size: 24px;
@@ -67,7 +67,7 @@
             cursor: pointer;
         }
 
-        #logout-button:hover {
+        .logout-button:hover {
             background-color: lightgrey;
         }
 
@@ -108,13 +108,40 @@
             text-align: center;
             margin-top: 20px;
         }
+        .logout-button{
+    background-color: white;
+    cursor: pointer;
+    border: 3px solid rgb(37, 125, 132);
+    border-radius: 100%;
+    font-family: sans-serif;
+    width: 60px;
+    height: 60px;
+    font-size: 20;
+    font-weight: bold;
+    transition: 0.5s;
+    display:inline-block;
+    text-align: center;
+
+    float:right;
+    margin-right:0px;
+    margin-top: 20px;
+}
+#logout{
+    width:30px;
+    height:30px;
+    margin:0 auto;
+    margin-top:4px;
+    margin-left:4px;
+}
     </style>
 </head>
 <body>
     <header class="header">
         <img id="logo" src="../logo_text.png" alt="Logo">
         <h1>Bank</h1>
-        <a id="logout-button" href="../loginPage.html">Log Out&#10162;</a>
+        <button class="logout-button" onclick="window.location='../loginPage.html'">
+            <img id="logout" src="../logout.png" alt="logout">
+        </button>
     </header>
         <div class="button-container1">
 			<h2>Banker Portal</h2>

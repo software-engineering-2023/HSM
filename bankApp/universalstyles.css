@@ -234,8 +234,7 @@ header{
 }
 
 .box-button:hover{
-    border: 1px solid rgb(37, 125, 132);
-    font-weight: bold;
+    background-color: rgb(37, 125, 132);
 }
 
  .extra-button { /*outside of the boxes */
