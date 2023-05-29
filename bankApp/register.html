@@ -1,97 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <link rel="stylesheet" href="../universalstyles.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #ffffff;
-      margin: 0;
-      padding: 0;
-    }
+    <title>Online Banking - Register</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
 
-    .register-container {
-      text-align: center;
-      margin: 200px auto;
-      width: 50%;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-    .register-container input {
-      width: 200px;
-      height: 50px;
-      border: 1px solid;
-      margin: 10px 0;
-      font-size: 16px;
-      padding: 5px;
-    }
+        h1 {
+            text-align: center;
+            color: rgb(37, 125, 132);
+            margin-bottom: 30px;
+        }
 
-    .register-container button {
-      margin: 10px 0;
-      width: 100px;
-      height: 50px;
-      background-color: #000000;
-      color: #ffffff;
-      font-size: 18px;
-      border: none;
-      cursor: pointer;
-    }
+        .header {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
 
-    .bottom-links {
-      text-align: center;
-      margin: 30px auto;
-      width: 50%;
-    }
+        .content {
+            margin-bottom: 30px;
+            color: #333333;
+            line-height: 1.6;
+        }
 
-    .bottom-links a {
-      text-decoration: none;
-      color: #000000;
-      font-size: 16px;
-      margin: 10px 10px;
-    }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888888;
+        }
 
-    .bottom-links a:hover {
-      background-color: #eeeeee;
-    }
+        /* Form styles */
+        .form-container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-    .logo {
-      width: 100px;
-      height: 100px;
-      margin: 20px;
-    }
-  </style>
+        .form-container h2 {
+            text-align: center;
+            color: rgb(37, 125, 132);
+            margin-bottom: 30px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="password"],
+        .form-container input[type="email"],
+        .form-container input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .form-container button {
+            background-color: rgb(37, 125, 132);
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: #002776;
+        }
+
+        .form-container p {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-container p a {
+            color: #005EB8;
+            text-decoration: none;
+        }
+
+        .form-container p a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-
 <body>
-  <img src="logo.jpeg" alt="Logo" class="logo">
-  <div class="register-container">
-    <h1>Register</h1>
-    <input type="text" placeholder="Username" id="username" required><br><br>
-    <input type="password" placeholder="Password" id="password" required><br><br>
-    <input type="text" placeholder="National ID" id="national_id" required><br><br>
-    <button onclick="register()">Register</button>
-  </div>
-  <div class="bottom-links">
-    <a href="login.html">Login</a>
-    <a href="atm.html">ATM Locator</a>
-    <a href="settings.html">Settings</a>
-    <a href="contactus.html">Contact Us &phone;</a>
-  </div>
-  <script>
-    function register() {
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-      var nationalId = document.getElementById("national_id").value;
+    <div class="container">
+        <div class="header">
+            <h1>Online Banking</h1>
+        </div>
+        <div class="content">
+            <div class="form-container">
+                <h2>Register</h2>
+                <form onsubmit="return validateForm()">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Enter your username" required>
 
-      // Perform registration logic here
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter your password" required>
 
-      // Redirect to a success page or perform further actions
-      window.location.href = "success.html";
-    }
-  </script>
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+                    <label for="card-number">Card Number:</label>
+                    <input type="text" id="card-number" placeholder="Enter your card number" required>
+
+                    <label for="verification-code">Verification Code:</label>
+                    <input type="text" id="verification-code" placeholder="Enter the verification code" required>
+
+                    <button type="submit">Register</button>
+                </form>
+                <p>Already have an account? <a href="loginPage.html">Login here</a></p>
+            </div>
+        </div>
+        <div class="footer">
+            &copy; 2023 HSM. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById('email').value;
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            alert('Registration successful!');
+            return true;
+        }
+    </script>
 </body>
-
 </html>
